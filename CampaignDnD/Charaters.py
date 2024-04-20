@@ -17,13 +17,17 @@ class_values = df['class'].unique()
 spells_values = df['spells'].unique()
 skills_values = df['skills'].unique()
 
+#spells label "nan" replace it with "No spells"
+for i in range(len(spells_values)):
+    if spells_values[i] != spells_values[i]:
+        spells_values[i] = "No spells"
+
 count = 0
 output_file_path = "Charaters.csv"
 
 with open(output_file_path, "w", newline='') as file:
     csv_writer = csv.writer(file)
     csv_writer.writerow(["Name", "Class", "Spells", "Skills"])  # Header
-
 
     for name in name_values:
         if count >= 10:  # testing

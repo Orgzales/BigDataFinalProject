@@ -50,7 +50,10 @@ CREATE OUTPUT FILES FOR PROCESSING STATS
 		- Get the classes that the spell could use
 		- Check if the charater has the class that is within the requiements 
 			- if the charater does give out a precent success to that name in that session 
+			- Any nans replace it with "Charater knows no spells"
 		
+		
+Later on tokenize all words to get a cluster of certain words for 3d models
 	
 
 

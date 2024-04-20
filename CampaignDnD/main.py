@@ -34,8 +34,7 @@ with progress:
 
             # Count the occurrences of each spell
             for spell in spell_names_values:
-                spell = spell.lower()
-                spell_counts[spell] = text.count(spell)
+                spell_counts[spell] = text.count(spell.lower())
 
             if "level up" in text:
                 total_files_with_level_up += 1
@@ -69,13 +68,41 @@ for spell, count in Spell_total_counts.items():
     if count > 0:
         print(spell + ": " + str(count))
         #print out the calsses value for each spell
-        print(spell_classes_values[spell_names_values == spell])
+        print(spell_classes_values[spell_names_values.tolist().index(spell)])
 
 df_characters = pd.read_csv("Charaters.csv")
 
 character_names = df_characters['Name'].unique()  # Unique character names
 character_classes = df_characters['Class'].unique()  # Unique character classes
 character_spells = df_characters['Spells'].unique()  # Unique character spells
+
+character_success_rate = {} #store the success rate of each character
+
+#Check if each charater has the spell or not | or class can have the spell
+for character in character_names:
+    sucesss_rate = 0.0 #testing
+
+    for spell in spell_counts: #go throgh each spell (change to each session later)
+        if Spell_total_counts[spell] > 0: # if it has been used in the session
+            spell_occurance = Spell_total_counts[spell] # total num of times the spell has been used
+            spell_class = spell_classes_values[spell_names_values.tolist().index(spell)] # the classes that could use the spell
+            print ("Spell: " + spell)
+            if spell in character_spells[character_names.tolist().index(character)]:
+                print(character + " has " + spell + " spell")
+                sucesss_rate = (spell_occurance * 2) + sucesss_rate
+            elif character_classes[character_names.tolist().index(character)] in spell_class:
+                print(character + " can obtain " + spell + " spell")
+                sucesss_rate = spell_occurance + sucesss_rate
+                # print("Spell class: " + spell_class)
+                # print("Character class: " + character_classes[character_names.tolist().index(character)])
+    print("success rate for " + character + " is: " + str(sucesss_rate) + "%")
+    character_success_rate[character] = sucesss_rate
+
+#print all the characters and their success rate sorted from best to worst
+print("!!!!!!!!!!!!!!!!!!!!!!")
+print("Characters and their success rate sorted from best to worst in session 1:")
+for character, rate in sorted(character_success_rate.items(), key=lambda item: item[1], reverse=True):
+    print(character + ": " + + str(rate) + "%")
 
 
 
