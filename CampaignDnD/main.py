@@ -3,6 +3,7 @@ import nltk
 from nltk.tokenize import word_tokenize
 from rich.progress import Progress
 from rich.console import Console
+import matplotlib.pyplot as plt
 
 progress = Progress()
 console = Console()
@@ -13,15 +14,15 @@ console = Console()
 token_list = []
 word_counts = {}
 total_files = len(glob.glob("crititcalrole/*.txt"))
-# phrases_to_count = ['water breathing', 'hex', 'rage']  # for testing
-phrases_to_count = []
+# Spells_to_Count = ['water breathing', 'hex', 'rage']  # for testing
+Spells_to_Count = []
 
 with open("SpellsOuput.txt", "r") as file:
-    phrases_to_count = file.read().splitlines()
+    Spells_to_Count = file.read().splitlines()
 
-phrase_counts = {}
-for phrase in phrases_to_count:
-    phrase_counts[phrase] = 0
+Spell_counts = {}
+for Spells in Spells_to_Count:
+    Spell_counts[Spells] = 0
 
 
 with progress:
@@ -38,18 +39,40 @@ with progress:
             for word in tokens:
                 word_counts[word] = word_counts.get(word, 0) + 1
 
-            # Count the occurrences of each phrase
-            for phrase in phrases_to_count:
-                phrase_counts[phrase] += text.count(phrase)
+            # Count the occurrences of each Spells
+            for Spells in Spells_to_Count:
+                Spell_counts[Spells] += text.count(Spells)
 
         # Advance the progress tracker
         progress.advance(task)
 
 # Print the occurrences of each word
 for word, count in word_counts.items():
-    print('word: ' + word + ' count: ' + str(count))
+    print(word + ' count: ' + str(count))
 
-# Print the occurrences of each phrase
-print("\nOccurrences of phrases:")
-for phrase, count in phrase_counts.items():
-    print('Phrase: ' + phrase + ' count: ' + str(count))
+# Print the occurrences of each Spells
+print("\nOccurrences of Spells:")
+for Spells, count in Spell_counts.items():
+    print(Spells + ' count: ' + str(count))
+
+# sort Spells by count
+sorted_Spells = sorted(Spell_counts.items(), key=lambda x: x[1], reverse=True)
+# print top 10 Spells
+print("\nTop 10 Spells:")
+for Spells, count in sorted_Spells[:10]:
+    print(Spells + ' count: ' + str(count))
+
+#graph it using matplotlib
+x_values = [x[0] for x in sorted_Spells[:30]]
+y_values = [y[1] for y in sorted_Spells[:30]]
+plt.bar(x_values, y_values)
+plt.xlabel('Spells')
+plt.ylabel('Count')
+plt.title('Top 30 Spells')
+plt.xticks(rotation=65)
+plt.tight_layout()
+plt.show()
+
+
+
+
