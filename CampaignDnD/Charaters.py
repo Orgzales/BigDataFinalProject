@@ -12,10 +12,10 @@ column_names = df.columns.tolist()
 print("Column Names:", column_names)
 
 
-Name_Column = df.columns[df.columns.get_loc('name')] #names column
-Class_Column = df.columns[df.columns.get_loc('class')] #class column
-processedSpells_Column = df.columns[df.columns.get_loc('processedSpells')] #spells column
-skills_Column = df.columns[df.columns.get_loc('skills')] #skills column
+name_values = df['name'].unique()
+class_values = df['class'].unique()
+spells_values = df['spells'].unique()
+skills_values = df['skills'].unique()
 
 count = 0
 output_file_path = "Charaters.csv"
@@ -24,10 +24,6 @@ with open(output_file_path, "w", newline='') as file:
     csv_writer = csv.writer(file)
     csv_writer.writerow(["Name", "Class", "Spells", "Skills"])  # Header
 
-    name_values = df[Name_Column].unique()
-    class_values = df[Class_Column].unique()
-    spells_values = df[processedSpells_Column].unique()
-    skills_values = df[skills_Column].unique()
 
     for name in name_values:
         if count >= 10:  # testing

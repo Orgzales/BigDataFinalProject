@@ -11,11 +11,12 @@ console = Console()
 # Uncomment the following line to download the required models
 # nltk.download('punkt')  # tokenizer models
 
-total_files = len(glob.glob("crititcalrole/*.txt"))
+total_files = len(glob.glob("crititcalrole/(2x01)_CuriousBeginnings.txt"))
+# total_files = len(glob.glob("crititcalrole/*.txt"))
 
-df = pd.read_csv("SpellsOutput.csv")
-spell_names_column = df.columns[df.columns.get_loc('Name')] #names column
-spell_names_values = df[spell_names_column].unique()
+df_spells = pd.read_csv("SpellsOutput.csv")
+spell_names_values = df_spells['Name'].unique()#spell names column
+spell_classes_values = df_spells['Classes'].unique() #spell classes column
 
 spell_counts_per_file = {} #  store the count of each spell in each file
 files_with_level_up = []  # To track which files contain "level up"
@@ -24,7 +25,7 @@ total_files_with_level_up = 0 #for testing
 
 with progress:
     task = progress.add_task("[green]Processing files...", total=total_files)
-    for file_path in glob.glob("crititcalrole/*.txt"):
+    for file_path in glob.glob("crititcalrole/(2x01)_CuriousBeginnings.txt"):
 
         spell_counts = {}
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -57,31 +58,24 @@ for file_path, counts in spell_counts_per_file.items():
         else:
             Spell_total_counts[spell] = count
 
+# Display the total count of level up
+print("Total 'level up' count:", total_files_with_level_up)
+print("Files with 'level up':", files_with_level_up)
+
+
 print("!!!!!!!!!!!!!!!!!!!!!!")
-#print the total count of each spell only if is greater than 0
+# print the total count of each spell only if is greater than 0
 for spell, count in Spell_total_counts.items():
     if count > 0:
         print(spell + ": " + str(count))
+        #print out the calsses value for each spell
+        print(spell_classes_values[spell_names_values == spell])
 
-# Display the total count
-# print("Total 'level up' count:", total_files_with_level_up)
-# print("Files with 'level up':", files_with_level_up)
+df_characters = pd.read_csv("Charaters.csv")
 
-
-
-
-#
-# #graph it using matplotlib
-# x_values = [x[0] for x in sorted_Spells[:30]]
-# y_values = [y[1] for y in sorted_Spells[:30]]
-# plt.bar(x_values, y_values)
-# plt.xlabel('Spells')
-# plt.ylabel('Count')
-# plt.title('Top 30 Spells')
-# plt.xticks(rotation=65)
-# plt.tight_layout()
-# plt.show()
-
+character_names = df_characters['Name'].unique()  # Unique character names
+character_classes = df_characters['Class'].unique()  # Unique character classes
+character_spells = df_characters['Spells'].unique()  # Unique character spells
 
 
 

@@ -45,6 +45,13 @@ CREATE OUTPUT FILES FOR PROCESSING STATS
 		- Seperate each file into a session for each match 
 	- Make sure to make it not case sensitive
 	
+##TODO/STEP 2
+	- W/ total amount of spells in total + Session amount of spells using pandas 
+		- Get the classes that the spell could use
+		- Check if the charater has the class that is within the requiements 
+			- if the charater does give out a precent success to that name in that session 
+		
+	
 
 
 ###Data Sources
