@@ -43,7 +43,7 @@ CREATE OUTPUT FILES FOR PROCESSING STATS
 		- SPELLS: Find out how many times spells have been used + Classes can use them 
 		- Monsters: Find out each monster and match challenge rating 
 		- Seperate each file into a session for each match 
-	
+	- Make sure to make it not case sensitive
 	
 
 
