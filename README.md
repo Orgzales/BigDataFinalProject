@@ -47,14 +47,29 @@ CREATE OUTPUT FILES FOR PROCESSING STATS
 	
 ##TODO/STEP 2
 	- W/ total amount of spells in total + Session amount of spells using pandas 
-		- Get the classes that the spell could use
+		- Get the classes that the spell could use or access by
 		- Check if the charater has the class that is within the requiements 
 			- if the charater does give out a precent success to that name in that session 
 			- Any nans replace it with "Charater knows no spells"
+			- Make a method to get for each class if the charater has multiple 
+		- for each session keep the success rate from each charter 
+		- also get the total average of success rate for all sessions for each charaters		
+		- Do the same for abilities and skills 
+			- May have to make a sepererate list of abilities for classes 
+		- 
 		
-		
-Later on tokenize all words to get a cluster of certain words for 3d models
+##TODO/STEP 3
+	- Make each session name based on file name 
+	- Add a permanent success rate addition when a level up is found in the session 
+	- tokenize all words to get a cluster of certain words for 3d models
 	
+	
+#Charts to Create
+	- a line chart of the avg success rate for each session among all charaters 
+	- a graph of most common spells, classses, monsters, and charters 
+		- possibly for each session 
+	- A cluster graph of the most successful classes with the spells 
+	- cluster/3d graph of the common words, spells, and charaters 
 
 
 ###Data Sources

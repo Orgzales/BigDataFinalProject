@@ -81,16 +81,22 @@ character_success_rate = {} #store the success rate of each character
 #Check if each charater has the spell or not | or class can have the spell
 for character in character_names:
     sucesss_rate = 0.0 #testing
+    character_class = character_classes[character_names.tolist().index(character)]
+    class_text = character_class.split(" ")[0] #to get rid of the extra text in the class column
+    # level_text = character_class.split(" ")[1] #to get the level to add to the susscess rate
+    # sucesss_rate = sucesss_rate + int(level_text) #add the level to the success rate
 
     for spell in spell_counts: #go throgh each spell (change to each session later)
         if Spell_total_counts[spell] > 0: # if it has been used in the session
             spell_occurance = Spell_total_counts[spell] # total num of times the spell has been used
             spell_class = spell_classes_values[spell_names_values.tolist().index(spell)] # the classes that could use the spell
-            print ("Spell: " + spell)
+            # print ("Spell: " + spell)
             if spell in character_spells[character_names.tolist().index(character)]:
                 print(character + " has " + spell + " spell")
                 sucesss_rate = (spell_occurance * 2) + sucesss_rate
-            elif character_classes[character_names.tolist().index(character)] in spell_class:
+            elif class_text in spell_class:
+                print(character_classes[character_names.tolist().index(character)])
+                print(spell_class)
                 print(character + " can obtain " + spell + " spell")
                 sucesss_rate = spell_occurance + sucesss_rate
                 # print("Spell class: " + spell_class)
@@ -102,7 +108,25 @@ for character in character_names:
 print("!!!!!!!!!!!!!!!!!!!!!!")
 print("Characters and their success rate sorted from best to worst in session 1:")
 for character, rate in sorted(character_success_rate.items(), key=lambda item: item[1], reverse=True):
-    print(character + ": " + + str(rate) + "%")
+    print(character + ": " + str(rate) + "%")
+
+
+print("!!!!!!!!!!!!!!!!!!!!!!")
+
+for character in character_names:
+    character_class = character_classes[character_names.tolist().index(character)]
+    class_text = character_class.split("|")  # to get rid of the extra text in the class column
+    print (class_text)
+    # level_text = character_class.split(" ")[1] #to get the level to add to the susscess rate
+    # sucesss_rate = sucesss_rate + int(level_text) #add the level to the success rate
+    for string in class_text:
+        name_class = string.split(" ")[0]
+        level_class = string.split(" ")[1]
+        print(name_class)
+        print(level_class)
+    print("!!!!!!!!!!!!!!!!!!!!!!")
+
+
 
 
 
