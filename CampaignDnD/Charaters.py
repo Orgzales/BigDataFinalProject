@@ -12,10 +12,10 @@ column_names = df.columns.tolist()
 print("Column Names:", column_names)
 
 
-name_values = df['name'].unique()
-class_values = df['class'].unique()
-spells_values = df['spells'].unique()
-skills_values = df['skills'].unique()
+name_values = df['name']
+class_values = df['class']
+spells_values = df['spells']
+skills_values = df['skills']
 
 #spells label "nan" replace it with "No spells"
 for i in range(len(spells_values)):

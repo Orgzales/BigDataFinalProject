@@ -15,8 +15,8 @@ total_files = len(glob.glob("crititcalrole/(2x01)_CuriousBeginnings.txt"))
 # total_files = len(glob.glob("crititcalrole/*.txt"))
 
 df_spells = pd.read_csv("SpellsOutput.csv")
-spell_names_values = df_spells['Name'].unique()#spell names column
-spell_classes_values = df_spells['Classes'].unique() #spell classes column
+spell_names_values = df_spells['Name']#spell names column
+spell_classes_values = df_spells['Classes'] #spell classes column
 
 spell_counts_per_file = {} #  store the count of each spell in each file
 files_with_level_up = []  # To track which files contain "level up"
