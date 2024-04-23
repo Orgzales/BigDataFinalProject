@@ -22,6 +22,8 @@ spell_counts_per_file = {} #  store the count of each spell in each file
 files_with_level_up = []  # To track which files contain "level up"
 total_files_with_level_up = 0 #for testing
 
+token_list = []
+word_counts = {}
 
 with progress:
     task = progress.add_task("[green]Processing files...", total=total_files)
@@ -30,7 +32,12 @@ with progress:
         spell_counts = {}
         with open(file_path, 'r', encoding='utf-8') as file:
             text = file.read().lower()
-            # tokens = word_tokenize(text)
+            tokens = word_tokenize(text)
+            token_list.extend(tokens)
+
+            #count each occurrence of each word
+            for word in tokens:
+                word_counts[word] = word_counts.get(word, 0) + 1
 
             # Count the occurrences of each spell
             for spell in spell_names_values:
@@ -112,7 +119,7 @@ for character, rate in sorted(character_success_rate.items(), key=lambda item: i
 
 
 print("!!!!!!!!!!!!!!!!!!!!!!")
-
+#getting the level and class of each subclass
 for character in character_names:
     character_class = character_classes[character_names.tolist().index(character)]
     class_text = character_class.split("|")  # to get rid of the extra text in the class column
@@ -127,6 +134,23 @@ for character in character_names:
     print("!!!!!!!!!!!!!!!!!!!!!!")
 
 
+# print out the top 10 most common words
+print("!!!!!!!!!!!!!!!!!!!!!!")
+print("Top 10 most common words:")
+for word, count in sorted(word_counts.items(), key=lambda item: item[1], reverse=True)[:10]:
+    print(word + ": " + str(count))
+
+# for each charater, find how often their skills would be used in the sesssions
+print("!!!!!!!!!!!!!!!!!!!!!!")
+for character in character_names:
+    character_skills = df_characters['Skills'][character_names.tolist().index(character)]
+    print(character + " skills: " + character_skills)
+    skills_split = character_skills.split("|")
+    for skill in skills_split:
+        print(skill)
+        for word, count in word_counts.items():
+            if skill.lower() in word:
+                print(word + ": " + str(count))
 
 
 
