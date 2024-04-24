@@ -63,6 +63,15 @@ CREATE OUTPUT FILES FOR PROCESSING STATS
 	- Add a permanent success rate addition when a level up is found in the session 
 	- tokenize all words to get a cluster of certain words for 3d models
 	
+###Success Rates 
+	- Player level: +Lv%
+	- If player has spell: +1% Each occurance
+	- If player can learn spell: +0.5% Each occurance
+	- If Player has skill: +0.5% Each occurance
+	- If Session has level up: +1 to level rate 
+	- Monster CR lowers success: Challeneg rating = 3 -> -3% 
+		Challenege rating 0.4 -> -0.4%
+	
 	
 #Charts to Create
 	- a line chart of the avg success rate for each session among all charaters 

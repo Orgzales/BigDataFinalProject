@@ -4,6 +4,7 @@ from nltk.tokenize import word_tokenize
 from rich.progress import Progress
 from rich.console import Console
 import pandas as pd
+import re
 
 progress = Progress()
 console = Console()
@@ -151,6 +152,51 @@ for character in character_names:
         for word, count in word_counts.items():
             if skill.lower() in word:
                 print(word + ": " + str(count))
+
+
+df_monsters = pd.read_csv("DndData/Dd5e_monsters.csv")
+monster_names = df_monsters['Name'] # monster names
+monster_count = {} #store the count of each monster in the session
+
+# #finding every occurace of name of mosnter in the files same as spells
+# for file_path in glob.glob("crititcalrole/(2x97)_TheFancyandtheFooled.txt"):
+#     monster_counts = {}
+#     with open(file_path, 'r', encoding='utf-8') as file:
+#         text = file.read().lower()  # Convert text to lowercase
+#         tokens = word_tokenize(text)
+#
+#         text_joined = " ".join(tokens)
+#         # Loop over each monster name
+#         for monster in monster_names:
+#             pattern = r'\b' + re.escape(monster) + r'\b'  # for monster names that have more than one word (red dragon)
+#             count = len(re.findall(pattern, text_joined)) #find all occurances of the monster name and count list
+#
+#             monster_counts[monster] = count
+#     monster_count[file_path] = monster_counts
+
+for file_path in glob.glob("crititcalrole/(2x97)_TheFancyandtheFooled.txt"):
+    monster_counts = {}
+    with open(file_path, 'r', encoding='utf-8') as file:
+        text = file.read().lower()
+        #tokenize the text
+        tokens = word_tokenize(text)
+        for monster in monster_names:
+            #if monster contains " " in its name skip it
+            if " " in monster:
+                monster_counts[monster] = text.count(monster.lower())
+            else:
+                monster_counts[monster] = tokens.count(monster.lower())
+    monster_count[file_path] = monster_counts
+
+#print each count of monsters
+for file_path, counts in monster_count.items():
+    print("File: " + str(file_path))
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    for monster, count in counts.items():
+        if count > 0:
+            print(monster + ": " + str(count))
+
+
 
 
 
