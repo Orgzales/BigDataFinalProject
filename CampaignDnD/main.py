@@ -55,11 +55,11 @@ with progress:
         # print(spell_counts_per_file[file_path])
         progress.advance(task)
 
-for file_path, counts in spell_counts_per_file.items():
-    print("File: " + str(file_path))
-    for spell, count in counts.items():
-        if count > 0:
-            print(spell + ": " + str(count))
+# for file_path, counts in spell_counts_per_file.items():
+#     print("File: " + str(file_path))
+#     for spell, count in counts.items():
+#         if count > 0:
+#             print(spell + ": " + str(count))
 
 # Count the total occurrences of each spell and print the total with the spell name
 Spell_total_counts = {}
@@ -69,8 +69,8 @@ for file_path, counts in spell_counts_per_file.items():
             Spell_total_counts[spell] += count
         else:
             Spell_total_counts[spell] = count
-    print("File: " + str(file_path))
-    print("Total spell counts: " + str(Spell_total_counts))
+    # print("File: " + str(file_path))
+    # print("Total spell counts: " + str(Spell_total_counts))
 
 # Display the total count of level up
 print("Total 'level up' count:", total_files_with_level_up)
@@ -100,33 +100,39 @@ for file_path, spells_in_session in spell_counts_per_file.items():
         class_text = character_class.split("|")  # to get rid of the extra text in the class column
         print(character + " class: " + character_class)
 
-        for class_name in class_text:
-            name_class = class_name.split(" ")[0]
-            level_class = class_name.split(" ")[1]
+        name_classes_clean = []
 
+        for class_name in class_text:
+            name_of_class = class_name.split(" ")[0]
+            level_class = class_name.split(" ")[1]
+            name_classes_clean.append(name_of_class)
             sucesss_rate = sucesss_rate + int(level_class) #add the level to the success rate
             # print("Level from " + name_class + ": +" + level_class + "%")
 
-            spells_known = []
-            spells_leaning = []
-            spell_known_rate = 0.0
-            spell_learn_rate = 0.0
-            for spell in spells_in_session: #go throgh each spell (change to each session later)
-                if spells_in_session[spell] > 0: # if it has been used in the session
-                    spell_occurance = spells_in_session[spell] # total num of times the spell has been used
-                    spell_class = spell_classes_values[spell_names_values.tolist().index(spell)] # the classes that could use the spell
-                    if spell in character_spells[character_names.tolist().index(character)]:
-                        spell_known_rate = spell_occurance
-                        spells_known.append(spell)
-                        # print(spell + "(#=" + str(spell_occurance) + ") is known by " + character + " (+ " + str(spell_known_rate) + "%)")
-                    elif name_class in spell_class:
-                        spell_learn_rate = (spell_occurance/2)
-                        spells_leaning.append(spell)
-                        # print(spell + "(#=" + str(spell_occurance) + ") is learned by " + character + " (+ " + str(spell_learn_rate) + "%)")
+        spells_known = []
+        spells_leaning = []
+        spell_known_rate = 0.0
+        spell_learn_rate = 0.0
+        for spell in spells_in_session: #go throgh each spell (change to each session later)
+            if spells_in_session[spell] > 0: # if it has been used in the session
+                spell_occurance = spells_in_session[spell] # total num of times the spell has been used
+                spell_class = spell_classes_values[spell_names_values.tolist().index(spell)] # the classes that could use the spell
+                if spell in character_spells[character_names.tolist().index(character)]:
+                    spell_known_rate = spell_occurance
+                    spells_known.append(spell)
+                    # print(spell + "(#=" + str(spell_occurance) + ") is known by " + character + " (+ " + str(spell_known_rate) + "%)")
+                else:
+                    for name_class in name_classes_clean:
+                        if name_class in spell_class:
+                            spell_learn_rate = (spell_occurance/2)
+                            spells_leaning.append(spell)
+                            # print("spell: " + spell + " class: " + name_class + " spell class: " + spell_class)
+                            # print(spell + "(#=" + str(spell_occurance) + ") is learned by " + character + " (+ " + str(spell_learn_rate) + "%)")
+                            break #break of inner loop so multi class can't be counted twice
 
-            # print("Spells known (+ " + str(spell_known_rate) + "%) : " + str(spells_known))
-            # print("Spells leaning (+ " + str(spell_learn_rate) + "%) : " + str(spells_leaning))
-            sucesss_rate = sucesss_rate + spell_known_rate + spell_learn_rate
+        # print("Spells known (+ " + str(spell_known_rate) + "%) : " + str(spells_known))
+        # print("Spells leaning (+ " + str(spell_learn_rate) + "%) : " + str(spells_leaning))
+        sucesss_rate = sucesss_rate + spell_known_rate + spell_learn_rate
 
         character_skills = df_characters['Skills'][character_names.tolist().index(character)]
 
@@ -140,7 +146,7 @@ for file_path, spells_in_session in spell_counts_per_file.items():
                     skill_rate = skill_rate + count
                     # print(skill + " is known by " + character + " (+ " + str(count) + "%)")
 
-        print("Skills known (+ " + str(skill_rate) + "%) : " + str(skills_known))
+        # print("Skills known (+ " + str(skill_rate) + "%) : " + str(skills_known))
         sucesss_rate = sucesss_rate + skill_rate
 
         # print("##################################")
@@ -167,35 +173,35 @@ for file_path in spell_counts_per_file:
 #     print(word + ": " + str(count))
 
 
-# df_monsters = pd.read_csv("DndData/Dd5e_monsters.csv")
-# monster_names = df_monsters['Name'] # monster names
-# monster_count = {} #store the count of each monster in the session
-#
-#
-# for file_path in glob.glob("crititcalrole/(2x97)_TheFancyandtheFooled.txt"):
-#     monster_counts = {}
-#     with open(file_path, 'r', encoding='utf-8') as file:
-#         text = file.read().lower()
-#         #tokenize the text
-#         tokens = word_tokenize(text)
-#         for monster in monster_names:
-#             #if monster contains " " in its name skip it
-#             if " " in monster:
-#                 monster_counts[monster] = text.count(monster.lower())
-#             else:
-#                 monster_counts[monster] = tokens.count(monster.lower())
-#     monster_count[file_path] = monster_counts
-#
-# #print each count of monsters
-# for file_path, counts in monster_count.items():
-#     print("File: " + str(file_path))
-#     print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-#     for monster, count in counts.items():
-#         if count > 0:
-#             print(monster + ": " + str(count))
-#             print("Monster CR: " + str(df_monsters['Challenge rating  (XP)'][monster_names.tolist().index(monster)]))
-#
-#
-#
+df_monsters = pd.read_csv("DndData/Dd5e_monsters.csv")
+monster_names = df_monsters['Name'] # monster names
+monster_count = {} #store the count of each monster in the session
+
+
+for file_path in glob.glob("crititcalrole/(2x97)_TheFancyandtheFooled.txt"):
+    monster_counts = {}
+    with open(file_path, 'r', encoding='utf-8') as file:
+        text = file.read().lower()
+        #tokenize the text
+        tokens = word_tokenize(text)
+        for monster in monster_names:
+            #if monster contains " " in its name skip it
+            if " " in monster:
+                monster_counts[monster] = text.count(monster.lower())
+            else:
+                monster_counts[monster] = tokens.count(monster.lower())
+    monster_count[file_path] = monster_counts
+
+#print each count of monsters
+for file_path, counts in monster_count.items():
+    print("File: " + str(file_path))
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    for monster, count in counts.items():
+        if count > 0:
+            print(monster + ": " + str(count))
+            print("Monster CR: " + str(df_monsters['Challenge rating  (XP)'][monster_names.tolist().index(monster)]))
+
+
+
 
 
