@@ -15,12 +15,19 @@ console = Console()
 total_files = len(glob.glob("crititcalrole/(2x01)_CuriousBeginnings.txt"))
 # total_files = len(glob.glob("crititcalrole/*.txt"))
 
+#spells
 df_spells = pd.read_csv("SpellsOutput.csv")
 spell_names_values = df_spells['Name']#spell names column
 spell_classes_values = df_spells['Classes'] #spell classes column
 
+#monsters
+df_monsters = pd.read_csv("DndData/Dd5e_monsters.csv")
+monster_names = df_monsters['Name'] # monster names
+monster_count = {} #store the count of each monster in the session
+
 spell_counts_per_file = {} #  store the count of each spell in each file
 word_counts_per_file = {} # store the count of each word in each file
+monster_counts_per_file = {} # store the count of each monster in each file
 files_with_level_up = []  # To track which files contain "level up"
 total_files_with_level_up = 0 #for testing
 
@@ -33,6 +40,8 @@ with progress:
 
         word_counts = {}
         spell_counts = {}
+        monster_counts = {}
+
         with open(file_path, 'r', encoding='utf-8') as file:
             text = file.read().lower()
             tokens = word_tokenize(text)
@@ -46,20 +55,21 @@ with progress:
             for spell in spell_names_values:
                 spell_counts[spell] = text.count(spell.lower())
 
+            for monster in monster_names:
+                if " " in monster:
+                    monster_counts[monster] = text.count(monster.lower())
+                else:
+                    monster_counts[monster] = tokens.count(monster.lower()) #to prevent counting the word EX: "ape" in "paper"
+
             if "level up" in text:
                 total_files_with_level_up += 1
                 files_with_level_up.append(file_path)
 
         spell_counts_per_file[file_path] = spell_counts
         word_counts_per_file[file_path] = word_counts
-        # print(spell_counts_per_file[file_path])
-        progress.advance(task)
+        monster_counts_per_file[file_path] = monster_counts
 
-# for file_path, counts in spell_counts_per_file.items():
-#     print("File: " + str(file_path))
-#     for spell, count in counts.items():
-#         if count > 0:
-#             print(spell + ": " + str(count))
+        progress.advance(task)
 
 # Count the total occurrences of each spell and print the total with the spell name
 Spell_total_counts = {}
@@ -69,8 +79,20 @@ for file_path, counts in spell_counts_per_file.items():
             Spell_total_counts[spell] += count
         else:
             Spell_total_counts[spell] = count
-    # print("File: " + str(file_path))
-    # print("Total spell counts: " + str(Spell_total_counts))
+    print("File: " + str(file_path))
+    print("Total spell counts: " + str(Spell_total_counts))
+
+print("!!!!!!!!!!!!!!!!!!!!!!")
+# Count the total occurrences of each monster and print the total with the monster name
+Monster_total_counts = {}
+for file_path, counts in monster_counts_per_file.items():
+    for monster, count in counts.items():
+        if monster in Monster_total_counts:
+            Monster_total_counts[monster] += count
+        else:
+            Monster_total_counts[monster] = count
+    print("File: " + str(file_path))
+    print("Total monster counts: " + str(Monster_total_counts))
 
 # Display the total count of level up
 print("Total 'level up' count:", total_files_with_level_up)
@@ -84,21 +106,25 @@ character_spells = df_characters['Spells']  # Unique character spells
 
 #dictionary that contains the charater success rate in each file
 session_success_rate = {}
+permanent_success_level = 0.0
 
 #for each file check how many spells that the charater knwon in that file
 for file_path, spells_in_session in spell_counts_per_file.items():
     character_success_rate = {}  # store the success rate of each character in the session
     print("Session: " + str(file_path))
+    if file_path in files_with_level_up:
+        permanent_success_level += 1
+        print("Level up: +1% | from " + file_path)
 
 
     #Check if each charater has the spell or not | or class can have the spell
     for character in character_names:
         # print("!!!!!!!!!!!!!!!!!!!!!!")
-        sucesss_rate = 0.0 #testing
+        sucesss_rate = 0.0 + permanent_success_level
 
         character_class = character_classes[character_names.tolist().index(character)]
         class_text = character_class.split("|")  # to get rid of the extra text in the class column
-        print(character + " class: " + character_class)
+        # print(character + " class: " + character_class)
 
         name_classes_clean = []
 
@@ -143,7 +169,8 @@ for file_path, spells_in_session in spell_counts_per_file.items():
             for word, count in word_counts_per_file[file_path].items():
                 if skill.lower() in word:
                     skills_known.append(skill)
-                    skill_rate = skill_rate + count
+                    skill_rate = skill_rate + count/10 # +0.1 for each occurance of the skill
+                    skill_rate = skill_rate + 2 # +2% for each skill
                     # print(skill + " is known by " + character + " (+ " + str(count) + "%)")
 
         # print("Skills known (+ " + str(skill_rate) + "%) : " + str(skills_known))
@@ -156,7 +183,7 @@ for file_path, spells_in_session in spell_counts_per_file.items():
 
         #add all the success rate of each character in the session to the session success rate dictionary
     session_success_rate[file_path] = character_success_rate
-    print(session_success_rate)
+    # print(session_success_rate)
 
 print("!!!!!!!!!!!!!!!!!!!!!!")
 #print each session collection success rates from all charaters in the session
@@ -165,43 +192,19 @@ for file_path in spell_counts_per_file:
     charater_success_rates = session_success_rate[file_path]
     print(charater_success_rates)
 
+#print each sesssion of spells counted for that session
+for file_path in spell_counts_per_file:
+    print("Session: " + str(file_path))
+    print(spell_counts_per_file[file_path])
+
+#print each session of the monsters counted for that session
+for file_path in monster_counts_per_file:
+    print("Session: " + str(file_path))
+    print(monster_counts_per_file[file_path])
+
 #
 # # print out the top 10 most common words
 # print("!!!!!!!!!!!!!!!!!!!!!!")
 # print("Top 10 most common words:")
 # for word, count in sorted(word_counts.items(), key=lambda item: item[1], reverse=True)[:10]:
 #     print(word + ": " + str(count))
-
-
-df_monsters = pd.read_csv("DndData/Dd5e_monsters.csv")
-monster_names = df_monsters['Name'] # monster names
-monster_count = {} #store the count of each monster in the session
-
-
-for file_path in glob.glob("crititcalrole/(2x97)_TheFancyandtheFooled.txt"):
-    monster_counts = {}
-    with open(file_path, 'r', encoding='utf-8') as file:
-        text = file.read().lower()
-        #tokenize the text
-        tokens = word_tokenize(text)
-        for monster in monster_names:
-            #if monster contains " " in its name skip it
-            if " " in monster:
-                monster_counts[monster] = text.count(monster.lower())
-            else:
-                monster_counts[monster] = tokens.count(monster.lower())
-    monster_count[file_path] = monster_counts
-
-#print each count of monsters
-for file_path, counts in monster_count.items():
-    print("File: " + str(file_path))
-    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    for monster, count in counts.items():
-        if count > 0:
-            print(monster + ": " + str(count))
-            print("Monster CR: " + str(df_monsters['Challenge rating  (XP)'][monster_names.tolist().index(monster)]))
-
-
-
-
-
