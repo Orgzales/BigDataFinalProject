@@ -33,20 +33,3 @@ with open(output_file_path, "w", newline='') as file:
         csv_writer.writerow([ability, abilities_classes[count]])
         count += 1
 
-
-# # spells
-# output_file_path = "SpellsOuput.txt"
-# with open(output_file_path, "w") as file:
-#     # Print unique values and write them to the file simultaneously
-#     for name in name_values:
-#         print(name)
-#         file.write(str(name) + "\n")
-
-
-
-#class abilites
-# output_file_path = "AbilitiesOutput.txt"
-# with open(output_file_path, "w") as file:
-#     for ability in abilities:
-#         print(ability)
-#         file.write(str(ability) + "\n")
