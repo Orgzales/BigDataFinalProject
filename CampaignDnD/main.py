@@ -98,6 +98,26 @@ for file_path, counts in monster_counts_per_file.items():
 print("Total 'level up' count:", total_files_with_level_up)
 print("Files with 'level up':", files_with_level_up)
 
+Monster_negitive_rate_perfile = {}
+
+# for each file print the "Challenge rating  (XP)" of each monster in the file
+for file_path, counts in monster_counts_per_file.items():
+    print("File: " + str(file_path))
+    total_sum = 0.0
+    for monster, count in counts.items():
+        if count > 0:
+            monster_index = monster_names.tolist().index(monster)
+            # print(monster + ": " + str(df_monsters['Challenge rating  (XP)'][monster_index]))
+            challenge_rating = df_monsters['Challenge rating  (XP)'][monster_index].split(" ")[0]
+            if "/" in challenge_rating:
+                numerator = challenge_rating.split("/")[0]
+                denominator = challenge_rating.split("/")[1]
+                challenge_rating = float(numerator)/float(denominator)
+            total_sum += float(challenge_rating)
+    # print("Total challenge rating: " + str(total_sum/10))
+    Monster_negitive_rate_perfile[file_path] = total_sum/10
+
+
 df_characters = pd.read_csv("Charaters.csv")
 
 character_names = df_characters['Name']  # Unique character names
@@ -173,7 +193,7 @@ with progress:
 
             # print("Skills known (+ " + str(skill_rate) + "%) : " + str(skills_known))
             sucesss_rate = sucesss_rate + skill_rate
-            character_success_rate[character] = sucesss_rate
+            character_success_rate[character] = sucesss_rate - Monster_negitive_rate_perfile[file_path] #subtract the monster challenge rating from the success rate
             progress.advance(task)
             # print(character_success_rate)
             # print("##################################")
@@ -213,3 +233,4 @@ print("!!!!!!!!!!!!!!!!!!!!!!")
 print("Most successful charaters from session 1:")
 for character, rate in sorted(session_success_rate["crititcalrole/testing\(2x01)_CuriousBeginnings.txt"].items(), key=lambda item: item[1], reverse=True):
     print(character + ": " + str(rate) + "%")
+
