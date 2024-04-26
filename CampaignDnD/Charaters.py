@@ -1,5 +1,6 @@
 import pandas as pd
 import csv
+import numpy as np
 
 df = pd.read_csv("DndData/Charaters.csv")
 # df = pd.read_csv("DndData/Charaters_unquie.csv")
@@ -18,31 +19,17 @@ class_values = df['class']
 spells_values = df['spells']
 skills_values = df['skills']
 
-#spells label "nan" replace it with "No spells"
-for i in range(len(spells_values)):
-    if spells_values[i] != spells_values[i]:
-        spells_values[i] = "No spells"
+#spells label is empty replace it with "No spells"
+df['spells'].fillna('No spells', inplace=True)
 
 #names label "nan" replace it with "No name"
-for i in range(len(name_values)):
-    if name_values[i] != name_values[i]:
-        name_values[i] = "No name from Charater #" + str(i)
+df['name'].replace('', np.nan, inplace=True)
+for i in range(len(df['name'])):
+    if pd.isna(df['name'].iloc[i]):  # Checks if it's NaN
+        df.loc[i, 'name'] = "No name from Character #" + str(i)
 
 #skills label "nan" replace it with "No skills"
-for i in range(len(skills_values)):
-    if skills_values[i] != skills_values[i]:
-        skills_values[i] = "No skills"
-
-#FOR SOME REASON IS NOT WORKING
-#spells label "nan" replace it with "No spells"
-# df['spells'] = df['spells'].fillna("No spells")
-#
-# #names label "nan" replace it with "No name"
-# df['name'] = df.index.apply(lambda x: "No name from Charater #" + str(x) if pd.isna(df['name'][x]) else df['name'][x])
-#
-#
-# #skills label "nan" replace it with "No skills"
-# df['skills'] = df['spells'].fillna("No spells")
+df['skills'].fillna('No skills', inplace=True)
 
 count = 0
 output_file_path = "Charaters.csv"

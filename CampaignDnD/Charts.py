@@ -1,13 +1,18 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+
 
 df = pd.read_csv("SessionData.csv")
 column_names = df.columns.tolist()
 print("Column Names:", column_names)
-#Column Names: ['Session', 'Character', 'Success Rate (%)']
+#Column Names: ['Session', 'Character', 'Character_Class', 'Success Rate (%)']
 
 session_values = df['Session']
 character_values = df['Character']
+character_class_values = df['Character_Class']
 success_rate_values = df['Success Rate (%)']
 
 #Find all charaters + successrates that are from session crititcalrole/testing\(2x01)_CuriousBeginnings.txt and sort them to get the top 10 highest rates
@@ -19,94 +24,94 @@ for i in range(len(session_values)):
 session_data = sorted(session_data, key=lambda x: x[1], reverse=True)
 session_data = session_data[:10]
 print(session_data)
-
+#print them out neatly for the user
 print("Top 10 highest success rates for session", session)
 for i in range(len(session_data)):
     print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
 
+# for each session, find the top 10 highest success rates of characters and print them out neatly sorted
+sessions = session_values.unique() #get all unique sessions file names
+for session in sessions:
+    session_data = []
+    for i in range(len(session_values)):
+        if session_values[i] == session:
+            session_data.append([character_values[i], success_rate_values[i]])
+    session_data = sorted(session_data, key=lambda x: x[1], reverse=True)
+    session_data = session_data[:10]
+    print("Top 10 highest success rates for session", session)
+    for i in range(len(session_data)):
+        print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
 
-# #print each session collection success rates from all charaters in the session
-# for file_path in spell_counts_per_file:
-#     print("Session: " + str(file_path))
-#     charater_success_rates = session_success_rate[file_path]
-#     print(charater_success_rates)
-#
-# #print each sesssion of spells counted for that session
-# for file_path in spell_counts_per_file:
-#     print("Session: " + str(file_path))
-#     print(spell_counts_per_file[file_path])
-#
-# #print each session of the monsters counted for that session
-# for file_path in monster_counts_per_file:
-#     print("Session: " + str(file_path))
-#     print(monster_counts_per_file[file_path])
+# for each session, find the top 10 lowest success rates of characters and print them out neatly sorted
+sessions = session_values.unique() #get all unique sessions file names
+for session in sessions:
+    session_data = []
+    for i in range(len(session_values)):
+        if session_values[i] == session:
+            session_data.append([character_values[i], success_rate_values[i]])
+    session_data = sorted(session_data, key=lambda x: x[1])
+    session_data = session_data[:10]
+    print("Top 10 lowest success rates for session", session)
+    for i in range(len(session_data)):
+        print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
 
-#
-# # print out the top 10 most common words
-# print("!!!!!!!!!!!!!!!!!!!!!!")
-# print("Top 10 most common words:")
-# for word, count in sorted(word_counts.items(), key=lambda item: item[1], reverse=True)[:10]:
-#     print(word + ": " + str(count))
-#
-# # print out the most successful charaters from sesssion 1
-# print("!!!!!!!!!!!!!!!!!!!!!!")
-# print("Top 10 most successful characters from session 1:")
-# session1 = session_success_rate["crititcalrole/testing\(2x01)_CuriousBeginnings.txt"]
-# for character, success_rate in sorted(session1.items(), key=lambda item: item[1], reverse=True)[:10]:
-#     print(character + ": " + str(success_rate) + "%")
-#
-# # print out the most successful charaters from sesssion 2
-# print("!!!!!!!!!!!!!!!!!!!!!!")
-# print("Top 10 most successful characters from session 2:")
-# session2 = session_success_rate["crititcalrole/testing\(2x02)_AShowofScrutiny.txt"]
-# for character, success_rate in sorted(session2.items(), key=lambda item: item[1], reverse=True)[:10]:
-#     print(character + ": " + str(success_rate) + "%")
-#
-# # print out the least successful charaters from sesssion 1
-# print("!!!!!!!!!!!!!!!!!!!!!!")
-# print("Top 10 least successful characters from session 1:")
-# for character, success_rate in sorted(session1.items(), key=lambda item: item[1])[:10]:
-#     print(character + ": " + str(success_rate) + "%")
-#
-# # print out the least successful charaters from sesssion 2
-# print("!!!!!!!!!!!!!!!!!!!!!!")
-# print("Top 10 least successful characters from session 2:")
-# for character, success_rate in sorted(session2.items(), key=lambda item: item[1])[:10]:
-#     print(character + ": " + str(success_rate) + "%")
 
-# # get the average success rate for each session
-# average_success_rate = {}
-# count = 0
-# for file_path, character_success_rate in session_success_rate.items():
-#     count += 1
-#     average_success_rate[("Session: " + str(count))] = np.mean(list(character_success_rate.values()))
-#
-# # # make a line chart for each session and the average success rate
-# plt.plot(list(average_success_rate.keys()), list(average_success_rate.values()), label="Average Success Rate")
-# plt.xlabel("Session")
-# plt.xticks(rotation=45)
-# plt.ylabel("Success Rate (%)")
-# plt.title("Average Success Rate for Each Session")
-# plt.legend()
-#
+#get the average success rate for "crititcalrole/testing\(2x01)_CuriousBeginnings.txt" of all characters and print it out
+session = "crititcalrole/testing\(2x01)_CuriousBeginnings.txt"
+session_data = []
+for i in range(len(session_values)):
+    if session_values[i] == session:
+        session_data.append(success_rate_values[i])
+average_success_rate = np.mean(session_data)
+print("Average success rate for session", session, "is", average_success_rate)
+
+# get the average success rate for each session of all characters and print it out
+sessions = session_values.unique() #get all unique sessions file names
+average_success_rate_session = {}
+list_of_shorten_session = []
+for session in sessions:
+    session_data = []
+    for i in range(len(session_values)):
+        if session_values[i] == session:
+            session_data.append(success_rate_values[i])
+    average_success_rate = np.mean(session_data)
+    #change the session key to be only the first 7 chars between a splice of "_" and "."
+    session = session[session.find("_")+1:session.find(".")]
+    session = session[:7]
+    list_of_shorten_session.append(session)
+    average_success_rate_session[session] = average_success_rate
+    print("Average success rate for session", session, "is", average_success_rate)
+
+# make a line chart for each session and the average success rate
+plt.plot(list_of_shorten_session, list(average_success_rate_session.values()), label="Average Success Rate")
+plt.xlabel("Session")
+plt.xticks(rotation=45)
+plt.ylabel("Success Rate (%)")
+plt.title("Average Success Rate for Each Session")
+plt.legend()
+plt.tight_layout()
+
+
 # #get the success rate for charater daf76ff2 from each session and make a line graph
-# character_daf76ff2 = {}
-# count = 0
-# for file_path, character_success_rate in session_success_rate.items():
-#     count += 1
-#     character_daf76ff2[("Session: " + str(count))] = character_success_rate["daf76ff2"]
-#
-# class_of_guy = character_classes[character_names.tolist().index("daf76ff2")]
-# plt.plot(list(character_daf76ff2.keys()), list(character_daf76ff2.values()), label=("Character: daf76ff2 | " + class_of_guy))
-# plt.xlabel("Session")
-# plt.xticks(rotation=45)
-# plt.ylabel("Success Rate (%)")
-# plt.title("Success Rate for Character: daf76ff2")
-# plt.legend()
-# plt.tight_layout()
-#
-# plt.savefig("SuccessRate.png")
-# plt.show()
+character = "daf76ff2"
+character_data = {}
+for i in range(len(character_values)):
+    if character_values[i] == character:
+        character_data[session_values[i]] = success_rate_values[i]
+    #change the x to be only the first 7 chars between a splice of "_" and "."
+    session = session[session.find("_")+1:session.find(".")]
+print("Success rate for character", character, "in session", session, "is", success_rate_values[i])
+character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
+plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
+plt.xlabel("Session")
+plt.xticks(rotation=45)
+plt.ylabel("Success Rate (%)")
+plt.title("Success Rate for Character " + character)
+plt.legend()
+plt.tight_layout()
+plt.show()
+plt.clf()
+
 
 ##cluster example
 

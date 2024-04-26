@@ -79,10 +79,10 @@ d4a88419,Sorcerer 1|Fighter 14,No spells,Athletics|Insight|Intimidation|Persuasi
 52bd23ec,Wizard 6,Firebolt*0|Ray Of Frost*0|Sapping Sting*0|Mage Hand*0|Encode Thoughts*0|Burning Hands*1|Magic Missile*1|Mage Armor*1|Thunderwave*1|Gift Of Alacrity*1|Puppet*1|Wrist pocket*2|Scorching Ray*2|Flaming Sphere*2|Call Lightning*3|Fireball*3,Arcana|History|Insight|Perception|Persuasion
 b17341d5,Fighter 6,No spells,Athletics|Acrobatics|Insight|Intimidation
 4e1aec3f,Paladin 1,No spells,Religion|Insight|Medicine|Persuasion
-No name from Charater #80,Barbarian 1,No spells,Athletics|Nature|Perception|Survival
+No name from Character #80,Barbarian 1,No spells,Athletics|Nature|Perception|Survival
 99486089,Ranger 3,Speak with Animals*1|Disguise Self*1|Cure Wounds*1,Stealth|Animal Handling|Insight|Perception|Survival|Deception
 9e7007fc,Monk 4|Fighter 1|Cleric 1,Fog Cloud*1|Thunderwave*1,Athletics|Acrobatics|Sleight of Hand|Intimidation
-No name from Charater #83,Rogue 5,No spells,Acrobatics|Sleight of Hand|Stealth|Investigation|Perception|Deception
+No name from Character #83,Rogue 5,No spells,Acrobatics|Sleight of Hand|Stealth|Investigation|Perception|Deception
 ac032f98,Warlock 1,Eldritch Blast*0|Create Bonfire*0|Sleep*1|Unseen Servant*1,Arcana|History|Nature|Intimidation
 4d175338,Monk 1,No spells,Athletics|Acrobatics|Religion|Medicine|Intimidation
 28f87b3d,Fighter 1,No spells,Acrobatics|Sleight of Hand|Insight|Deception
@@ -159,7 +159,7 @@ f62e4641,Bard 1,Vicious Mockery*0|Blade Ward*0|Charm Person*1|Dissonant Whisper*
 054b6b9e,Barbarian 5,No spells,Athletics|Insight|Survival|Intimidation|Persuasion
 25844ac8,Artificer 1,No spells,Arcana|History|Medicine|Persuasion
 9fd258a5,Ranger 5,Disguise Self*1|Rope Trick*2,Acrobatics|Stealth|Investigation|Nature|Animal Handling|Survival|Persuasion
-No name from Charater #160,Artificer 3,Heroism*1|Shield*1,Arcana|Investigation|Insight|Persuasion
+No name from Character #160,Artificer 3,Heroism*1|Shield*1,Arcana|Investigation|Insight|Persuasion
 c88d1bf4,Barbarian 3,No spells,Athletics|Animal Handling|Survival|Intimidation
 87b921f9,Rogue 5|Paladin 7,Ensnaring Strike*1|Speak with Animals*1|Moonbeam*2|Misty Step*2,Sleight of Hand|Stealth|Deception|Intimidation|Performance|Persuasion
 ad721d36,Cleric 8|Druid 10,Chill Touch*0|Sapping Sting*0|False Life*1|Ray of Sickness*1|Blindness/Deafness*2|Ray of Enfeeblement*2|Blindness/Deafness*2|Gentle Repose*2|Animate Dead*3|Vampiric Touch*3|Animate Dead*3|Gaseous Form*3|Blight*4|Death Ward*4|Blight*4|Confusion*4|Cloudkill*5|Contagion*5,Insight|Medicine|Perception|Survival
@@ -293,16 +293,16 @@ f90a942f,Rogue 3,No spells,Acrobatics|Sleight of Hand|Stealth|Insight|Perception
 7fe1a60c,Fighter 3,No spells,Athletics|Acrobatics|Animal Handling|Intimidation|Performance
 4255ae87,Warlock 3,No spells,Investigation|Insight|Deception|Persuasion
 8356ccb2,Paladin 2|Rogue 1,No spells,Athletics|Arcana|Investigation|Religion|Insight|Perception
-No name from Charater #288,Ranger 11,Speak with Animals*1|Protection from Evil and Good*1|Beast Sense*2|Zone of Truth*2|Speak with Plants*3|Magic Circle*3,Acrobatics|Stealth|Nature|Animal Handling|Insight|Perception|Survival
+No name from Character #288,Ranger 11,Speak with Animals*1|Protection from Evil and Good*1|Beast Sense*2|Zone of Truth*2|Speak with Plants*3|Magic Circle*3,Acrobatics|Stealth|Nature|Animal Handling|Insight|Perception|Survival
 b6d65d38,Warlock 3,Eldritch Blast*0|Minor illusion*0|Hex*1|Protection From Evil And Good*1|Armor Of Agathys*1|Suggestion*2,Stealth|Investigation|Deception|Intimidation
-No name from Charater #290,Fighter 10,No spells,Athletics|History|Insight|Perception
+No name from Character #290,Fighter 10,No spells,Athletics|History|Insight|Perception
 28422390,Paladin 1,No spells,Religion|Insight|Medicine|Persuasion
 fd5936f9,Cleric 6|Wizard 2,"1(CLR)Guidance (+1d4)*0|2(CLR)Thaumturgy*0|3(CLR)Virtue[1d4+3tempHP]1rd*0|1(Wiz)BladeBurst(2d6,5ftDex)*0|2(Wiz)Shape Water*0|3(Wiz)Encode Thoughts*0|4(CLR)Resistance*0|(Knowledge)Command*1|(Knowledge)Identify*1|(Cler)Bane (-1d4 Atks+saves)*1|(Cler)Bless (+1d4atk+Saves)*1|(Cler)C.Fear (Wis, Frightened, Retry)*1|(Cler)Create/Destroy Water*1|(Cler)Detect EviL+Good*1|(Cler)Detect Poison+Disease*1|(Wiz)Detect Magic*1|(Wiz)Floating Disk*1|(Wiz)Alarm*1|(Wiz)Illusory Script *1|(Wiz)Sleep 5d8+2d8/lvl*1|(Wiz)Comprehend Language *1|(Wiz)ProtectionGoodEvil*1|(Wiz)Feather Fall*1|(Cler) PurifyFood And DRINK*1|(Cler)Ray of Sick*1|(Cler)Inflict Wound*1|(Wiz)Unseen Servant*1|(Cler) Healing Word*1|(Knowledge)Augury*2|(Knowledge)Suggestion*2|(Cler)Lesser Restoration *2|(Cler)SpiritWeapon,1d8+4(+1d8lvl)*2|(Cler)Calm Emotions*2|(Cler)Warding Bond*2|(Cler)Prayer Of Healing*2|(Cler)Water Walk*3|(Cler)Mass Healing Word*3|(Cler) Sending *3|(Cler)Nondetection*3|(Cler)Speak with Dead*3|(Wiz)Fly*3|(Wiz, Ritual) Mihn Tzu Minimosque*3|(Cler)Dimension Door*4",Arcana|History|Nature|Religion|Medicine|Perception
 b0455055,Paladin 2,No spells,History|Religion|Intimidation|Persuasion
 01036bf3,Ranger 1,No spells,Athletics|Sleight of Hand|Stealth|Investigation|Nature|Animal Handling|Survival
 1d40c29f,Paladin 1,No spells,Athletics|History|Religion|Persuasion
-No name from Charater #296,Cleric 5,False Life*1|Ray of Sickness*1|Blindness/Deafness*2|Ray of Enfeeblement*2|Animate Dead*3|Vampiric Touch*3,History|Religion|Insight|Medicine|Survival
-No name from Charater #297,Warlock 5,Spare the Dying*0,Stealth|Arcana|Religion|Survival|Deception|Intimidation
+No name from Character #296,Cleric 5,False Life*1|Ray of Sickness*1|Blindness/Deafness*2|Ray of Enfeeblement*2|Animate Dead*3|Vampiric Touch*3,History|Religion|Insight|Medicine|Survival
+No name from Character #297,Warlock 5,Spare the Dying*0,Stealth|Arcana|Religion|Survival|Deception|Intimidation
 be717d80,Cleric 20,Sacred Flame*0|Spare The Dying*0|Fog Cloud*1|Thunderwave*1|Hellish Rebuke*1|Healing Word*1|Cure Wounds*1|Inflict Wounds*1|Bane *1|Bless*1|Gust of Wind*2|Shatter*2|Spiritual Weapon*2|Hold Person*2|Call Lightning*3|Sleet Storm*3|Dispel Magic*3|Spirit Guardians*3|Control Water*4|Ice Storm*4|Banishment*4|Death Ward*4|Destructive Wave*5|Insect Plague*5|Heal*6|Power Word Heal*9,Religion|Insight|Medicine|Persuasion
 e2915746,Wizard 20,Frostbite*0|Chill Touch*0|Mage Hand*0|Ray Of Frost*0|Toll The Dead*0|Magic Missile*1|Shield*1|Blur*2|Misty Step*2|Fortunes Favor*2|Shadow Blade*2|Haste*3|Counterspell*3|Dispel Magic*3|Banishment*4|Blight*4|Cone Of Cold*5|Animate Objects*5|Scatter*6|Simulacrum*7|Power Word Stun*8|Foresight *9,Stealth|Arcana|Insight|Medicine|Deception
 baeb493b,Barbarian 5,No spells,Athletics|Insight|Perception|Intimidation|Persuasion
@@ -315,18 +315,18 @@ b2d4190e,Sorcerer 1,No spells,Animal Handling|Survival|Deception|Persuasion
 7b232c96,Fighter 5,Klingenbann*0|Tanzende Lichter*0|Alarm*1|Federfall*1|Magierruestung*1,Acrobatics|Stealth|Arcana|Animal Handling|Survival
 cfc017d0,Fighter 5,No spells,Athletics|Stealth|Animal Handling|Perception|Survival
 d34a98a4,Barbarian 5,No spells,Athletics|Animal Handling|Insight|Medicine|Perception|Survival|Intimidation
-No name from Charater #310,Blood-Hunter 3,No spells,Athletics|Acrobatics|Stealth|Investigation|Perception|Deception|Persuasion
-No name from Charater #311,Cleric 3,False Life*1|Ray of Sickness*1|Blindness/Deafness*2|Ray of Enfeeblement*2,History|Religion|Insight|Medicine|Survival
-No name from Charater #312,Monk 3,No spells,Acrobatics|Animal Handling|Insight|Survival
-No name from Charater #313,Fighter 3,No spells,Athletics|Survival|Intimidation
-No name from Charater #314,Ranger 3,Speak with Animals*1|Protection from Evil and Good*1,Acrobatics|Stealth|Nature|Animal Handling|Insight|Perception|Survival
-No name from Charater #315,Barbarian 3,No spells,Athletics|Nature|Animal Handling|Survival|Intimidation
-No name from Charater #316,Warlock 3,Spare the Dying*0,Stealth|Arcana|Religion|Survival|Deception|Intimidation
-No name from Charater #317,Artificer 3,Heroism*1|Shield*1,Arcana|History|Investigation|Insight
-No name from Charater #318,Mystic 3,No spells,Arcana|History|Nature|Insight
+No name from Character #310,Blood-Hunter 3,No spells,Athletics|Acrobatics|Stealth|Investigation|Perception|Deception|Persuasion
+No name from Character #311,Cleric 3,False Life*1|Ray of Sickness*1|Blindness/Deafness*2|Ray of Enfeeblement*2,History|Religion|Insight|Medicine|Survival
+No name from Character #312,Monk 3,No spells,Acrobatics|Animal Handling|Insight|Survival
+No name from Character #313,Fighter 3,No spells,Athletics|Survival|Intimidation
+No name from Character #314,Ranger 3,Speak with Animals*1|Protection from Evil and Good*1,Acrobatics|Stealth|Nature|Animal Handling|Insight|Perception|Survival
+No name from Character #315,Barbarian 3,No spells,Athletics|Nature|Animal Handling|Survival|Intimidation
+No name from Character #316,Warlock 3,Spare the Dying*0,Stealth|Arcana|Religion|Survival|Deception|Intimidation
+No name from Character #317,Artificer 3,Heroism*1|Shield*1,Arcana|History|Investigation|Insight
+No name from Character #318,Mystic 3,No spells,Arcana|History|Nature|Insight
 9e7007fc,Monk 3,No spells,Athletics|Acrobatics|Stealth|Intimidation
-No name from Charater #320,Rogue 3,No spells,Athletics|Acrobatics|Sleight of Hand|Stealth|Nature|Perception|Survival|Deception|Intimidation
-No name from Charater #321,Bard 1,No spells,Sleight of Hand|History|Survival|Deception|Performance
+No name from Character #320,Rogue 3,No spells,Athletics|Acrobatics|Sleight of Hand|Stealth|Nature|Perception|Survival|Deception|Intimidation
+No name from Character #321,Bard 1,No spells,Sleight of Hand|History|Survival|Deception|Performance
 b935f0da,Ranger 3,Hail Of Thorns*1|Hunter's Mark*1|Disguise Self*1,Stealth|Investigation|Nature|Animal Handling|Perception|Survival
 fb2725fb,Artificer 5,Magic Stone*0|Featherfall*1|Catapult*1|Disguise Self*1|Cure Wounds*1|Heat Metal*2|Invisibility*2,History|Animal Handling|Perception|Survival
 8247420c,Cleric 3,Toll The Dead *0|Spare The Dying*0|Sacred Flame*0|Divine Favor - C*1|Shield of Faith - C*1|Bless - C*1|Command*1|Guiding Bolt*1|Inflict Wounds *1|Bane - C*1|Magic Weapon - C*2|Spiritual Weapon*2|Aid*2,Athletics|Religion|Insight|Intimidation
@@ -511,7 +511,7 @@ b0226f79,Barbarian 3,No spells,Athletics|Religion|Insight|Perception|Intimidatio
 b9edb128,Cleric 3,Faerie Fire*1|Sleep*1|Moonbeam*2|See Invisibility*2,Religion|Insight|Medicine|Persuasion
 d535cb08,Fighter 3,No spells,Athletics|Acrobatics|Perception|Survival|Intimidation
 6cd9db84,Rogue 8,No spells,Athletics|Acrobatics|Sleight of Hand|Stealth|Investigation|Nature|Insight|Perception|Survival|Intimidation
-No name from Charater #506,Sorcerer 8,Light*0|Prestidigitation*0|Ray Of Frost*0|Shocking Grasp*0|Fire Bolt*0|Choas Bolt*1|Witch Bolt*1|Mirror Image*2|Flame Arrows*3|Fire Ball*3|Haste*3|Polymorph*4,Arcana|Religion|Insight|Persuasion
+No name from Character #506,Sorcerer 8,Light*0|Prestidigitation*0|Ray Of Frost*0|Shocking Grasp*0|Fire Bolt*0|Choas Bolt*1|Witch Bolt*1|Mirror Image*2|Flame Arrows*3|Fire Ball*3|Haste*3|Polymorph*4,Arcana|Religion|Insight|Persuasion
 45955c99,Fighter 5,Green-Flame Blade*0|Booming Blade*0|Shield*1|Absorb Elements *1|Burning Hands*1,Athletics|History|Animal Handling|Perception|Survival|Persuasion
 539b5b84,Barbarian 2|Warlock 3,No spells,Athletics|Arcana|History|Intimidation
 d83150c3,Cleric 5,Fog Cloud*1|Thunderwave*1|Gust of Wind*2|Shatter*2|Call Lightning*3|Sleet Storm*3,Religion|Insight|Medicine|Persuasion
@@ -701,7 +701,7 @@ b97e55f9,Bard 3,Vicious Mockery*0|Prestidigitation*0|Cure Wounds*1|Thunderwave*1
 8656e4f4,Ranger 3,Prestidigitation*0|Speak with Animals*1|Protection from Evil and Good*1|Goodberry *1|Hail Of Thorns*1|Zephyr Strike?*1,Athletics|Stealth|Animal Handling|Insight|Perception|Survival
 d63283fe,Paladin 6,Bane*1|Hunter�s Mark*1|Hold Person*2|Misty Step*2,Religion|Insight|Medicine|Persuasion
 686f6ace,Warlock 3|Wizard 2,Eldritch Blast (WL)*0|Black-Ice Bash [G.F.B. Alt] (WL)*0|Message*0|Minor Illusion*0|Prestidigitation*0|Guidance (Tome)*0|Mage Hand (Tome)*0|Headache Hammer [B.B. Alt] (Tome)*0|Armor Of Agathys (WL)*1|Hex  (WL)*1|Absorb Elements*1|Shield*1|Charm Person*1|Disguise Self*1|Detect Magic/R/*1|Comp. Languages/R/*1|Arms of Hadar (WL)*1|Identify/R/*1|Silvery Barbs*1|Hrtbrkr's Hammer (WL)*2,Arcana|History|Investigation|Insight|Deception|Performance
-No name from Charater #691,Rogue 7,No spells,Athletics|Acrobatics|Sleight of Hand|Stealth|Investigation|Perception|Deception
+No name from Character #691,Rogue 7,No spells,Athletics|Acrobatics|Sleight of Hand|Stealth|Investigation|Perception|Deception
 6b4104c4,Monk 1,No spells,Acrobatics|Stealth|Religion|Medicine|Perception
 12ed2e2d,Druid 1,No spells,Nature|Religion|Animal Handling|Medicine|Perception
 09882a29,Sorcerer 1,Mind Sliver*0|Arms of Hatred*1|Dissonent Whispers*1,Arcana|Religion|Medicine|Intimidation
@@ -797,7 +797,7 @@ c1ca5e8b,Warlock 1,Mage Hand*0|Eldritch Blast*0|Charm Person*1|Wrathful Smite*1,
 c1ca5e8b,Warlock 1,Mage Hand*0|Eldritch Blast*0|Charm Person*1|Wrathful Smite*1,Stealth|Arcana|Investigation|Survival|Deception|Persuasion
 c1ca5e8b,Warlock 1,No spells,Stealth|Arcana|Investigation|Survival|Deception|Persuasion
 fc72e965,Monk 1,No spells,Acrobatics|Stealth|Arcana|History|Religion|Perception
-No name from Charater #787,Monk 1,No spells,Acrobatics|Stealth|Arcana|History|Religion|Perception
+No name from Character #787,Monk 1,No spells,Acrobatics|Stealth|Arcana|History|Religion|Perception
 f3af408e,Warlock 1,No spells,Stealth|History|Investigation|Survival|Deception|Persuasion
 51e45246,Cleric 3,Friends*0|Message*0|Toll Of The Dead*0|Resistance *0|Thaumaturgy*0|Faerie Fire*1|Sleep*1|Command*1|Ensnaring Strike*1|Bless*1|Healing Word*1|Bane*1|Moonbeam*2|See Invisibility*2|Arcane Lock*2|Calm Emotions *2|Hold Person*2|Spiritual Weapon*2|Silence*2|Lesser Restoration *2,Religion|Insight|Medicine|Perception
 d1fc6f9c,Fighter 1,Booming Blade*0|Green-Flame Blade*0,Athletics|Acrobatics|Perception|Intimidation
@@ -984,7 +984,7 @@ dfd1d3a4,Monk 10|Cleric 10,Faerie Fire*1|Sleep*1|Moonbeam*2|See Invisibility*2|A
 a3799353,Rogue 3,No spells,Acrobatics|Sleight of Hand|Stealth|Insight|Perception|Performance
 c25a0651,Artificer 7,Heroism*1|Shield*1|Branding Smite*2|Warding Bond*2,Athletics|Investigation|Nature|Perception
 c25a0651,Artificer 7,Heroism*1|Shield*1|Branding Smite*2|Warding Bond*2,Athletics|Investigation|Nature|Perception
-No name from Charater #974,Cleric 1,False Life*1|Ray of Sickness*1,Religion|Insight|Medicine|Persuasion
+No name from Character #974,Cleric 1,False Life*1|Ray of Sickness*1,Religion|Insight|Medicine|Persuasion
 3aa08164,Wizard 8,Light*0|Firebolt*0|Shocking Grasp*0|Mage Hand*0|Mage Armor*1|Detect Magic*1|Identify*1|Witch Bolt*1|Misty Step*2|Scorching Ray*2|Shatter*2|Da FIREBALL! *3|Lightning Bolt*3|Melissa Minute Meteors *3|Greater Invisibility *4|Wall Of Fire*4,Arcana|History|Investigation|Insight
 3f738bc7,Paladin 3,Alarm*1|Detect Magic*1|Bless*1|Cure Wounds*1|Purify Food and Drink*1|Shield of Faith*1,Athletics|Acrobatics|Intimidation|Performance
 c6898f5d,Druid 3,No spells,Athletics|Nature|Perception|Survival
@@ -995,17 +995,17 @@ fd8a81fe,Cleric 3,Sacred Flame*0|Guidance*0|Word Of Radiance*0|Bless*1|Cure Woun
 b8850d81,Rogue 1,No spells,Sleight of Hand|Arcana|Insight|Deception|Intimidation|Performance|Persuasion
 6cd9db84,Warlock 5,No spells,Stealth|Religion|Perception|Deception|Intimidation|Persuasion
 a6558033,Warlock 6,Eldritch Blast *0|Minor Illusion *0|Mage Hand *0|Shillelagh*0|Shocking Grasp*0|Spare The Dying *0|Burning Hands *1|Hellish Rebuke *1|Mirror Image *2|Misty Step *2|Counter Spell*3|Fireball*3,Sleight of Hand|Stealth|Arcana|Deception
-No name from Charater #985,Wizard 3,No spells,Arcana|History|Investigation|Medicine|Perception
-No name from Charater #986,Warlock 3,No spells,Sleight of Hand|Arcana|Investigation|Deception
-No name from Charater #987,Sorcerer 3,No spells,Athletics|Perception|Intimidation|Persuasion
-No name from Charater #988,Ranger 3,Speak with Animals*1,Stealth|Animal Handling|Insight|Perception|Survival
-No name from Charater #989,Paladin 3,Protection from Evil and Good*1|Sanctuary*1,Athletics|History|Intimidation|Persuasion
-No name from Charater #990,Monk 3,No spells,Acrobatics|Sleight of Hand|Stealth|Insight
-No name from Charater #991,Fighter 3,No spells,Athletics|Perception|Survival|Intimidation
-No name from Charater #992,Druid 3,No spells,Nature|Animal Handling|Medicine|Perception|Survival
-No name from Charater #993,Cleric 3,Bless*1|Cure Wounds*1|Lesser Restoration*2|Spiritual Weapon*2,History|Religion|Insight|Medicine
-No name from Charater #994,Bard 3,No spells,Acrobatics|Sleight of Hand|Arcana|History|Investigation|Insight|Deception|Intimidation|Performance|Persuasion
-No name from Charater #995,Barbarian 3,No spells,Athletics|Animal Handling|Perception|Survival|Intimidation
+No name from Character #985,Wizard 3,No spells,Arcana|History|Investigation|Medicine|Perception
+No name from Character #986,Warlock 3,No spells,Sleight of Hand|Arcana|Investigation|Deception
+No name from Character #987,Sorcerer 3,No spells,Athletics|Perception|Intimidation|Persuasion
+No name from Character #988,Ranger 3,Speak with Animals*1,Stealth|Animal Handling|Insight|Perception|Survival
+No name from Character #989,Paladin 3,Protection from Evil and Good*1|Sanctuary*1,Athletics|History|Intimidation|Persuasion
+No name from Character #990,Monk 3,No spells,Acrobatics|Sleight of Hand|Stealth|Insight
+No name from Character #991,Fighter 3,No spells,Athletics|Perception|Survival|Intimidation
+No name from Character #992,Druid 3,No spells,Nature|Animal Handling|Medicine|Perception|Survival
+No name from Character #993,Cleric 3,Bless*1|Cure Wounds*1|Lesser Restoration*2|Spiritual Weapon*2,History|Religion|Insight|Medicine
+No name from Character #994,Bard 3,No spells,Acrobatics|Sleight of Hand|Arcana|History|Investigation|Insight|Deception|Intimidation|Performance|Persuasion
+No name from Character #995,Barbarian 3,No spells,Athletics|Animal Handling|Perception|Survival|Intimidation
 03693e53,Bard 6,No spells,Stealth|Perception|Deception|Intimidation|Persuasion
 029ecd81,Rogue 12,No spells,Athletics|Acrobatics|Sleight of Hand|Stealth|Investigation|Perception
 00065e65,Rogue 7|Fighter 8,No spells,Athletics|Acrobatics|Sleight of Hand|Perception|Survival|Performance|Persuasion

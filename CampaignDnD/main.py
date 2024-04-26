@@ -216,10 +216,10 @@ print("!!!!!!!!!!!!!!!!!!!!!!")
 output_file_path = "SessionData.csv"
 with open(output_file_path, "w", newline='', encoding='utf-8') as file:
     csv_writer = csv.writer(file)
-    csv_writer.writerow(["Session", "Character", "Success Rate (%)"])  # Header
+    csv_writer.writerow(["Session", "Character", "Character_Class","Success Rate (%)"])  # Header
     for file_path in spell_counts_per_file:
         for character, success_rate in session_success_rate[file_path].items():
-            csv_writer.writerow([file_path, character, success_rate])
+            csv_writer.writerow([file_path, character, character_classes[character_names.tolist().index(character)], success_rate])
 print("Session data saved to", output_file_path)
 
 #save each session spells, monsters, and words count to a csv file
