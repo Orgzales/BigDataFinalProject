@@ -42,7 +42,7 @@ for session in sessions:
     for i in range(len(session_data)):
         print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
 
-
+plt.figure(figsize=(18, 9), dpi=300)
 # get the average success rate for each session of all characters and print it out
 sessions = session_values.unique() #get all unique sessions file names
 average_success_rate_session = {}
@@ -53,8 +53,7 @@ for session in sessions:
         if session_values[i] == session:
             session_data.append(success_rate_values[i])
     average_success_rate = np.mean(session_data)
-    #change the session key to be only the first 7 chars between a splice of "_" and "."
-    session = session[session.find("_")+1:session.find(".")]
+    session = session[session.find("_")+1:session.find(".")] #change the x to be only the first 7 chars between a splice of "_" and "."
     session = session[:10] + "..."
     list_of_shorten_session.append(session)
     average_success_rate_session[session] = average_success_rate
@@ -67,51 +66,111 @@ plt.xticks(rotation=45)
 plt.ylabel("Success Rate (%)")
 plt.title("Average Success Rate for Each Session")
 plt.legend()
-plt.tight_layout()
-
-#
-# # #get the success rate for charater daf76ff2 from each session and make a line graph
-# character = "daf76ff2"
-# character_data = {}
-# for i in range(len(character_values)):
-#     if character_values[i] == character:
-#         character_data[session_values[i]] = success_rate_values[i]
-#     #change the x to be only the first 7 chars between a splice of "_" and "."
-#     session = session[session.find("_")+1:session.find(".")]
-# print("Success rate for character", character, "in session", session, "is", success_rate_values[i])
-# character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
-# plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
-# plt.xlabel("Session")
-# plt.xticks(rotation=45)
-# plt.ylabel("Success Rate (%)")
-# plt.title("Success Rate for Character " + character)
-# plt.legend()
 # plt.tight_layout()
 
 character_names = df['Character'].unique()
-# #get the success rate for charater[1-5] from each session and make a line graph
-for character in character_names[:5]:
+# #get the success rate for charaters {num} from each session and make a line graph
+for character in character_names[:10]:
     character_data = {}
-    #get the success value for each session from indexing with charater name and session name
+    # print("name: " + character)
     for i in range(len(character_values)):
         if character_values[i] == character:
             character_data[session_values[i]] = success_rate_values[i]
-            print("Success rate for character", character, "in session", session_values[i], "is", success_rate_values[i])
-    #change the x to be only the first 7 chars between a splice of "_" and "."
-    session = session[session.find("_")+1:session.find(".")]
-    #print the character data success rate for all sessions
+            # print("Success rate for character", character, "in session", session_values[i], "is", success_rate_values[i])
+    session = session[session.find("_")+1:session.find(".")] #change the x to be only the first 7 chars between a splice of "_" and "."
     character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
     plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
 plt.xlabel("Session")
 plt.xticks(rotation=45)
 plt.ylabel("Success Rate (%)")
-plt.title("Success Rate for Characters 1-5")
+plt.title("Success Rate for Characters #1-10")
 plt.legend()
-plt.tight_layout()
-plt.show()
+# plt.tight_layout()
+plt.savefig("First5Sessions_Charts/First10Charaters.jpeg")
+# plt.show()
 plt.clf()
 
+#  10 highest averages from each session
+for session in sessions:
+    plt.figure(figsize=(18, 9), dpi=300)
+    plt.title("Success Rate for the 10 Highest Averages in Session " + session)
+    session_data = []
+    for i in range(len(session_values)):
+        if session_values[i] == session:
+            session_data.append([character_values[i], success_rate_values[i]])
+    session_data = sorted(session_data, key=lambda x: x[1], reverse=True)
+    session_data = session_data[:10]
+    for i in range(len(session_data)):
+        character = session_data[i][0]
+        character_data = {}
+        for i in range(len(character_values)):
+            if character_values[i] == character:
+                character_data[session_values[i]] = success_rate_values[i]
+        session = session[session.find("_")+1:session.find(".")] #change the x to be only the first 7 chars between a splice of "_" and "."
+        character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
+        plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
+    plt.plot(list_of_shorten_session, list(average_success_rate_session.values()), linestyle=':', color='black', label="Average Success Rate")
+    plt.xlabel("Session")
+    plt.xticks(rotation=45)
+    plt.ylabel("Success Rate (%)")
+    plt.legend()
+    plt.tight_layout()
+    # plt.show()
+    plt.savefig("First5Sessions_Charts/" + session + "_10highest.jpeg")
+    plt.clf()
 
+# # success rate for the 10 lowest averages from each session
+for session in sessions:
+    plt.figure(figsize=(18, 9), dpi=300)
+    plt.title("Success Rate for the 10 Lowest Averages in Session " + session)
+    session_data = []
+    for i in range(len(session_values)):
+        if session_values[i] == session:
+            session_data.append([character_values[i], success_rate_values[i]])
+    session_data = sorted(session_data, key=lambda x: x[1])
+    session_data = session_data[:10]
+    for i in range(len(session_data)):
+        character = session_data[i][0]
+        character_data = {}
+        for i in range(len(character_values)):
+            if character_values[i] == character:
+                character_data[session_values[i]] = success_rate_values[i]
+        session = session[session.find("_")+1:session.find(".")] #change the x to be only the first 7 chars between a splice of "_" and "."
+        character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
+        plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
+    plt.plot(list_of_shorten_session, list(average_success_rate_session.values()), linestyle=':', color='black', label="Average Success Rate")
+    plt.xlabel("Session")
+    plt.xticks(rotation=45)
+    plt.ylabel("Success Rate (%)")
+    plt.legend()
+    # plt.tight_layout()
+    # plt.show()
+
+    plt.savefig("First5Sessions_Charts/" + session + "_10lowest.jpeg")
+    plt.clf()
+#
+# #Making a new graph for every 10 charaters
+# for i in range(0, len(character_names), 10):
+#     plt.figure(figsize=(18, 9), dpi=300)
+#     for character in character_names[i:i+10]:
+#         character_data = {}
+#         print("name: " + character)
+#         for i in range(len(character_values)):
+#             if character_values[i] == character:
+#                 character_data[session_values[i]] = success_rate_values[i]
+#                 # print("Success rate for character", character, "in session", session_values[i], "is", success_rate_values[i])
+#         session = session[session.find("_")+1:session.find(".")] #change the x to be only the first 7 chars between a splice of "_" and "."
+#         character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
+#         plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
+#     plt.plot(list_of_shorten_session, list(average_success_rate_session.values()), linestyle=':', color='black', label="Average Success Rate")
+#     plt.xlabel("Session")
+#     plt.xticks(rotation=45)
+#     plt.ylabel("Success Rate (%)")
+#     plt.title("Success Rate for Characters " + str(i) + "-" + str(i+10))
+#     plt.legend()
+#     # plt.tight_layout()
+#     # plt.show()
+#     plt.clf()
 
 
 
