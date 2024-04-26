@@ -79,8 +79,8 @@ for file_path, counts in spell_counts_per_file.items():
             Spell_total_counts[spell] += count
         else:
             Spell_total_counts[spell] = count
-    print("File: " + str(file_path))
-    print("Total spell counts: " + str(Spell_total_counts))
+    # print("File: " + str(file_path))
+    # print("Total spell counts: " + str(Spell_total_counts))
 
 print("!!!!!!!!!!!!!!!!!!!!!!")
 # Count the total occurrences of each monster and print the total with the monster name
@@ -91,11 +91,11 @@ for file_path, counts in monster_counts_per_file.items():
             Monster_total_counts[monster] += count
         else:
             Monster_total_counts[monster] = count
-    print("File: " + str(file_path))
-    print("Total monster counts: " + str(Monster_total_counts))
+    # print("File: " + str(file_path))
+    # print("Total monster counts: " + str(Monster_total_counts))
 
 # Display the total count of level up
-print("Total 'level up' count:", total_files_with_level_up)
+# print("Total 'level up' count:", total_files_with_level_up)
 print("Files with 'level up':", files_with_level_up)
 
 Monster_negitive_rate_perfile = {}
@@ -128,7 +128,143 @@ character_spells = df_characters['Spells']  # Unique character spells
 session_success_rate = {}
 permanent_success_level = 0.0
 
-#for each file check how many spells that the charater knwon in that file
+character_index = {name: i for i, name in enumerate(character_names)} #tuplues to make it more optimize for indexing
+
+# DO Splitting First to avoid repeats
+character_classes_clean = {}
+for character in character_names:
+    class_text = character_classes[character_index[character]].split("|")
+    name_classes_clean = []
+    for class_name in class_text:
+        name_of_class, level_class = class_name.split(" ")[:2] #EX Sorcerer 13
+        name_classes_clean.append( (name_of_class, int(level_class) ))
+    character_classes_clean[character] = name_classes_clean #EX [('Sorcerer', 13), ('Fighter', 5)]
+
+# DO Splitting skills to avoid repeated splitting
+character_skills_clean = {}
+for character in character_names:
+    character_skills_clean[character] = df_characters['Skills'][character_index[character]].split("|") #EX ['Acrobatics', "stealth..."]
+    # print(character_skills_clean[character])
+
+##for each file check how many spells that the charater knwon in that file
+with progress:
+    total_characters = len(character_names) #for progress bar
+    for file_path, spells_in_session in spell_counts_per_file.items():
+        task = progress.add_task("[red]Processing characters for " + file_path + "...", total=total_characters)
+        # print("Session: " + str(file_path))
+
+        character_success_rate = {}  # This is where the success rate of each character in the session
+        if file_path in files_with_level_up:
+            permanent_success_level += 1 #if the file has "level up" add 1% to the success rate
+
+        for character in character_names:
+            # print("Character: " + character)
+            success_rate = permanent_success_level
+            name_classes_clean = character_classes_clean[character] #EX [('Sorcerer', 13), ('Fighter', 5)]
+            success_rate += sum(level_class for assoisiated_class, level_class in name_classes_clean) #Add for each class level
+            # print("Level from " + character + ": +" + str(sum(level_class for assoisiated_class, level_class in name_classes_clean)) + "%")
+
+            spell_known_rate = 0.0
+            spell_learn_rate = 0.0
+
+            for spell, occurrence in spells_in_session.items():
+                if occurrence > 0:
+                    spell_class = spell_classes_values[spell_names_values.tolist().index(spell)]
+                    # print(spell_class)
+                    if spell in character_spells[character_index[character]]:
+                        spell_known_rate += occurrence
+                        # print(spell + "(#=" + str(occurrence) + ") is known by " + character + " (+ " + str(spell_known_rate) + "%)")
+                    else:
+                        if any(name_class in spell_class for name_class, class_text in name_classes_clean):
+                            spell_learn_rate += occurrence / 2
+                            # print(spell + "(#=" + str(occurrence) + ") is learned by " + character + " (+ " + str(spell_learn_rate) + "%)")
+
+            success_rate += spell_known_rate + spell_learn_rate
+
+            skills_known = [] #Where the skills that the character knows
+            skill_rate = 0.0
+            skills_split = character_skills_clean[character] #EX ['Acrobatics', "stealth..."]
+            word_counts_per_file_lower = {word.lower(): count for word, count in word_counts_per_file[file_path].items()} #Converting each word to lower, getting the count for each word + count for each word in file
+            # print(word_counts_per_file_lower)
+
+            for skill in skills_split:
+                # print(skill)
+                skill_lower = skill.lower()
+                if any(skill_lower in word for word in word_counts_per_file_lower): #for each skill in word, check if the skill is in the file
+                    skill_rate += 2  # +2% for each skill
+                    # print(skill + " is known by " + character + " (+ " + str(skill_rate) + "%)")
+                    skill_rate += sum( (count/10) for word, count in word_counts_per_file_lower.items() if skill_lower in word) # +0.1 for each occurance of the skill
+                    # print(skill + " is known by " + character + " (+ " + str(skill_rate) + "%)")
+                    # print(skill + ": " + str(sum( (count/10) for word, count in word_counts_per_file_lower.items() if skill_lower in word)))
+
+            success_rate += skill_rate
+            character_success_rate[character] = success_rate - Monster_negitive_rate_perfile[file_path] #subtract the monster challenge rating from the success
+            progress.advance(task)
+
+            # print(character_success_rate)
+            # print("##################################")
+        session_success_rate[file_path] = character_success_rate
+        # print(session_success_rate)
+
+
+
+
+print("!!!!!!!!!!!!!!!!!!!!!!")
+
+# #print each session collection success rates from all charaters in the session
+# for file_path in spell_counts_per_file:
+#     print("Session: " + str(file_path))
+#     charater_success_rates = session_success_rate[file_path]
+#     print(charater_success_rates)
+#
+# #print each sesssion of spells counted for that session
+# for file_path in spell_counts_per_file:
+#     print("Session: " + str(file_path))
+#     print(spell_counts_per_file[file_path])
+#
+# #print each session of the monsters counted for that session
+# for file_path in monster_counts_per_file:
+#     print("Session: " + str(file_path))
+#     print(monster_counts_per_file[file_path])
+
+#
+# # print out the top 10 most common words
+# print("!!!!!!!!!!!!!!!!!!!!!!")
+# print("Top 10 most common words:")
+# for word, count in sorted(word_counts.items(), key=lambda item: item[1], reverse=True)[:10]:
+#     print(word + ": " + str(count))
+
+# print out the most successful charaters from sesssion 1
+print("!!!!!!!!!!!!!!!!!!!!!!")
+print("Top 10 most successful characters from session 1:")
+session1 = session_success_rate["crititcalrole/testing\(2x01)_CuriousBeginnings.txt"]
+for character, success_rate in sorted(session1.items(), key=lambda item: item[1], reverse=True)[:10]:
+    print(character + ": " + str(success_rate) + "%")
+
+# print out the most successful charaters from sesssion 2
+print("!!!!!!!!!!!!!!!!!!!!!!")
+print("Top 10 most successful characters from session 2:")
+session2 = session_success_rate["crititcalrole/testing\(2x02)_AShowofScrutiny.txt"]
+for character, success_rate in sorted(session2.items(), key=lambda item: item[1], reverse=True)[:10]:
+    print(character + ": " + str(success_rate) + "%")
+
+# print out the least successful charaters from sesssion 1
+print("!!!!!!!!!!!!!!!!!!!!!!")
+print("Top 10 least successful characters from session 1:")
+for character, success_rate in sorted(session1.items(), key=lambda item: item[1])[:10]:
+    print(character + ": " + str(success_rate) + "%")
+
+# print out the least successful charaters from sesssion 2
+print("!!!!!!!!!!!!!!!!!!!!!!")
+print("Top 10 least successful characters from session 2:")
+for character, success_rate in sorted(session2.items(), key=lambda item: item[1])[:10]:
+    print(character + ": " + str(success_rate) + "%")
+
+
+
+
+#Old Loop for reference when optimizing
+"""
 with progress:
     #get values for total in progress
     total_characters = len(character_names)
@@ -202,35 +338,4 @@ with progress:
         session_success_rate[file_path] = character_success_rate
         # print(session_success_rate)
 
-
-
-print("!!!!!!!!!!!!!!!!!!!!!!")
-#print each session collection success rates from all charaters in the session
-for file_path in spell_counts_per_file:
-    print("Session: " + str(file_path))
-    charater_success_rates = session_success_rate[file_path]
-    print(charater_success_rates)
-
-#print each sesssion of spells counted for that session
-for file_path in spell_counts_per_file:
-    print("Session: " + str(file_path))
-    print(spell_counts_per_file[file_path])
-
-#print each session of the monsters counted for that session
-for file_path in monster_counts_per_file:
-    print("Session: " + str(file_path))
-    print(monster_counts_per_file[file_path])
-
-#
-# # print out the top 10 most common words
-# print("!!!!!!!!!!!!!!!!!!!!!!")
-# print("Top 10 most common words:")
-# for word, count in sorted(word_counts.items(), key=lambda item: item[1], reverse=True)[:10]:
-#     print(word + ": " + str(count))
-
-# print out the most successful charaters from sesssion 1
-print("!!!!!!!!!!!!!!!!!!!!!!")
-print("Most successful charaters from session 1:")
-for character, rate in sorted(session_success_rate["crititcalrole/testing\(2x01)_CuriousBeginnings.txt"].items(), key=lambda item: item[1], reverse=True):
-    print(character + ": " + str(rate) + "%")
-
+"""
