@@ -2,6 +2,7 @@ import pandas as pd
 import csv
 
 df = pd.read_csv("DndData/Charaters.csv")
+# df = pd.read_csv("DndData/Charaters_unquie.csv")
 
 #pulling data that is useful only for the characters
 column_names = df.columns.tolist()
@@ -31,6 +32,17 @@ for i in range(len(name_values)):
 for i in range(len(skills_values)):
     if skills_values[i] != skills_values[i]:
         skills_values[i] = "No skills"
+
+#FOR SOME REASON IS NOT WORKING
+#spells label "nan" replace it with "No spells"
+# df['spells'] = df['spells'].fillna("No spells")
+#
+# #names label "nan" replace it with "No name"
+# df['name'] = df.index.apply(lambda x: "No name from Charater #" + str(x) if pd.isna(df['name'][x]) else df['name'][x])
+#
+#
+# #skills label "nan" replace it with "No skills"
+# df['skills'] = df['spells'].fillna("No spells")
 
 count = 0
 output_file_path = "Charaters.csv"

@@ -7,6 +7,9 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+import csv
 
 progress = Progress()
 console = Console()
@@ -102,7 +105,7 @@ print("Files with 'level up':", files_with_level_up)
 
 Monster_negitive_rate_perfile = {}
 
-# for each file print the "Challenge rating  (XP)" of each monster in the file
+# for each file grab the "Challenge rating  (XP)" of each monster in the file
 for file_path, counts in monster_counts_per_file.items():
     print("File: " + str(file_path))
     total_sum = 0.0
@@ -207,101 +210,26 @@ with progress:
             # print("##################################")
         session_success_rate[file_path] = character_success_rate
         # print(session_success_rate)
-
-
-
-
 print("!!!!!!!!!!!!!!!!!!!!!!")
 
-# #print each session collection success rates from all charaters in the session
-# for file_path in spell_counts_per_file:
-#     print("Session: " + str(file_path))
-#     charater_success_rates = session_success_rate[file_path]
-#     print(charater_success_rates)
-#
-# #print each sesssion of spells counted for that session
-# for file_path in spell_counts_per_file:
-#     print("Session: " + str(file_path))
-#     print(spell_counts_per_file[file_path])
-#
-# #print each session of the monsters counted for that session
-# for file_path in monster_counts_per_file:
-#     print("Session: " + str(file_path))
-#     print(monster_counts_per_file[file_path])
+#save each session data dictionaries (charater success rate, spells, and monsters) to a csv file
+output_file_path = "SessionData.csv"
+with open(output_file_path, "w", newline='', encoding='utf-8') as file:
+    csv_writer = csv.writer(file)
+    csv_writer.writerow(["Session", "Character", "Success Rate (%)"])  # Header
+    for file_path in spell_counts_per_file:
+        for character, success_rate in session_success_rate[file_path].items():
+            csv_writer.writerow([file_path, character, success_rate])
+print("Session data saved to", output_file_path)
 
-#
-# # print out the top 10 most common words
-# print("!!!!!!!!!!!!!!!!!!!!!!")
-# print("Top 10 most common words:")
-# for word, count in sorted(word_counts.items(), key=lambda item: item[1], reverse=True)[:10]:
-#     print(word + ": " + str(count))
-
-# print out the most successful charaters from sesssion 1
-print("!!!!!!!!!!!!!!!!!!!!!!")
-print("Top 10 most successful characters from session 1:")
-session1 = session_success_rate["crititcalrole/testing\(2x01)_CuriousBeginnings.txt"]
-for character, success_rate in sorted(session1.items(), key=lambda item: item[1], reverse=True)[:10]:
-    print(character + ": " + str(success_rate) + "%")
-
-# print out the most successful charaters from sesssion 2
-print("!!!!!!!!!!!!!!!!!!!!!!")
-print("Top 10 most successful characters from session 2:")
-session2 = session_success_rate["crititcalrole/testing\(2x02)_AShowofScrutiny.txt"]
-for character, success_rate in sorted(session2.items(), key=lambda item: item[1], reverse=True)[:10]:
-    print(character + ": " + str(success_rate) + "%")
-
-# print out the least successful charaters from sesssion 1
-print("!!!!!!!!!!!!!!!!!!!!!!")
-print("Top 10 least successful characters from session 1:")
-for character, success_rate in sorted(session1.items(), key=lambda item: item[1])[:10]:
-    print(character + ": " + str(success_rate) + "%")
-
-# print out the least successful charaters from sesssion 2
-print("!!!!!!!!!!!!!!!!!!!!!!")
-print("Top 10 least successful characters from session 2:")
-for character, success_rate in sorted(session2.items(), key=lambda item: item[1])[:10]:
-    print(character + ": " + str(success_rate) + "%")
-
-# get the average success rate for each session
-average_success_rate = {}
-count = 0
-for file_path, character_success_rate in session_success_rate.items():
-    count += 1
-    average_success_rate[("Session: " + str(count))] = np.mean(list(character_success_rate.values()))
-
-# # make a line chart for each session and the average success rate
-plt.plot(list(average_success_rate.keys()), list(average_success_rate.values()), label="Average Success Rate")
-plt.xlabel("Session")
-plt.xticks(rotation=45)
-plt.ylabel("Success Rate (%)")
-plt.title("Average Success Rate for Each Session")
-plt.legend()
-
-#get the success rate for charater daf76ff2 from each session and make a line graph
-character_daf76ff2 = {}
-count = 0
-for file_path, character_success_rate in session_success_rate.items():
-    count += 1
-    character_daf76ff2[("Session: " + str(count))] = character_success_rate["daf76ff2"]
-
-class_of_guy = character_classes[character_names.tolist().index("daf76ff2")]
-plt.plot(list(character_daf76ff2.keys()), list(character_daf76ff2.values()), label=("Character: daf76ff2 | " + class_of_guy))
-plt.xlabel("Session")
-plt.xticks(rotation=45)
-plt.ylabel("Success Rate (%)")
-plt.title("Success Rate for Character: daf76ff2")
-plt.legend()
-plt.tight_layout()
-
-plt.savefig("SuccessRate.png")
-
-plt.show()
-
-
-
-
-
-
+#save each session spells, monsters, and words count to a csv file
+output_file_path = "SessionDataCounts.csv"
+with open(output_file_path, "w", newline='', encoding='utf-8') as file:
+    csv_writer = csv.writer(file)
+    csv_writer.writerow(["Session", "Spells", "Monsters", "Words"])  # Header
+    for file_path in spell_counts_per_file:
+        csv_writer.writerow([file_path, spell_counts_per_file[file_path], monster_counts_per_file[file_path], word_counts_per_file[file_path]])
+print("Session data counts saved to", output_file_path)
 
 #Old Loop for reference when optimizing
 """
