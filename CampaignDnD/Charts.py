@@ -15,19 +15,6 @@ character_values = df['Character']
 character_class_values = df['Character_Class']
 success_rate_values = df['Success Rate (%)']
 
-#Find all charaters + successrates that are from session crititcalrole/testing\(2x01)_CuriousBeginnings.txt and sort them to get the top 10 highest rates
-session = "crititcalrole/testing\(2x01)_CuriousBeginnings.txt"
-session_data = []
-for i in range(len(session_values)):
-    if session_values[i] == session:
-        session_data.append([character_values[i], success_rate_values[i]])
-session_data = sorted(session_data, key=lambda x: x[1], reverse=True)
-session_data = session_data[:10]
-print(session_data)
-#print them out neatly for the user
-print("Top 10 highest success rates for session", session)
-for i in range(len(session_data)):
-    print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
 
 # for each session, find the top 10 highest success rates of characters and print them out neatly sorted
 sessions = session_values.unique() #get all unique sessions file names
@@ -56,15 +43,6 @@ for session in sessions:
         print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
 
 
-#get the average success rate for "crititcalrole/testing\(2x01)_CuriousBeginnings.txt" of all characters and print it out
-session = "crititcalrole/testing\(2x01)_CuriousBeginnings.txt"
-session_data = []
-for i in range(len(session_values)):
-    if session_values[i] == session:
-        session_data.append(success_rate_values[i])
-average_success_rate = np.mean(session_data)
-print("Average success rate for session", session, "is", average_success_rate)
-
 # get the average success rate for each session of all characters and print it out
 sessions = session_values.unique() #get all unique sessions file names
 average_success_rate_session = {}
@@ -77,13 +55,13 @@ for session in sessions:
     average_success_rate = np.mean(session_data)
     #change the session key to be only the first 7 chars between a splice of "_" and "."
     session = session[session.find("_")+1:session.find(".")]
-    session = session[:7]
+    session = session[:10] + "..."
     list_of_shorten_session.append(session)
     average_success_rate_session[session] = average_success_rate
     print("Average success rate for session", session, "is", average_success_rate)
 
 # make a line chart for each session and the average success rate
-plt.plot(list_of_shorten_session, list(average_success_rate_session.values()), label="Average Success Rate")
+plt.plot(list_of_shorten_session, list(average_success_rate_session.values()), linestyle=':', color='black', label="Average Success Rate")
 plt.xlabel("Session")
 plt.xticks(rotation=45)
 plt.ylabel("Success Rate (%)")
@@ -91,26 +69,55 @@ plt.title("Average Success Rate for Each Session")
 plt.legend()
 plt.tight_layout()
 
+#
+# # #get the success rate for charater daf76ff2 from each session and make a line graph
+# character = "daf76ff2"
+# character_data = {}
+# for i in range(len(character_values)):
+#     if character_values[i] == character:
+#         character_data[session_values[i]] = success_rate_values[i]
+#     #change the x to be only the first 7 chars between a splice of "_" and "."
+#     session = session[session.find("_")+1:session.find(".")]
+# print("Success rate for character", character, "in session", session, "is", success_rate_values[i])
+# character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
+# plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
+# plt.xlabel("Session")
+# plt.xticks(rotation=45)
+# plt.ylabel("Success Rate (%)")
+# plt.title("Success Rate for Character " + character)
+# plt.legend()
+# plt.tight_layout()
 
-# #get the success rate for charater daf76ff2 from each session and make a line graph
-character = "daf76ff2"
-character_data = {}
-for i in range(len(character_values)):
-    if character_values[i] == character:
-        character_data[session_values[i]] = success_rate_values[i]
+character_names = df['Character'].unique()
+# #get the success rate for charater[1-5] from each session and make a line graph
+for character in character_names[:5]:
+    character_data = {}
+    #get the success value for each session from indexing with charater name and session name
+    for i in range(len(character_values)):
+        if character_values[i] == character:
+            character_data[session_values[i]] = success_rate_values[i]
+            print("Success rate for character", character, "in session", session_values[i], "is", success_rate_values[i])
     #change the x to be only the first 7 chars between a splice of "_" and "."
     session = session[session.find("_")+1:session.find(".")]
-print("Success rate for character", character, "in session", session, "is", success_rate_values[i])
-character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
-plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
+    #print the character data success rate for all sessions
+    character_label = character + ": " + character_class_values[character_values.tolist().index(character)]
+    plt.plot(list_of_shorten_session, list(character_data.values()), label=character_label)
 plt.xlabel("Session")
 plt.xticks(rotation=45)
 plt.ylabel("Success Rate (%)")
-plt.title("Success Rate for Character " + character)
+plt.title("Success Rate for Characters 1-5")
 plt.legend()
 plt.tight_layout()
 plt.show()
 plt.clf()
+
+
+
+
+
+
+
+
 
 
 ##cluster example

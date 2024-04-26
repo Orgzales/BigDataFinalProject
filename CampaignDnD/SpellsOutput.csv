@@ -1,558 +1,558 @@
-Name,Classes
-Acid Splash,"Artificer, Sorcerer, Wizard"
-Blade Ward,"Bard, Sorcerer, Warlock, Wizard"
-Booming Blade,"Artificer, Sorcerer, Warlock, Wizard"
-Chill Touch,"Sorcerer, Warlock, Wizard"
-Control Flames,"Druid, Sorcerer, Wizard"
-Create Bonfire,"Druid, Sorcerer, Warlock, Wizard"
-Dancing Lights,"Artificer, Bard, Sorcerer, Wizard"
-Decompose (HB),Cleric
-Druidcraft,Druid
-Eldritch Blast,Warlock
-Encode Thoughts,Wizard
-Fire Bolt,"Artificer, Sorcerer, Wizard"
-Friends,"Bard, Sorcerer, Warlock, Wizard"
-Frostbite,"Artificer, Druid, Sorcerer, Warlock, Wizard"
-Green-Flame Blade,"Artificer, Sorcerer, Warlock, Wizard"
-Guidance,"Artificer, Cleric, Druid"
-Gust,"Druid, Sorcerer, Wizard"
-Hand of Radiance (UA),Cleric
-Infestation,"Druid, Sorcerer, Warlock, Wizard"
-Light,"Artificer, Bard, Cleric, Sorcerer, Wizard"
-Lightning Lure,"Artificer, Sorcerer, Warlock, Wizard"
-Mage Hand,"Artificer, Bard, Sorcerer, Warlock, Wizard"
-Magic Stone,"Druid, Warlock, Artificer"
-Mending,"Artificer, Bard, Cleric, Druid, Sorcerer, Wizard"
-Message,"Artificer, Bard, Sorcerer, Wizard"
-Mind Sliver,"Sorcerer, Warlock, Wizard"
-Minor Illusion,"Bard, Sorcerer, Warlock, Wizard"
-Mold Earth,"Druid, Sorcerer, Wizard"
-On/Off (UA),"Sorcerer, Warlock, Wizard"
-Poison Spray,"Artificer, Druid, Sorcerer, Warlock, Wizard"
-Prestidigitation,"Artificer, Bard, Sorcerer, Warlock, Wizard"
-Primal Savagery,Druid
-Produce Flame,Druid
-Ray of Frost,"Artificer, Sorcerer, Wizard"
-Resistance,"Artificer, Cleric, Druid"
-Sacred Flame,Cleric
-Sapping Sting,Wizard
-Shape Water,"Druid, Sorcerer, Wizard"
-Shillelagh,Druid
-Shocking Grasp,"Artificer, Sorcerer, Wizard"
-Spare the Dying,"Artificer, Cleric"
-Sword Burst,"Artificer, Sorcerer, Warlock, Wizard"
-Thaumaturgy,Cleric
-Thorn Whip,"Artificer, Druid"
-Thunderclap,"Bard, Druid, Sorcerer, Warlock, Wizard, Artificer"
-Toll the Dead,"Cleric, Warlock, Wizard"
-True Strike,"Bard, Sorcerer, Warlock, Wizard"
-Vicious Mockery,Bard
-Virtue (UA),Cleric
-Word of Radiance,Cleric
-Absorb Elements,"Artificer, Druid, Ranger, Sorcerer, Wizard"
-Acid Stream (UA),"Sorcerer, Wizard"
-Alarm,"Artificer, Ranger, Wizard"
-Animal Friendship,"Bard, Druid, Ranger"
-Arcane Weapon (UA),Artificer
-Armor of Agathys,Warlock
-Arms of Hadar,Warlock
-Bane,"Bard, Cleric"
-Beast Bond,"Druid, Ranger"
-Bless,"Cleric, Paladin"
-Burning Hands,"Sorcerer, Wizard"
-Catapult,"Artificer, Sorcerer, Wizard"
-Cause Fear,"Warlock, Wizard"
-Ceremony,"Cleric, Paladin"
-Chaos Bolt,Sorcerer
-Charm Person,"Bard, Druid, Sorcerer, Warlock, Wizard"
-Chromatic Orb,"Sorcerer, Wizard"
-Color Spray,"Bard, Sorcerer, Wizard"
-Command,"Bard, Cleric, Paladin"
-Compelled Duel,Paladin
-Comprehend Languages,"Bard, Sorcerer, Warlock, Wizard"
-Create or Destroy Water,"Cleric, Druid"
-Cure Wounds,"Artificer, Bard, Cleric, Druid, Paladin, Ranger"
-Detect Evil and Good,"Cleric, Paladin"
-Detect Magic,"Artificer, Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Wizard"
-Detect Poison and Disease,"Cleric, Druid, Paladin, Ranger"
-Disguise Self,"Artificer, Bard, Sorcerer, Wizard"
-Dissonant Whispers,Bard
-Distort Value,"Bard, Sorcerer, Warlock, Wizard"
-Divine Favor,Paladin
-Earth Tremor,"Bard, Druid, Sorcerer, Wizard"
-Ensnaring Strike,Ranger
-Entangle,"Druid, Ranger"
-Expeditious Retreat,"Artificer, Sorcerer, Warlock, Wizard"
-Faerie Fire,"Artificer, Bard, Druid"
-False Life,"Artificer, Sorcerer, Wizard"
-Feather Fall,"Artificer, Bard, Sorcerer, Wizard"
-Find Familiar,Wizard
-Fog Cloud,"Druid, Ranger, Sorcerer, Wizard"
-Frost Fingers,Wizard
-Gift of Alacrity,Wizard
-Goodberry,"Druid, Ranger"
-Grease,"Artificer, Sorcerer, Wizard"
-Guiding Bolt,Cleric
-Guiding Hand (UA),"Bard, Cleric, Druid, Wizard"
-Hail of Thorns,Ranger
-Healing Elixir (UA),"Warlock, Wizard"
-Healing Word,"Bard, Cleric, Druid"
-Hellish Rebuke,Warlock
-Heroism,"Bard, Paladin"
-Hex,Warlock
-Hunter's Mark,Ranger
-Ice Knife,"Druid, Sorcerer, Wizard"
-Id Insinuation (UA),"Sorcerer, Warlock, Wizard"
-Identify,"Artificer, Bard, Wizard"
-Illusory Script,"Bard, Warlock, Wizard"
-Infallible Relay (UA),"Sorcerer, Warlock, Wizard"
-Inflict Wounds,Cleric
-Jim's Magic Missile,Wizard
-Jump,"Artificer, Druid, Ranger, Sorcerer, Wizard"
-Longstrider,"Artificer, Bard, Druid, Ranger, Wizard"
-Mage Armor,"Sorcerer, Wizard"
-Magic Missile,"Sorcerer, Wizard"
-Magnify Gravity,Wizard
-Protection from Evil and Good,"Cleric, Druid, Paladin, Warlock, Wizard"
-Puppet (UA),"Bard, Warlock, Wizard"
-Purify Food and Drink,"Artificer, Cleric, Druid, Paladin"
-Ray of Sickness,"Sorcerer, Wizard"
-Remote Access (UA),"Sorcerer, Warlock, Wizard"
-Sanctuary,"Artificer, Cleric"
-Searing Smite,"Paladin, Ranger"
-Sense Emotion (UA),"Bard, Warlock, Wizard"
-Shield,"Sorcerer, Wizard"
-Shield of Faith,"Cleric, Paladin"
-Silent Image,"Bard, Sorcerer, Wizard"
-Sleep,"Bard, Sorcerer, Wizard"
-Snare,"Artificer, Druid, Ranger, Wizard"
-Speak with Animals,"Bard, Druid, Ranger"
-Sudden Awakening (UA),"Bard, Ranger, Sorcerer, Wizard"
-Tasha's Caustic Brew,"Artificer, Sorcerer, Wizard"
-Tasha's Hideous Laughter,"Bard, Wizard"
-Tenser's Floating Disk,Wizard
-Thunderous Smite,Paladin
-Thunderwave,"Bard, Druid, Sorcerer, Wizard"
-Unearthly Chorus (UA),Bard
-Unseen Servant,"Bard, Warlock, Wizard"
-Wild Cunning (UA),"Druid, Ranger"
-Witch Bolt,"Sorcerer, Warlock, Wizard"
-Wrathful Smite,Paladin
-Zephyr Strike,Ranger
-Aganazzar's Scorcher,"Sorcerer, Wizard"
-Aid,"Artificer, Bard, Cleric, Paladin, Ranger"
-Alter Self,"Artificer, Sorcerer, Wizard"
-Animal Messenger,"Bard, Druid, Ranger"
-Arcane Hacking (UA),"Sorcerer, Warlock, Wizard"
-Arcane Lock,"Artificer, Wizard"
-Augury,"Cleric, Druid, Wizard"
-Barkskin,"Druid, Ranger"
-Beast Sense,"Druid, Ranger"
-Blindness/Deafness,"Bard, Cleric, Sorcerer, Wizard"
-Blur,"Artificer, Sorcerer, Wizard"
-Branding Smite,Paladin
-Calm Emotions,"Bard, Cleric"
-Cloud of Daggers,"Bard, Sorcerer, Warlock, Wizard"
-Continual Flame,"Artificer, Cleric, Druid, Wizard"
-Cordon of Arrows,Ranger
-Crown of Madness,"Bard, Sorcerer, Warlock, Wizard"
-Darkness,"Sorcerer, Warlock, Wizard"
-Darkvision,"Artificer, Druid, Ranger, Sorcerer, Wizard"
-Detect Thoughts,"Bard, Sorcerer, Wizard"
-Digital Phantom (UA),"Sorcerer, Warlock, Wizard"
-Dragon's Breath,"Sorcerer, Wizard"
-Dust Devil,"Druid, Sorcerer, Wizard"
-Earthbind,"Druid, Sorcerer, Warlock, Wizard"
-Enhance Ability,"Artificer, Bard, Cleric, Druid, Ranger, Sorcerer, Wizard"
-Enlarge/Reduce,"Artificer, Bard, Druid, Sorcerer, Wizard"
-Enthrall,"Bard, Warlock"
-Find Steed,Paladin
-Find Traps,"Cleric, Druid, Ranger"
-Find Vehicle (UA),"Paladin, Sorcerer, Warlock, Wizard"
-Flame Blade,"Druid, Sorcerer"
-Flaming Sphere,"Druid, Sorcerer, Wizard"
-Flock of Familiars,"Warlock, Wizard"
-Fortune's Favor,Wizard
-Gentle Repose,"Cleric, Paladin, Wizard"
-Gift of Gab,"Bard, Wizard"
-Gust of Wind,"Druid, Ranger, Sorcerer, Wizard"
-Healing Spirit,"Druid, Ranger"
-Heat Metal,"Artificer, Bard, Druid"
-Hold Person,"Bard,Cleric, Druid,Sorcerer, Warlock, Wizard"
-Icingdeath's Frost (UA),"Sorcerer, Wizard"
-Immovable Object,Wizard
-Invisibility,"Artificer, Bard, Sorcerer, Warlock, Wizard"
-Jim's Glowing Coin,Wizard
-Knock,"Bard, Sorcerer, Wizard"
-Lesser Restoration,"Artificer, Bard, Cleric, Druid, Paladin, Ranger"
-Levitate,"Artificer, Sorcerer, Wizard"
-Locate Animals or Plants,"Bard, Druid, Ranger"
-Locate Object,"Bard, Cleric, Druid, Paladin, Ranger, Wizard"
-Magic Mouth,"Artificer, Bard, Wizard"
-Magic Weapon,"Artificer, Paladin, Ranger, Sorcerer, Wizard"
-Maximillian's Earthen Grasp,"Sorcerer, Wizard"
-Melf's Acid Arrow,Wizard
-Mental Barrier (UA),"Sorcerer, Warlock, Wizard"
-Mind Spike,"Sorcerer, Warlock, Wizard"
-Mind Thrust (UA),"Sorcerer, Warlock, Wizard"
-Mirror Image,"Bard, Sorcerer, Warlock, Wizard"
-Misty Step,"Sorcerer, Warlock, Wizard"
-Moonbeam,Druid
-Nathair's Mischief (UA),"Bard, Sorcerer, Wizard"
-Nystul's Magic Aura,Wizard
-Pass Without Trace,"Druid, Ranger"
-Phantasmal Force,"Bard, Sorcerer, Wizard"
-Prayer of Healing,"Cleric, Paladin"
-Protection from Poison,"Artificer, Cleric, Druid, Paladin, Ranger"
-Pyrotechnics,"Artificer, Bard, Sorcerer, Wizard"
-Ray of Enfeeblement,"Warlock, Wizard"
-Rope Trick,"Artificer, Wizard"
-Scorching Ray,"Sorcerer, Wizard"
-See Invisibility,"Artificer, Bard, Sorcerer, Wizard"
-Shadow Blade,"Sorcerer, Warlock, Wizard"
-Shatter,"Bard, Sorcerer, Warlock, Wizard"
-Silence,"Bard, Cleric, Ranger"
-Skywrite,"Bard, Druid, Wizard, Artificer"
-Snilloc's Snowball Storm,"Sorcerer, Wizard"
-Spider Climb,"Artificer, Sorcerer, Warlock, Wizard"
-Spike Growth,"Druid, Ranger"
-Spiritual Weapon,Cleric
-Suggestion,"Bard, Sorcerer, Warlock, Wizard"
-Summon Beast,"Druid, Ranger"
-Tasha's Mind Whip,"Sorcerer, Wizard"
-Thought Shield (UA),"Sorcerer, Warlock, Wizard"
-Warding Bond,"Cleric, Paladin"
-Warding Wind,"Bard, Druid, Sorcerer, Wizard"
-Web,"Artificer, Sorcerer, Wizard"
-Wristpocket,Wizard
-Zone of Truth,"Bard, Cleric, Paladin"
-Animate Dead,"Cleric, Wizard"
-Aura of Vitality,"Cleric, Druid, Paladin"
-Beacon of Hope,Cleric
-Bestow Curse,"Bard, Cleric, Wizard"
-Blinding Smite,Paladin
-Blink,"Artificer, Sorcerer, Wizard"
-Call Lightning,Druid
-Catnap,"Artificer, Bard, Sorcerer, Wizard"
-Clairvoyance,"Bard, Cleric, Sorcerer, Wizard"
-Conjure Animals,"Druid, Ranger"
-Conjure Barrage,Ranger
-Conjure Lesser Demon (UA),"Sorcerer, Wizard"
-Counterspell,"Sorcerer, Warlock, Wizard"
-Create Food and Water,"Artificer, Cleric, Paladin"
-Crusader's Mantle,Paladin
-Daylight,"Cleric, Druid, Paladin, Ranger, Sorcerer"
-Dispel Magic,"Artificer, Bard, Cleric, Druid, Paladin, Sorcerer, Warlock, Wizard"
-Elemental Weapon,"Artificer, Druid, Paladin, Ranger"
-Enemies Abound,"Bard, Sorcerer, Warlock, Wizard"
-Erupting Earth,"Druid, Sorcerer, Wizard"
-Fast Friends,"Bard, Cleric, Wizard"
-Fear,"Bard, Sorcerer, Warlock, Wizard"
-Feign Death,"Bard, Cleric, Druid, Wizard"
-Fireball,"Sorcerer, Wizard"
-Flame Arrows,"Artificer, Druid, Ranger, Sorcerer, Wizard"
-Flame Stride (UA),"Artificer, Ranger, Sorcerer, Wizard"
-Fly,"Artificer, Sorcerer, Warlock, Wizard"
-Galder's Tower,Wizard
-Gaseous Form,"Sorcerer, Warlock, Wizard"
-Glyph of Warding,"Artificer, Bard, Cleric, Wizard"
-Haste,"Artificer, Sorcerer, Wizard"
-Haywire (UA),"Sorcerer, Warlock, Wizard"
-Hunger Of Hadar,Warlock
-Hypnotic Pattern,"Bard, Sorcerer, Warlock, Wizard"
-Incite Greed,"Cleric, Sorcerer, Warlock, Wizard"
-Intellect Fortress,"Artificer, Bard, Sorcerer, Warlock, Wizard"
-Invisibility To Cameras (UA),"Sorcerer, Warlock, Wizard"
-Leomund's Tiny Hut,"Bard, Wizard"
-Life Transference,"Cleric, Wizard"
-Lightning Arrow,Ranger
-Lightning Bolt,"Sorcerer, Wizard"
-Magic Circle,"Cleric, Paladin, Warlock, Wizard"
-Major Image,"Bard, Sorcerer, Warlock, Wizard"
-Mass Healing Word,"Bard, Cleric"
-Meld into Stone,"Cleric, Druid, Ranger"
-Melf's Minute Meteors,"Sorcerer, Wizard"
-Motivational Speech,"Bard, Cleric"
-Nondetection,"Bard, Ranger, Wizard"
-Phantom Steed,Wizard
-Plant Growth,"Bard, Druid, Ranger"
-Protection from Ballistics (UA),"Sorcerer, Warlock, Wizard"
-Protection from Energy,"Artificer, Cleric, Druid, Ranger, Sorcerer, Wizard"
-Psionic Blast (UA),"Sorcerer, Warlock, Wizard"
-Pulse Wave,Wizard
-Remove Curse,"Cleric, Paladin, Warlock, Wizard"
-Revivify,"Artificer, Cleric, Druid, Paladin, Ranger"
-Sending,"Bard, Cleric, Wizard"
-Sleet Storm,"Druid, Sorcerer, Wizard"
-Slow,"Bard, Sorcerer, Wizard"
-Speak with Dead,"Bard, Cleric, Wizard"
-Speak with Plants,"Bard, Druid, Ranger"
-Spirit Guardians,Cleric
-Spirit Shroud,"Cleric, Paladin, Warlock, Wizard"
-Stinking Cloud,"Bard, Sorcerer, Wizard"
-Summon Fey,"Druid, Ranger, Warlock, Wizard"
-Summon Lesser Demons,"Warlock, Wizard"
-Summon Shadowspawn,"Warlock, Wizard"
-Summon Undead,"Warlock, Wizard"
-Thunder Step,"Sorcerer, Warlock, Wizard"
-Tidal Wave,"Druid, Wizard"
-Tiny Servant,"Artificer, Wizard"
-Tongues,"Bard, Cleric, Sorcerer, Warlock, Wizard"
-Vampiric Touch,"Sorcerer, Warlock, Wizard"
-Wall of Sand,Wizard
-Wall of Water,"Druid, Sorcerer, Wizard"
-Water Breathing,"Artificer, Druid, Ranger, Sorcerer, Wizard"
-Water Walk,"Artificer, Cleric, Druid, Ranger, Sorcerer"
-Wind Wall,"Druid, Ranger"
-Arcane Eye,"Artificer, Wizard"
-Aura of Life,"Cleric, Paladin"
-Aura of Purity,"Cleric, Paladin"
-Banishment,"Cleric, Paladin, Sorcerer, Warlock, Wizard"
-Blight,"Druid, Sorcerer, Warlock, Wizard"
-Charm Monster,"Bard, Druid, Sorcerer, Warlock, Wizard"
-Compulsion,Bard
-Confusion,"Bard, Druid, Sorcerer, Wizard"
-Conjure Barlgura (UA),"Sorcerer, Wizard"
-Conjure Knowbot (UA),"Sorcerer, Warlock, Wizard"
-Conjure Minor Elementals,"Druid, Wizard"
-Conjure Shadow Demon (UA),"Sorcerer, Wizard"
-Conjure Woodland Beings,"Druid, Ranger"
-Control Water,"Cleric, Druid, Wizard"
-Death Ward,"Cleric, Paladin"
-Dimension Door,"Bard, Sorcerer, Warlock, Wizard"
-Divination,"Cleric, Druid, Wizard"
-Dominate Beast,"Druid, Ranger, Sorcerer"
-Ego Whip (UA),"Sorcerer, Warlock, Wizard"
-Elemental Bane,"Druid, Warlock, Wizard, Artificer"
-Evard's Black Tentacles,Wizard
-Fabricate,"Artificer, Wizard"
-Find Greater Steed,Paladin
-Fire Shield,"Druid, Sorcerer, Wizard"
-Freedom of Movement,"Artificer, Bard, Cleric, Druid, Ranger"
-Galder's Speedy Courier,"Warlock, Wizard"
-Giant Insect,Druid
-Grasping Vine,"Druid, Ranger"
-Gravity Sinkhole,Wizard
-Greater Invisibility,"Bard, Sorcerer, Wizard"
-Guardian of Faith,Cleric
-Guardian of Nature,"Druid, Ranger"
-Hallucinatory Terrain,"Bard, Druid, Warlock, Wizard"
-Ice Storm,"Druid, Sorcerer, Wizard"
-Leomund's Secret Chest,"Artificer,Wizard"
-Locate Creature,"Bard, Cleric, Druid, Paladin, Ranger, Wizard"
-Mordenkainen's Faithful Hound,"Artificer, Wizard"
-Mordenkainen's Private Sanctum,"Artificer, Wizard"
-Otiluke's Resilient Sphere,"Artificer, Wizard"
-Phantasmal Killer,"Bard, Wizard"
-Polymorph,"Bard, Druid, Sorcerer, Wizard"
-Raulothim's Psychic Lance (UA),"Bard, Sorcerer, Warlock, Wizard"
-Shadow Of Moil,Warlock
-Sickening Radiance,"Sorcerer, Warlock, Wizard"
-Staggering Smite,Paladin
-Stone Shape,"Artificer, Cleric, Druid, Wizard"
-Stoneskin,"Artificer, Druid, Ranger, Sorcerer, Wizard"
-Storm Sphere,"Sorcerer, Wizard"
-Summon Aberration,"Warlock, Wizard"
-Summon Construct,"Artificer, Wizard"
-Summon Elemental,"Druid, Ranger, Wizard"
-Summon Greater Demon,"Warlock, Wizard"
-Synchronicity (UA),"Sorcerer, Warlock, Wizard"
-System Backdoor (UA),"Sorcerer, Warlock, Wizard"
-Vitriolic Sphere,"Sorcerer, Wizard"
-Wall of Fire,"Druid, Sorcerer, Wizard"
-Watery Sphere,"Druid, Sorcerer, Wizard"
-Widogast's Vault of Amber (HB),Wizard
-Widogast's Web of Fire (HB),Wizard
-Animate Objects,"Artificer, Bard, Sorcerer, Wizard"
-Antilife Shell,Druid
-Awaken,"Bard, Druid"
-Banishing Smite,Paladin
-Bigby's Hand,"Artificer, Sorcerer, Wizard"
-Circle of Power,Paladin
-Cloudkill,"Sorcerer, Wizard"
-Commune,Cleric
-Commune with City (UA),"Sorcerer, Warlock, Wizard"
-Commune with Nature,"Druid, Ranger"
-Cone of Cold,"Druid, Sorcerer, Wizard"
-Conjure Elemental,"Druid, Wizard"
-Conjure Volley,Ranger
-Conjure Vrock (UA),"Sorcerer, Wizard"
-Contact Other Plane,"Warlock, Wizard"
-Contagion,"Cleric, Druid"
-Control Winds,"Druid, Sorcerer, Wizard"
-Creation,"Artificer, Sorcerer, Wizard"
-Danse Macabre,"Warlock, Wizard"
-Dawn,"Cleric, Wizard"
-Destructive Wave,Paladin
-Dispel Evil and Good,"Cleric, Paladin"
-Dominate Person,"Bard, Sorcerer, Wizard"
-Dream,"Bard, Warlock, Wizard"
-Enervation,"Sorcerer, Warlock, Wizard"
-Far Step,"Sorcerer, Warlock, Wizard"
-Flame Strike,Cleric
-Geas,"Bard, Cleric, Druid, Paladin, Wizard"
-Greater Restoration,"Artificer, Bard, Cleric, Druid, Ranger"
-Hallow,Cleric
-Hold Monster,"Bard, Sorcerer, Warlock, Wizard"
-Holy Weapon,"Cleric, Paladin"
-Immolation,"Sorcerer, Wizard"
-Infernal Calling,"Warlock, Wizard"
-Insect Plague,"Cleric, Druid, Sorcerer"
-Legend Lore,"Bard, Cleric, Wizard"
-Maelstrom,Druid
-Mass Cure Wounds,"Bard, Cleric, Druid"
-Mislead,"Bard, Warlock, Wizard"
-Modify Memory,"Bard, Warlock, Wizard"
-Negative Energy Flood,"Warlock, Wizard"
-Passwall,Wizard
-Planar Binding,"Bard, Cleric, Druid, Warlock, Wizard"
-Raise Dead,"Bard, Cleric, Paladin"
-Rary's Telepathic Bond,"Bard, Wizard"
-Reincarnate,Druid
-Scrying,"Bard, Cleric, Druid, Warlock, Wizard"
-Seeming,"Bard, Sorcerer, Wizard"
-Shutdown (UA),"Sorcerer, Warlock, Wizard"
-Skill Empowerment,"Artificer, Bard, Sorcerer, Wizard"
-Steel Wind Strike,"Ranger, Wizard"
-Summon Celestial,"Cleric, Paladin"
-Summon Draconic Spirit (UA),"Druid, Sorcerer, Wizard"
-Swift Quiver,Ranger
-Synaptic Static,"Bard, Sorcerer, Warlock, Wizard"
-Telekinesis,"Sorcerer, Wizard"
-Teleportation Circle,"Bard, Sorcerer, Warlock, Wizard"
-Temporal Shunt,Wizard
-Transmute Rock,"Druid, Wizard, Artificer"
-Tree Stride,"Druid, Ranger"
-Wall of Force,Wizard
-Wall Of Light,"Sorcerer, Warlock, Wizard"
-Wall of Stone,"Artificer, Druid, Sorcerer, Wizard"
-Wrath Of Nature,"Druid, Ranger"
-Arcane Gate,"Sorcerer, Warlock, Wizard"
-Blade Barrier,Cleric
-Bones of the Earth,Druid
-Chain Lightning,"Sorcerer, Wizard"
-Circle of Death,"Sorcerer, Warlock, Wizard"
-Conjure Fey,"Druid, Warlock"
-Contingency,Wizard
-Create Homunculus,Wizard
-Create Undead,"Cleric, Warlock, Wizard"
-Disintegrate,"Sorcerer, Wizard"
-Drawmij's Instant Summons,Wizard
-Druid Grove,Druid
-Eyebite,"Bard, Sorcerer, Warlock, Wizard"
-Find the Path,"Bard, Cleric, Druid"
-Fizban's Platinum Shield (UA),"Sorcerer, Wizard"
-Flesh to Stone,"Druid, Sorcerer, Warlock, Wizard"
-Forbiddance,Cleric
-Globe of Invulnerability,"Sorcerer, Wizard"
-Gravity Fissure,Wizard
-Guards and Wards,"Bard, Wizard"
-Harm,Cleric
-Heal,"Cleric, Druid"
-Heroes' Feast,"Bard, Cleric, Druid"
-Investiture of Flame,"Druid, Sorcerer, Warlock, Wizard"
-Investiture of Ice,"Druid, Sorcerer, Warlock, Wizard"
-Investiture of Stone,"Druid, Sorcerer, Warlock, Wizard"
-Investiture of Wind,"Druid, Sorcerer, Warlock, Wizard"
-Magic Jar,Wizard
-Mass Suggestion,"Bard, Sorcerer, Warlock, Wizard"
-Mental Prison,"Sorcerer, Warlock, Wizard"
-Move Earth,"Druid, Sorcerer, Wizard"
-Otherworldly Form (UA),"Cleric, Sorcerer, Warlock, Wizard"
-Otiluke's Freezing Sphere,"Sorcerer, Wizard"
-Otto's Irresistible Dance,"Bard, Wizard"
-Planar Ally,Cleric
-Primordial Ward,Druid
-Programmed Illusion,"Bard, Wizard"
-Psychic Crush (UA),"Sorcerer, Warlock, Wizard"
-Scatter,"Sorcerer, Warlock, Wizard"
-Soul Cage,"Warlock, Wizard"
-Summon Fiend,"Warlock, Wizard"
-Sunbeam,"Cleric, Druid, Sorcerer, Wizard"
-Tasha's Otherworldly Guise,"Sorcerer, Warlock, Wizard"
-Tenser's Transformation,Wizard
-Transport via Plants,Druid
-True Seeing,"Bard, Cleric, Sorcerer, Warlock, Wizard"
-Wall of Ice,Wizard
-Wall of Thorns,Druid
-Widogast's Transmogrification (HB),Wizard
-Wind Walk,Druid
-Word of Recall,Cleric
-Conjure Celestial,Cleric
-Conjure Hezrou (UA),"Sorcerer, Wizard"
-Create Magen,Wizard
-Crown Of Stars,"Sorcerer, Warlock, Wizard"
-Delayed Blast Fireball,"Sorcerer, Wizard"
-Divine Word,Cleric
-Draconic Transformation (UA),"Druid, Sorcerer, Wizard"
-Dream of the Blue Veil,"Bard, Sorcerer, Warlock, Wizard"
-Etherealness,"Bard, Cleric, Sorcerer, Warlock, Wizard"
-Finger of Death,"Sorcerer, Warlock, Wizard"
-Fire Storm,"Cleric, Druid, Sorcerer"
-Forcecage,"Bard, Warlock, Wizard"
-Mirage Arcane,"Bard, Druid, Wizard"
-Mordenkainen's Magnificent Mansion,"Bard, Wizard"
-Mordenkainen's Sword,"Bard, Wizard"
-Plane Shift,"Cleric, Druid, Sorcerer, Warlock, Wizard"
-Power Word: Pain,"Sorcerer, Warlock, Wizard"
-Prismatic Spray,"Bard, Sorcerer, Wizard"
-Project Image,"Bard, Warlock, Wizard"
-Regenerate,"Bard, Cleric, Druid"
-Resurrection,"Bard, Cleric"
-Reverse Gravity,"Druid, Sorcerer, Wizard"
-Sequester,Wizard
-Simulacrum,Wizard
-Symbol,"Bard, Cleric, Druid, Wizard"
-Teleport,"Bard, Sorcerer, Wizard"
-Temple of the Gods,Cleric
-Tether Essence,Wizard
-Whirlwind,"Druid, Wizard"
-Abi-Dalzim's Horrid Wilting,"Sorcerer, Warlock, Wizard"
-Animal Shapes,Druid
-Antimagic Field,"Cleric, Wizard"
-Antipathy/Sympathy,"Bard, Druid, Wizard"
-Clone,Wizard
-Control Weather,"Cleric, Druid, Wizard"
-Dark Star,Wizard
-Demiplane,"Sorcerer, Warlock, Wizard"
-Dominate Monster,"Bard, Sorcerer, Warlock, Wizard"
-Earthquake,"Cleric, Druid, Sorcerer"
-Feeblemind,"Bard, Druid, Warlock, Wizard"
-Glibness,"Bard, Warlock"
-Holy Aura,Cleric
-Illusory Dragon,Wizard
-Incendiary Cloud,"Druid, Sorcerer, Wizard"
-Maddening Darkness,"Warlock, Wizard"
-Maze,Wizard
-Mighty Fortress,Wizard
-Mind Blank,"Bard, Wizard"
-Power Word: Stun,"Bard, Sorcerer, Warlock, Wizard"
-Reality Break,Wizard
-Sunburst,"Cleric, Druid, Sorcerer, Wizard"
-Telepathy,Wizard
-Tsunami,Druid
-Astral Projection,"Cleric, Warlock, Wizard"
-Blade of Disaster,"Sorcerer, Warlock, Wizard"
-Foresight,"Bard, Druid, Warlock, Wizard"
-Gate,"Cleric, Sorcerer, Warlock, Wizard"
-Imprisonment,"Warlock, Wizard"
-Invulnerability,Wizard
-Mass Heal,Cleric
-Mass Polymorph,"Bard, Sorcerer, Wizard"
-Meteor Swarm,"Sorcerer, Wizard"
-Power Word: Heal,"Bard, Cleric"
-Power Word: Kill,"Bard, Sorcerer, Warlock, Wizard"
-Prismatic Wall,"Bard, Wizard"
-Psychic Scream,"Bard, Sorcerer, Warlock, Wizard"
-Ravenous Void,Wizard
-Shapechange,"Druid, Warlock, Wizard"
-Storm of Vengeance,Druid
-Time Ravage,Wizard
-Time Stop,"Sorcerer, Wizard"
-True Polymorph,"Bard, Warlock, Wizard"
-True Resurrection,"Cleric, Druid"
-Weird,"Warlock, Wizard"
-Wish,"Sorcerer, Wizard"
+Name,Classes,Level
+Acid Splash,"Artificer, Sorcerer, Wizard",0
+Blade Ward,"Bard, Sorcerer, Warlock, Wizard",0
+Booming Blade,"Artificer, Sorcerer, Warlock, Wizard",0
+Chill Touch,"Sorcerer, Warlock, Wizard",0
+Control Flames,"Druid, Sorcerer, Wizard",0
+Create Bonfire,"Druid, Sorcerer, Warlock, Wizard",0
+Dancing Lights,"Artificer, Bard, Sorcerer, Wizard",0
+Decompose (HB),Cleric,0
+Druidcraft,Druid,0
+Eldritch Blast,Warlock,0
+Encode Thoughts,Wizard,0
+Fire Bolt,"Artificer, Sorcerer, Wizard",0
+Friends,"Bard, Sorcerer, Warlock, Wizard",0
+Frostbite,"Artificer, Druid, Sorcerer, Warlock, Wizard",0
+Green-Flame Blade,"Artificer, Sorcerer, Warlock, Wizard",0
+Guidance,"Artificer, Cleric, Druid",0
+Gust,"Druid, Sorcerer, Wizard",0
+Hand of Radiance (UA),Cleric,0
+Infestation,"Druid, Sorcerer, Warlock, Wizard",0
+Light,"Artificer, Bard, Cleric, Sorcerer, Wizard",0
+Lightning Lure,"Artificer, Sorcerer, Warlock, Wizard",0
+Mage Hand,"Artificer, Bard, Sorcerer, Warlock, Wizard",0
+Magic Stone,"Druid, Warlock, Artificer",0
+Mending,"Artificer, Bard, Cleric, Druid, Sorcerer, Wizard",0
+Message,"Artificer, Bard, Sorcerer, Wizard",0
+Mind Sliver,"Sorcerer, Warlock, Wizard",0
+Minor Illusion,"Bard, Sorcerer, Warlock, Wizard",0
+Mold Earth,"Druid, Sorcerer, Wizard",0
+On/Off (UA),"Sorcerer, Warlock, Wizard",0
+Poison Spray,"Artificer, Druid, Sorcerer, Warlock, Wizard",0
+Prestidigitation,"Artificer, Bard, Sorcerer, Warlock, Wizard",0
+Primal Savagery,Druid,0
+Produce Flame,Druid,0
+Ray of Frost,"Artificer, Sorcerer, Wizard",0
+Resistance,"Artificer, Cleric, Druid",0
+Sacred Flame,Cleric,0
+Sapping Sting,Wizard,0
+Shape Water,"Druid, Sorcerer, Wizard",0
+Shillelagh,Druid,0
+Shocking Grasp,"Artificer, Sorcerer, Wizard",0
+Spare the Dying,"Artificer, Cleric",0
+Sword Burst,"Artificer, Sorcerer, Warlock, Wizard",0
+Thaumaturgy,Cleric,0
+Thorn Whip,"Artificer, Druid",0
+Thunderclap,"Bard, Druid, Sorcerer, Warlock, Wizard, Artificer",0
+Toll the Dead,"Cleric, Warlock, Wizard",0
+True Strike,"Bard, Sorcerer, Warlock, Wizard",0
+Vicious Mockery,Bard,0
+Virtue (UA),Cleric,0
+Word of Radiance,Cleric,0
+Absorb Elements,"Artificer, Druid, Ranger, Sorcerer, Wizard",1
+Acid Stream (UA),"Sorcerer, Wizard",1
+Alarm,"Artificer, Ranger, Wizard",1
+Animal Friendship,"Bard, Druid, Ranger",1
+Arcane Weapon (UA),Artificer,1
+Armor of Agathys,Warlock,1
+Arms of Hadar,Warlock,1
+Bane,"Bard, Cleric",1
+Beast Bond,"Druid, Ranger",1
+Bless,"Cleric, Paladin",1
+Burning Hands,"Sorcerer, Wizard",1
+Catapult,"Artificer, Sorcerer, Wizard",1
+Cause Fear,"Warlock, Wizard",1
+Ceremony,"Cleric, Paladin",1
+Chaos Bolt,Sorcerer,1
+Charm Person,"Bard, Druid, Sorcerer, Warlock, Wizard",1
+Chromatic Orb,"Sorcerer, Wizard",1
+Color Spray,"Bard, Sorcerer, Wizard",1
+Command,"Bard, Cleric, Paladin",1
+Compelled Duel,Paladin,1
+Comprehend Languages,"Bard, Sorcerer, Warlock, Wizard",1
+Create or Destroy Water,"Cleric, Druid",1
+Cure Wounds,"Artificer, Bard, Cleric, Druid, Paladin, Ranger",1
+Detect Evil and Good,"Cleric, Paladin",1
+Detect Magic,"Artificer, Bard, Cleric, Druid, Paladin, Ranger, Sorcerer, Wizard",1
+Detect Poison and Disease,"Cleric, Druid, Paladin, Ranger",1
+Disguise Self,"Artificer, Bard, Sorcerer, Wizard",1
+Dissonant Whispers,Bard,1
+Distort Value,"Bard, Sorcerer, Warlock, Wizard",1
+Divine Favor,Paladin,1
+Earth Tremor,"Bard, Druid, Sorcerer, Wizard",1
+Ensnaring Strike,Ranger,1
+Entangle,"Druid, Ranger",1
+Expeditious Retreat,"Artificer, Sorcerer, Warlock, Wizard",1
+Faerie Fire,"Artificer, Bard, Druid",1
+False Life,"Artificer, Sorcerer, Wizard",1
+Feather Fall,"Artificer, Bard, Sorcerer, Wizard",1
+Find Familiar,Wizard,1
+Fog Cloud,"Druid, Ranger, Sorcerer, Wizard",1
+Frost Fingers,Wizard,1
+Gift of Alacrity,Wizard,1
+Goodberry,"Druid, Ranger",1
+Grease,"Artificer, Sorcerer, Wizard",1
+Guiding Bolt,Cleric,1
+Guiding Hand (UA),"Bard, Cleric, Druid, Wizard",1
+Hail of Thorns,Ranger,1
+Healing Elixir (UA),"Warlock, Wizard",1
+Healing Word,"Bard, Cleric, Druid",1
+Hellish Rebuke,Warlock,1
+Heroism,"Bard, Paladin",1
+Hex,Warlock,1
+Hunter's Mark,Ranger,1
+Ice Knife,"Druid, Sorcerer, Wizard",1
+Id Insinuation (UA),"Sorcerer, Warlock, Wizard",1
+Identify,"Artificer, Bard, Wizard",1
+Illusory Script,"Bard, Warlock, Wizard",1
+Infallible Relay (UA),"Sorcerer, Warlock, Wizard",1
+Inflict Wounds,Cleric,1
+Jim's Magic Missile,Wizard,1
+Jump,"Artificer, Druid, Ranger, Sorcerer, Wizard",1
+Longstrider,"Artificer, Bard, Druid, Ranger, Wizard",1
+Mage Armor,"Sorcerer, Wizard",1
+Magic Missile,"Sorcerer, Wizard",1
+Magnify Gravity,Wizard,1
+Protection from Evil and Good,"Cleric, Druid, Paladin, Warlock, Wizard",1
+Puppet (UA),"Bard, Warlock, Wizard",1
+Purify Food and Drink,"Artificer, Cleric, Druid, Paladin",1
+Ray of Sickness,"Sorcerer, Wizard",1
+Remote Access (UA),"Sorcerer, Warlock, Wizard",1
+Sanctuary,"Artificer, Cleric",1
+Searing Smite,"Paladin, Ranger",1
+Sense Emotion (UA),"Bard, Warlock, Wizard",1
+Shield,"Sorcerer, Wizard",1
+Shield of Faith,"Cleric, Paladin",1
+Silent Image,"Bard, Sorcerer, Wizard",1
+Sleep,"Bard, Sorcerer, Wizard",1
+Snare,"Artificer, Druid, Ranger, Wizard",1
+Speak with Animals,"Bard, Druid, Ranger",1
+Sudden Awakening (UA),"Bard, Ranger, Sorcerer, Wizard",1
+Tasha's Caustic Brew,"Artificer, Sorcerer, Wizard",1
+Tasha's Hideous Laughter,"Bard, Wizard",1
+Tenser's Floating Disk,Wizard,1
+Thunderous Smite,Paladin,1
+Thunderwave,"Bard, Druid, Sorcerer, Wizard",1
+Unearthly Chorus (UA),Bard,1
+Unseen Servant,"Bard, Warlock, Wizard",1
+Wild Cunning (UA),"Druid, Ranger",1
+Witch Bolt,"Sorcerer, Warlock, Wizard",1
+Wrathful Smite,Paladin,1
+Zephyr Strike,Ranger,1
+Aganazzar's Scorcher,"Sorcerer, Wizard",2
+Aid,"Artificer, Bard, Cleric, Paladin, Ranger",2
+Alter Self,"Artificer, Sorcerer, Wizard",2
+Animal Messenger,"Bard, Druid, Ranger",2
+Arcane Hacking (UA),"Sorcerer, Warlock, Wizard",2
+Arcane Lock,"Artificer, Wizard",2
+Augury,"Cleric, Druid, Wizard",2
+Barkskin,"Druid, Ranger",2
+Beast Sense,"Druid, Ranger",2
+Blindness/Deafness,"Bard, Cleric, Sorcerer, Wizard",2
+Blur,"Artificer, Sorcerer, Wizard",2
+Branding Smite,Paladin,2
+Calm Emotions,"Bard, Cleric",2
+Cloud of Daggers,"Bard, Sorcerer, Warlock, Wizard",2
+Continual Flame,"Artificer, Cleric, Druid, Wizard",2
+Cordon of Arrows,Ranger,2
+Crown of Madness,"Bard, Sorcerer, Warlock, Wizard",2
+Darkness,"Sorcerer, Warlock, Wizard",2
+Darkvision,"Artificer, Druid, Ranger, Sorcerer, Wizard",2
+Detect Thoughts,"Bard, Sorcerer, Wizard",2
+Digital Phantom (UA),"Sorcerer, Warlock, Wizard",2
+Dragon's Breath,"Sorcerer, Wizard",2
+Dust Devil,"Druid, Sorcerer, Wizard",2
+Earthbind,"Druid, Sorcerer, Warlock, Wizard",2
+Enhance Ability,"Artificer, Bard, Cleric, Druid, Ranger, Sorcerer, Wizard",2
+Enlarge/Reduce,"Artificer, Bard, Druid, Sorcerer, Wizard",2
+Enthrall,"Bard, Warlock",2
+Find Steed,Paladin,2
+Find Traps,"Cleric, Druid, Ranger",2
+Find Vehicle (UA),"Paladin, Sorcerer, Warlock, Wizard",2
+Flame Blade,"Druid, Sorcerer",2
+Flaming Sphere,"Druid, Sorcerer, Wizard",2
+Flock of Familiars,"Warlock, Wizard",2
+Fortune's Favor,Wizard,2
+Gentle Repose,"Cleric, Paladin, Wizard",2
+Gift of Gab,"Bard, Wizard",2
+Gust of Wind,"Druid, Ranger, Sorcerer, Wizard",2
+Healing Spirit,"Druid, Ranger",2
+Heat Metal,"Artificer, Bard, Druid",2
+Hold Person,"Bard,Cleric, Druid,Sorcerer, Warlock, Wizard",2
+Icingdeath's Frost (UA),"Sorcerer, Wizard",2
+Immovable Object,Wizard,2
+Invisibility,"Artificer, Bard, Sorcerer, Warlock, Wizard",2
+Jim's Glowing Coin,Wizard,2
+Knock,"Bard, Sorcerer, Wizard",2
+Lesser Restoration,"Artificer, Bard, Cleric, Druid, Paladin, Ranger",2
+Levitate,"Artificer, Sorcerer, Wizard",2
+Locate Animals or Plants,"Bard, Druid, Ranger",2
+Locate Object,"Bard, Cleric, Druid, Paladin, Ranger, Wizard",2
+Magic Mouth,"Artificer, Bard, Wizard",2
+Magic Weapon,"Artificer, Paladin, Ranger, Sorcerer, Wizard",2
+Maximillian's Earthen Grasp,"Sorcerer, Wizard",2
+Melf's Acid Arrow,Wizard,2
+Mental Barrier (UA),"Sorcerer, Warlock, Wizard",2
+Mind Spike,"Sorcerer, Warlock, Wizard",2
+Mind Thrust (UA),"Sorcerer, Warlock, Wizard",2
+Mirror Image,"Bard, Sorcerer, Warlock, Wizard",2
+Misty Step,"Sorcerer, Warlock, Wizard",2
+Moonbeam,Druid,2
+Nathair's Mischief (UA),"Bard, Sorcerer, Wizard",2
+Nystul's Magic Aura,Wizard,2
+Pass Without Trace,"Druid, Ranger",2
+Phantasmal Force,"Bard, Sorcerer, Wizard",2
+Prayer of Healing,"Cleric, Paladin",2
+Protection from Poison,"Artificer, Cleric, Druid, Paladin, Ranger",2
+Pyrotechnics,"Artificer, Bard, Sorcerer, Wizard",2
+Ray of Enfeeblement,"Warlock, Wizard",2
+Rope Trick,"Artificer, Wizard",2
+Scorching Ray,"Sorcerer, Wizard",2
+See Invisibility,"Artificer, Bard, Sorcerer, Wizard",2
+Shadow Blade,"Sorcerer, Warlock, Wizard",2
+Shatter,"Bard, Sorcerer, Warlock, Wizard",2
+Silence,"Bard, Cleric, Ranger",2
+Skywrite,"Bard, Druid, Wizard, Artificer",2
+Snilloc's Snowball Storm,"Sorcerer, Wizard",2
+Spider Climb,"Artificer, Sorcerer, Warlock, Wizard",2
+Spike Growth,"Druid, Ranger",2
+Spiritual Weapon,Cleric,2
+Suggestion,"Bard, Sorcerer, Warlock, Wizard",2
+Summon Beast,"Druid, Ranger",2
+Tasha's Mind Whip,"Sorcerer, Wizard",2
+Thought Shield (UA),"Sorcerer, Warlock, Wizard",2
+Warding Bond,"Cleric, Paladin",2
+Warding Wind,"Bard, Druid, Sorcerer, Wizard",2
+Web,"Artificer, Sorcerer, Wizard",2
+Wristpocket,Wizard,2
+Zone of Truth,"Bard, Cleric, Paladin",2
+Animate Dead,"Cleric, Wizard",3
+Aura of Vitality,"Cleric, Druid, Paladin",3
+Beacon of Hope,Cleric,3
+Bestow Curse,"Bard, Cleric, Wizard",3
+Blinding Smite,Paladin,3
+Blink,"Artificer, Sorcerer, Wizard",3
+Call Lightning,Druid,3
+Catnap,"Artificer, Bard, Sorcerer, Wizard",3
+Clairvoyance,"Bard, Cleric, Sorcerer, Wizard",3
+Conjure Animals,"Druid, Ranger",3
+Conjure Barrage,Ranger,3
+Conjure Lesser Demon (UA),"Sorcerer, Wizard",3
+Counterspell,"Sorcerer, Warlock, Wizard",3
+Create Food and Water,"Artificer, Cleric, Paladin",3
+Crusader's Mantle,Paladin,3
+Daylight,"Cleric, Druid, Paladin, Ranger, Sorcerer",3
+Dispel Magic,"Artificer, Bard, Cleric, Druid, Paladin, Sorcerer, Warlock, Wizard",3
+Elemental Weapon,"Artificer, Druid, Paladin, Ranger",3
+Enemies Abound,"Bard, Sorcerer, Warlock, Wizard",3
+Erupting Earth,"Druid, Sorcerer, Wizard",3
+Fast Friends,"Bard, Cleric, Wizard",3
+Fear,"Bard, Sorcerer, Warlock, Wizard",3
+Feign Death,"Bard, Cleric, Druid, Wizard",3
+Fireball,"Sorcerer, Wizard",3
+Flame Arrows,"Artificer, Druid, Ranger, Sorcerer, Wizard",3
+Flame Stride (UA),"Artificer, Ranger, Sorcerer, Wizard",3
+Fly,"Artificer, Sorcerer, Warlock, Wizard",3
+Galder's Tower,Wizard,3
+Gaseous Form,"Sorcerer, Warlock, Wizard",3
+Glyph of Warding,"Artificer, Bard, Cleric, Wizard",3
+Haste,"Artificer, Sorcerer, Wizard",3
+Haywire (UA),"Sorcerer, Warlock, Wizard",3
+Hunger Of Hadar,Warlock,3
+Hypnotic Pattern,"Bard, Sorcerer, Warlock, Wizard",3
+Incite Greed,"Cleric, Sorcerer, Warlock, Wizard",3
+Intellect Fortress,"Artificer, Bard, Sorcerer, Warlock, Wizard",3
+Invisibility To Cameras (UA),"Sorcerer, Warlock, Wizard",3
+Leomund's Tiny Hut,"Bard, Wizard",3
+Life Transference,"Cleric, Wizard",3
+Lightning Arrow,Ranger,3
+Lightning Bolt,"Sorcerer, Wizard",3
+Magic Circle,"Cleric, Paladin, Warlock, Wizard",3
+Major Image,"Bard, Sorcerer, Warlock, Wizard",3
+Mass Healing Word,"Bard, Cleric",3
+Meld into Stone,"Cleric, Druid, Ranger",3
+Melf's Minute Meteors,"Sorcerer, Wizard",3
+Motivational Speech,"Bard, Cleric",3
+Nondetection,"Bard, Ranger, Wizard",3
+Phantom Steed,Wizard,3
+Plant Growth,"Bard, Druid, Ranger",3
+Protection from Ballistics (UA),"Sorcerer, Warlock, Wizard",3
+Protection from Energy,"Artificer, Cleric, Druid, Ranger, Sorcerer, Wizard",3
+Psionic Blast (UA),"Sorcerer, Warlock, Wizard",3
+Pulse Wave,Wizard,3
+Remove Curse,"Cleric, Paladin, Warlock, Wizard",3
+Revivify,"Artificer, Cleric, Druid, Paladin, Ranger",3
+Sending,"Bard, Cleric, Wizard",3
+Sleet Storm,"Druid, Sorcerer, Wizard",3
+Slow,"Bard, Sorcerer, Wizard",3
+Speak with Dead,"Bard, Cleric, Wizard",3
+Speak with Plants,"Bard, Druid, Ranger",3
+Spirit Guardians,Cleric,3
+Spirit Shroud,"Cleric, Paladin, Warlock, Wizard",3
+Stinking Cloud,"Bard, Sorcerer, Wizard",3
+Summon Fey,"Druid, Ranger, Warlock, Wizard",3
+Summon Lesser Demons,"Warlock, Wizard",3
+Summon Shadowspawn,"Warlock, Wizard",3
+Summon Undead,"Warlock, Wizard",3
+Thunder Step,"Sorcerer, Warlock, Wizard",3
+Tidal Wave,"Druid, Wizard",3
+Tiny Servant,"Artificer, Wizard",3
+Tongues,"Bard, Cleric, Sorcerer, Warlock, Wizard",3
+Vampiric Touch,"Sorcerer, Warlock, Wizard",3
+Wall of Sand,Wizard,3
+Wall of Water,"Druid, Sorcerer, Wizard",3
+Water Breathing,"Artificer, Druid, Ranger, Sorcerer, Wizard",3
+Water Walk,"Artificer, Cleric, Druid, Ranger, Sorcerer",3
+Wind Wall,"Druid, Ranger",3
+Arcane Eye,"Artificer, Wizard",4
+Aura of Life,"Cleric, Paladin",4
+Aura of Purity,"Cleric, Paladin",4
+Banishment,"Cleric, Paladin, Sorcerer, Warlock, Wizard",4
+Blight,"Druid, Sorcerer, Warlock, Wizard",4
+Charm Monster,"Bard, Druid, Sorcerer, Warlock, Wizard",4
+Compulsion,Bard,4
+Confusion,"Bard, Druid, Sorcerer, Wizard",4
+Conjure Barlgura (UA),"Sorcerer, Wizard",4
+Conjure Knowbot (UA),"Sorcerer, Warlock, Wizard",4
+Conjure Minor Elementals,"Druid, Wizard",4
+Conjure Shadow Demon (UA),"Sorcerer, Wizard",4
+Conjure Woodland Beings,"Druid, Ranger",4
+Control Water,"Cleric, Druid, Wizard",4
+Death Ward,"Cleric, Paladin",4
+Dimension Door,"Bard, Sorcerer, Warlock, Wizard",4
+Divination,"Cleric, Druid, Wizard",4
+Dominate Beast,"Druid, Ranger, Sorcerer",4
+Ego Whip (UA),"Sorcerer, Warlock, Wizard",4
+Elemental Bane,"Druid, Warlock, Wizard, Artificer",4
+Evard's Black Tentacles,Wizard,4
+Fabricate,"Artificer, Wizard",4
+Find Greater Steed,Paladin,4
+Fire Shield,"Druid, Sorcerer, Wizard",4
+Freedom of Movement,"Artificer, Bard, Cleric, Druid, Ranger",4
+Galder's Speedy Courier,"Warlock, Wizard",4
+Giant Insect,Druid,4
+Grasping Vine,"Druid, Ranger",4
+Gravity Sinkhole,Wizard,4
+Greater Invisibility,"Bard, Sorcerer, Wizard",4
+Guardian of Faith,Cleric,4
+Guardian of Nature,"Druid, Ranger",4
+Hallucinatory Terrain,"Bard, Druid, Warlock, Wizard",4
+Ice Storm,"Druid, Sorcerer, Wizard",4
+Leomund's Secret Chest,"Artificer,Wizard",4
+Locate Creature,"Bard, Cleric, Druid, Paladin, Ranger, Wizard",4
+Mordenkainen's Faithful Hound,"Artificer, Wizard",4
+Mordenkainen's Private Sanctum,"Artificer, Wizard",4
+Otiluke's Resilient Sphere,"Artificer, Wizard",4
+Phantasmal Killer,"Bard, Wizard",4
+Polymorph,"Bard, Druid, Sorcerer, Wizard",4
+Raulothim's Psychic Lance (UA),"Bard, Sorcerer, Warlock, Wizard",4
+Shadow Of Moil,Warlock,4
+Sickening Radiance,"Sorcerer, Warlock, Wizard",4
+Staggering Smite,Paladin,4
+Stone Shape,"Artificer, Cleric, Druid, Wizard",4
+Stoneskin,"Artificer, Druid, Ranger, Sorcerer, Wizard",4
+Storm Sphere,"Sorcerer, Wizard",4
+Summon Aberration,"Warlock, Wizard",4
+Summon Construct,"Artificer, Wizard",4
+Summon Elemental,"Druid, Ranger, Wizard",4
+Summon Greater Demon,"Warlock, Wizard",4
+Synchronicity (UA),"Sorcerer, Warlock, Wizard",4
+System Backdoor (UA),"Sorcerer, Warlock, Wizard",4
+Vitriolic Sphere,"Sorcerer, Wizard",4
+Wall of Fire,"Druid, Sorcerer, Wizard",4
+Watery Sphere,"Druid, Sorcerer, Wizard",4
+Widogast's Vault of Amber (HB),Wizard,4
+Widogast's Web of Fire (HB),Wizard,4
+Animate Objects,"Artificer, Bard, Sorcerer, Wizard",5
+Antilife Shell,Druid,5
+Awaken,"Bard, Druid",5
+Banishing Smite,Paladin,5
+Bigby's Hand,"Artificer, Sorcerer, Wizard",5
+Circle of Power,Paladin,5
+Cloudkill,"Sorcerer, Wizard",5
+Commune,Cleric,5
+Commune with City (UA),"Sorcerer, Warlock, Wizard",5
+Commune with Nature,"Druid, Ranger",5
+Cone of Cold,"Druid, Sorcerer, Wizard",5
+Conjure Elemental,"Druid, Wizard",5
+Conjure Volley,Ranger,5
+Conjure Vrock (UA),"Sorcerer, Wizard",5
+Contact Other Plane,"Warlock, Wizard",5
+Contagion,"Cleric, Druid",5
+Control Winds,"Druid, Sorcerer, Wizard",5
+Creation,"Artificer, Sorcerer, Wizard",5
+Danse Macabre,"Warlock, Wizard",5
+Dawn,"Cleric, Wizard",5
+Destructive Wave,Paladin,5
+Dispel Evil and Good,"Cleric, Paladin",5
+Dominate Person,"Bard, Sorcerer, Wizard",5
+Dream,"Bard, Warlock, Wizard",5
+Enervation,"Sorcerer, Warlock, Wizard",5
+Far Step,"Sorcerer, Warlock, Wizard",5
+Flame Strike,Cleric,5
+Geas,"Bard, Cleric, Druid, Paladin, Wizard",5
+Greater Restoration,"Artificer, Bard, Cleric, Druid, Ranger",5
+Hallow,Cleric,5
+Hold Monster,"Bard, Sorcerer, Warlock, Wizard",5
+Holy Weapon,"Cleric, Paladin",5
+Immolation,"Sorcerer, Wizard",5
+Infernal Calling,"Warlock, Wizard",5
+Insect Plague,"Cleric, Druid, Sorcerer",5
+Legend Lore,"Bard, Cleric, Wizard",5
+Maelstrom,Druid,5
+Mass Cure Wounds,"Bard, Cleric, Druid",5
+Mislead,"Bard, Warlock, Wizard",5
+Modify Memory,"Bard, Warlock, Wizard",5
+Negative Energy Flood,"Warlock, Wizard",5
+Passwall,Wizard,5
+Planar Binding,"Bard, Cleric, Druid, Warlock, Wizard",5
+Raise Dead,"Bard, Cleric, Paladin",5
+Rary's Telepathic Bond,"Bard, Wizard",5
+Reincarnate,Druid,5
+Scrying,"Bard, Cleric, Druid, Warlock, Wizard",5
+Seeming,"Bard, Sorcerer, Wizard",5
+Shutdown (UA),"Sorcerer, Warlock, Wizard",5
+Skill Empowerment,"Artificer, Bard, Sorcerer, Wizard",5
+Steel Wind Strike,"Ranger, Wizard",5
+Summon Celestial,"Cleric, Paladin",5
+Summon Draconic Spirit (UA),"Druid, Sorcerer, Wizard",5
+Swift Quiver,Ranger,5
+Synaptic Static,"Bard, Sorcerer, Warlock, Wizard",5
+Telekinesis,"Sorcerer, Wizard",5
+Teleportation Circle,"Bard, Sorcerer, Warlock, Wizard",5
+Temporal Shunt,Wizard,5
+Transmute Rock,"Druid, Wizard, Artificer",5
+Tree Stride,"Druid, Ranger",5
+Wall of Force,Wizard,5
+Wall Of Light,"Sorcerer, Warlock, Wizard",5
+Wall of Stone,"Artificer, Druid, Sorcerer, Wizard",5
+Wrath Of Nature,"Druid, Ranger",5
+Arcane Gate,"Sorcerer, Warlock, Wizard",6
+Blade Barrier,Cleric,6
+Bones of the Earth,Druid,6
+Chain Lightning,"Sorcerer, Wizard",6
+Circle of Death,"Sorcerer, Warlock, Wizard",6
+Conjure Fey,"Druid, Warlock",6
+Contingency,Wizard,6
+Create Homunculus,Wizard,6
+Create Undead,"Cleric, Warlock, Wizard",6
+Disintegrate,"Sorcerer, Wizard",6
+Drawmij's Instant Summons,Wizard,6
+Druid Grove,Druid,6
+Eyebite,"Bard, Sorcerer, Warlock, Wizard",6
+Find the Path,"Bard, Cleric, Druid",6
+Fizban's Platinum Shield (UA),"Sorcerer, Wizard",6
+Flesh to Stone,"Druid, Sorcerer, Warlock, Wizard",6
+Forbiddance,Cleric,6
+Globe of Invulnerability,"Sorcerer, Wizard",6
+Gravity Fissure,Wizard,6
+Guards and Wards,"Bard, Wizard",6
+Harm,Cleric,6
+Heal,"Cleric, Druid",6
+Heroes' Feast,"Bard, Cleric, Druid",6
+Investiture of Flame,"Druid, Sorcerer, Warlock, Wizard",6
+Investiture of Ice,"Druid, Sorcerer, Warlock, Wizard",6
+Investiture of Stone,"Druid, Sorcerer, Warlock, Wizard",6
+Investiture of Wind,"Druid, Sorcerer, Warlock, Wizard",6
+Magic Jar,Wizard,6
+Mass Suggestion,"Bard, Sorcerer, Warlock, Wizard",6
+Mental Prison,"Sorcerer, Warlock, Wizard",6
+Move Earth,"Druid, Sorcerer, Wizard",6
+Otherworldly Form (UA),"Cleric, Sorcerer, Warlock, Wizard",6
+Otiluke's Freezing Sphere,"Sorcerer, Wizard",6
+Otto's Irresistible Dance,"Bard, Wizard",6
+Planar Ally,Cleric,6
+Primordial Ward,Druid,6
+Programmed Illusion,"Bard, Wizard",6
+Psychic Crush (UA),"Sorcerer, Warlock, Wizard",6
+Scatter,"Sorcerer, Warlock, Wizard",6
+Soul Cage,"Warlock, Wizard",6
+Summon Fiend,"Warlock, Wizard",6
+Sunbeam,"Cleric, Druid, Sorcerer, Wizard",6
+Tasha's Otherworldly Guise,"Sorcerer, Warlock, Wizard",6
+Tenser's Transformation,Wizard,6
+Transport via Plants,Druid,6
+True Seeing,"Bard, Cleric, Sorcerer, Warlock, Wizard",6
+Wall of Ice,Wizard,6
+Wall of Thorns,Druid,6
+Widogast's Transmogrification (HB),Wizard,6
+Wind Walk,Druid,6
+Word of Recall,Cleric,6
+Conjure Celestial,Cleric,7
+Conjure Hezrou (UA),"Sorcerer, Wizard",7
+Create Magen,Wizard,7
+Crown Of Stars,"Sorcerer, Warlock, Wizard",7
+Delayed Blast Fireball,"Sorcerer, Wizard",7
+Divine Word,Cleric,7
+Draconic Transformation (UA),"Druid, Sorcerer, Wizard",7
+Dream of the Blue Veil,"Bard, Sorcerer, Warlock, Wizard",7
+Etherealness,"Bard, Cleric, Sorcerer, Warlock, Wizard",7
+Finger of Death,"Sorcerer, Warlock, Wizard",7
+Fire Storm,"Cleric, Druid, Sorcerer",7
+Forcecage,"Bard, Warlock, Wizard",7
+Mirage Arcane,"Bard, Druid, Wizard",7
+Mordenkainen's Magnificent Mansion,"Bard, Wizard",7
+Mordenkainen's Sword,"Bard, Wizard",7
+Plane Shift,"Cleric, Druid, Sorcerer, Warlock, Wizard",7
+Power Word: Pain,"Sorcerer, Warlock, Wizard",7
+Prismatic Spray,"Bard, Sorcerer, Wizard",7
+Project Image,"Bard, Warlock, Wizard",7
+Regenerate,"Bard, Cleric, Druid",7
+Resurrection,"Bard, Cleric",7
+Reverse Gravity,"Druid, Sorcerer, Wizard",7
+Sequester,Wizard,7
+Simulacrum,Wizard,7
+Symbol,"Bard, Cleric, Druid, Wizard",7
+Teleport,"Bard, Sorcerer, Wizard",7
+Temple of the Gods,Cleric,7
+Tether Essence,Wizard,7
+Whirlwind,"Druid, Wizard",7
+Abi-Dalzim's Horrid Wilting,"Sorcerer, Warlock, Wizard",8
+Animal Shapes,Druid,8
+Antimagic Field,"Cleric, Wizard",8
+Antipathy/Sympathy,"Bard, Druid, Wizard",8
+Clone,Wizard,8
+Control Weather,"Cleric, Druid, Wizard",8
+Dark Star,Wizard,8
+Demiplane,"Sorcerer, Warlock, Wizard",8
+Dominate Monster,"Bard, Sorcerer, Warlock, Wizard",8
+Earthquake,"Cleric, Druid, Sorcerer",8
+Feeblemind,"Bard, Druid, Warlock, Wizard",8
+Glibness,"Bard, Warlock",8
+Holy Aura,Cleric,8
+Illusory Dragon,Wizard,8
+Incendiary Cloud,"Druid, Sorcerer, Wizard",8
+Maddening Darkness,"Warlock, Wizard",8
+Maze,Wizard,8
+Mighty Fortress,Wizard,8
+Mind Blank,"Bard, Wizard",8
+Power Word: Stun,"Bard, Sorcerer, Warlock, Wizard",8
+Reality Break,Wizard,8
+Sunburst,"Cleric, Druid, Sorcerer, Wizard",8
+Telepathy,Wizard,8
+Tsunami,Druid,8
+Astral Projection,"Cleric, Warlock, Wizard",9
+Blade of Disaster,"Sorcerer, Warlock, Wizard",9
+Foresight,"Bard, Druid, Warlock, Wizard",9
+Gate,"Cleric, Sorcerer, Warlock, Wizard",9
+Imprisonment,"Warlock, Wizard",9
+Invulnerability,Wizard,9
+Mass Heal,Cleric,9
+Mass Polymorph,"Bard, Sorcerer, Wizard",9
+Meteor Swarm,"Sorcerer, Wizard",9
+Power Word: Heal,"Bard, Cleric",9
+Power Word: Kill,"Bard, Sorcerer, Warlock, Wizard",9
+Prismatic Wall,"Bard, Wizard",9
+Psychic Scream,"Bard, Sorcerer, Warlock, Wizard",9
+Ravenous Void,Wizard,9
+Shapechange,"Druid, Warlock, Wizard",9
+Storm of Vengeance,Druid,9
+Time Ravage,Wizard,9
+Time Stop,"Sorcerer, Wizard",9
+True Polymorph,"Bard, Warlock, Wizard",9
+True Resurrection,"Cleric, Druid",9
+Weird,"Warlock, Wizard",9
+Wish,"Sorcerer, Wizard",9
 Rage,Barbarian
 Bardic Inspiration,Bard
 Channel Divinity,Cleric

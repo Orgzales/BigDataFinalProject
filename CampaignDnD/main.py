@@ -24,6 +24,7 @@ total_files = len(glob.glob("crititcalrole/testing/*.txt"))
 df_spells = pd.read_csv("SpellsOutput.csv")
 spell_names_values = df_spells['Name']#spell names column
 spell_classes_values = df_spells['Classes'] #spell classes column
+spell_level_values = df_spells['Level'] #spell level column
 
 #monsters
 df_monsters = pd.read_csv("DndData/Dd5e_monsters.csv")
@@ -166,8 +167,8 @@ with progress:
             # print("Character: " + character)
             success_rate = permanent_success_level
             name_classes_clean = character_classes_clean[character] #EX [('Sorcerer', 13), ('Fighter', 5)]
-            success_rate += sum(level_class for assoisiated_class, level_class in name_classes_clean) #Add for each class level
-            # print("Level from " + character + ": +" + str(sum(level_class for assoisiated_class, level_class in name_classes_clean)) + "%")
+            success_rate += sum(level_class for assoisiated_class, level_class in name_classes_clean)*2.5 #Add for each class level
+            print("Level from " + character + ": +" + str(sum(level_class for assoisiated_class, level_class in name_classes_clean) * 2.5) + "%")
 
             spell_known_rate = 0.0
             spell_learn_rate = 0.0
@@ -177,11 +178,13 @@ with progress:
                     spell_class = spell_classes_values[spell_names_values.tolist().index(spell)]
                     # print(spell_class)
                     if spell in character_spells[character_index[character]]:
-                        spell_known_rate += occurrence
+                        spell_known_rate += occurrence / 10
                         # print(spell + "(#=" + str(occurrence) + ") is known by " + character + " (+ " + str(spell_known_rate) + "%)")
                     else:
                         if any(name_class in spell_class for name_class, class_text in name_classes_clean):
-                            spell_learn_rate += occurrence / 2
+                            if any(level_class >= spell_level_values[spell_names_values.tolist().index(spell)] for name_class, level_class in name_classes_clean):
+                                spell_learn_rate += occurrence / 10
+                                # print(spell + "(#=" + str(occurrence) + ") is learned by " + character + " (+ " + str(spell_learn_rate) + "%)")
                             # print(spell + "(#=" + str(occurrence) + ") is learned by " + character + " (+ " + str(spell_learn_rate) + "%)")
 
             success_rate += spell_known_rate + spell_learn_rate
@@ -203,7 +206,7 @@ with progress:
                     # print(skill + ": " + str(sum( (count/10) for word, count in word_counts_per_file_lower.items() if skill_lower in word)))
 
             success_rate += skill_rate
-            character_success_rate[character] = success_rate - Monster_negitive_rate_perfile[file_path] #subtract the monster challenge rating from the success
+            character_success_rate[character] = success_rate - (Monster_negitive_rate_perfile[file_path]) #subtract the monster challenge rating from the success
             progress.advance(task)
 
             # print(character_success_rate)

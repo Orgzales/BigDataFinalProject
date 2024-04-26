@@ -12,20 +12,19 @@ column_names = df.columns.tolist()
 
 name_values = df['name']
 class_values = df['classes']
+spell_level = df['level']
 
-print(name_values)
 
 count = 0
 output_file_path = "SpellsOutput.csv"
 
 with open(output_file_path, "w", newline='') as file:
     csv_writer = csv.writer(file)
-    csv_writer.writerow(["Name", "Classes"])  # Header
+    csv_writer.writerow(["Name", "Classes", "Level"])  # Header
     print(class_values)
     for name in name_values:
-        print(name)
-        print(class_values)
-        csv_writer.writerow([name, class_values[count]])
+        print(name + " " + class_values[count] + " " + str(spell_level[count]))
+        csv_writer.writerow([name, class_values[count], spell_level[count]])
         count += 1
     count = 0
     for ability in abilities:
