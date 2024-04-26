@@ -5,6 +5,8 @@ from rich.progress import Progress
 from rich.console import Console
 import pandas as pd
 import re
+import matplotlib.pyplot as plt
+import numpy as np
 
 progress = Progress()
 console = Console()
@@ -259,6 +261,44 @@ print("!!!!!!!!!!!!!!!!!!!!!!")
 print("Top 10 least successful characters from session 2:")
 for character, success_rate in sorted(session2.items(), key=lambda item: item[1])[:10]:
     print(character + ": " + str(success_rate) + "%")
+
+# get the average success rate for each session
+average_success_rate = {}
+count = 0
+for file_path, character_success_rate in session_success_rate.items():
+    count += 1
+    average_success_rate[("Session: " + str(count))] = np.mean(list(character_success_rate.values()))
+
+# # make a line chart for each session and the average success rate
+plt.plot(list(average_success_rate.keys()), list(average_success_rate.values()), label="Average Success Rate")
+plt.xlabel("Session")
+plt.xticks(rotation=45)
+plt.ylabel("Success Rate (%)")
+plt.title("Average Success Rate for Each Session")
+plt.legend()
+
+#get the success rate for charater daf76ff2 from each session and make a line graph
+character_daf76ff2 = {}
+count = 0
+for file_path, character_success_rate in session_success_rate.items():
+    count += 1
+    character_daf76ff2[("Session: " + str(count))] = character_success_rate["daf76ff2"]
+
+class_of_guy = character_classes[character_names.tolist().index("daf76ff2")]
+plt.plot(list(character_daf76ff2.keys()), list(character_daf76ff2.values()), label=("Character: daf76ff2 | " + class_of_guy))
+plt.xlabel("Session")
+plt.xticks(rotation=45)
+plt.ylabel("Success Rate (%)")
+plt.title("Success Rate for Character: daf76ff2")
+plt.legend()
+plt.tight_layout()
+
+plt.savefig("SuccessRate.png")
+
+plt.show()
+
+
+
 
 
 
