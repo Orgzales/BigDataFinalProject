@@ -14,71 +14,56 @@ Analyze transcripts from over 128+ episodes of the Dungeons & Dragons 5e series,
 
 Background: Critical Role is a D&D 5e campaign with a rich storyline spanning over a year. The character dataset includes outliers, such as level 200 characters with an expected high success rate, and level 1 characters whose survival may vary. Factors such as class, race, abilities, weapons, magic spells, and additional skills will influence their survivability. With seven years of experience as a Dungeon Master and player, I can discern which statistics hold greater significance than others.
 
-##TODO/STEP 0:
-CREATE OUTPUT FILES FOR PROCESSING STATS
-	- Charaters output file contains:
-		- Name: Used to just ID the Charaters 
-		- Class: To compare what spells or abilities are brought up into each session 
-		- Skills: TO compare which skills are brought up into each session 
-		- Processed Spells: Magic that the charater specializes in 
-		- Level: Each session will automatically has a success rate for each level of the charater such as level 2 = 2% for each session. Also to compare the Challenge rating for the monster names brought up into the campaign in total.
-		- These will be used to compare the amount of times in the transcripts a previous player uses a Class ability or class spell, or when the DM has asked for a certain skill check
-		- EX: In the transcript in session 1, if stealth count = 9 , a charater with the stealth skill would have possibly a +9% success rate in that session 
-		- EX: If a charater that doesn't have the correct abilities in the session, then it's possible they may come out with a 0% success rate in that session. Once all 128 sessions have been totaled with the average of all percentages, it will be determine how likely that charater will be able to win the campaign
-		
-	- SpellList:
-		- Name: To ID which spells are in the transcripts
-		- Class: WHich class are able to use the magic
-		- EX: Each time a spell/feature of a class is brought up, if the charater has a class for the spell access such as Wizard with Acid = 3, they would get +3% success
-		- EX: If the CHarater has the spell in it's process spells, the percentage is doubled. If frost = 4, the success rate = 8%
-	
-	- Monsters: 
-		- Name: To ID which monsters are in the transcripts 
-		- Challenge rating: To ID what level requirment is recommended 
-		- EX: If in a session there is a Challenge Rating 3 Monster, and if a player is level 1, their success rate will go down by 3%
+#FILE SPELLLIST.PY and CHARATERS.PY
+	- Spells: 
+		- Grabbing and ETL only the columns needed for the Data Success Rate 
+			- Spell Name: To check how many occurances in each file 
+			- Spell Classes: To see which class can have access to the spell 
+			- Spell Level: TO see what level class you need to be to learn the spell 
+		- Export to new CSV
+	- Charaters: 
+		- Grabbing and ETL only information relevant to characters and filling nans 
+			- Name: To identify charaters 
+			- Class: + LV: TO give deafult success rate for character and find what spells they can learn 
+			- Spells KNown: To give success based on spells they already know 
+			- Skills: TO find how many occurances a skill they know is used in the session 
+		- Export to new CSV
+			
+#FILE MAIN.PY
+	- Read CSV Files: Reads data from CSV files of Charaters, Spells, and Monsters
+	- Read and tokenize each session txt file in transcripts
+		- Count each word, spell, and monster in each session sepererate
+		- Count each time a level up appears for permanent success addition later 
+		- Count total of all words, spells, and monsters of all sessions 
+	- Clean all charater data
+		- seperate levels and class in case of multiple classess in a charater 
+	- Go through each session (transcritp file count) for each charater for the following to get the success rate %:
+		- Add the levels x 2.5 of charater (based on max level charater 20 has 50% of winning) 
+		- For each spell check:
+			- IF the charater knows the spell
+			- IF the charater can learn the spell based on class + level requirements 
+			- Add the spell know rate (count of spell found in session)/10  (Small percentage due to a spell being used in most common usages and if it succeeds or not) 
+			- Add the spell can learn rate (count of spell found in session)/10
+		- For each skill check:
+			- If the character has skill 
+			- add skill (count of skill found in session)/10) (skills can also fail or succeed) 
+	- Once all charaters from each session is stored in dictionary/lists for each session, export it to new CSV for graphing for later 
 
-##TODO/STEP 1:
-	- Tokenize the transcripts of each file using Glob
-	- For each file, use a dictionary/lists to find the amount of times a spell, word, or etc has been said:
-		- SPELLS: Find out how many times spells have been used + Classes can use them 
-		- Monsters: Find out each monster and match challenge rating 
-		- Seperate each file into a session for each match 
-	- Make sure to make it not case sensitive
-	
-##TODO/STEP 2
-	- W/ total amount of spells in total + Session amount of spells using pandas 
-		- Get the classes that the spell could use or access by
-		- Check if the charater has the class that is within the requiements 
-			- if the charater does give out a precent success to that name in that session 
-			- Any nans replace it with "Charater knows no spells"
-			- Make a method to get for each class if the charater has multiple 
-		- for each session keep the success rate from each charter 
-		- also get the total average of success rate for all sessions for each charaters		
-		- Do the same for abilities and skills 
-			- May have to make a sepererate list of abilities for classes 
-		- 
-		
-##TODO/STEP 3
-	- Make each session name based on file name 
-	- Add a permanent success rate addition when a level up is found in the session 
-	- tokenize all words to get a cluster of certain words for 3d models
-	
-###Success Rates 
-	- Player level: +Lv%
-	- If player has spell: +1% Each occurance
-	- If player can learn spell: +0.5% Each occurance
-	- If Player has skill: +0.5% Each occurance
-	- If Session has level up: +1 to level rate 
-	- Monster CR lowers success: Challeneg rating = 3 -> -3% 
-		Challenege rating 0.4 -> -0.4%
-	
-	
-#Charts to Create
-	- a line chart of the avg success rate for each session among all charaters 
-	- a graph of most common spells, classses, monsters, and charters 
-		- possibly for each session 
-	- A cluster graph of the most successful classes with the spells 
-	- cluster/3d graph of the common words, spells, and charaters 
+
+#FILE CHART.PY
+	- Getting the following Graphs from the CSV of session data:
+		- For the first 5 sessions of 1000 charaters 
+			- Each legend has name and class lv of charater 
+			- Getting Average of all charaters for each session for comparison 
+			- Success Rate of the first 10 charaters #1-#10 in all sessions 
+			- Seperate chart for each session of the top 10 highest success rate characters 
+			- Seperate chart for each session of the bottom 10 lowest success rate characters 
+		- FOr 100 sessions of 1000 charaters 
+			- Average of all characters for each session for comparison
+			- Success Rate of the first 10 charaters #1-#10 in all sessions 
+			- For the first 500 charaters, make a sepererate graph of their success rates for all session comparied to the avereage 
+
+
 
 
 ###Data Sources
