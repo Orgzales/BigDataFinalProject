@@ -14,7 +14,7 @@ Analyze transcripts from over 128+ episodes of the Dungeons & Dragons 5e series,
 
 Background: Critical Role is a D&D 5e campaign with a rich storyline spanning over a year. The character dataset includes outliers, such as level 200 characters with an expected high success rate, and level 1 characters whose survival may vary. Factors such as class, race, abilities, weapons, magic spells, and additional skills will influence their survivability. With seven years of experience as a Dungeon Master and player, I can discern which statistics hold greater significance than others.
 
-#FILE SPELLLIST.PY and CHARATERS.PY
+# FILE SPELLLIST.PY and CHARATERS.PY
 	- Spells: 
 		- Grabbing and ETL only the columns needed for the Data Success Rate 
 			- Spell Name: To check how many occurances in each file 
@@ -29,7 +29,7 @@ Background: Critical Role is a D&D 5e campaign with a rich storyline spanning ov
 			- Skills: TO find how many occurances a skill they know is used in the session 
 		- Export to new CSV
 			
-#FILE MAIN.PY
+# FILE MAIN.PY
 	- Read CSV Files: Reads data from CSV files of Charaters, Spells, and Monsters
 	- Read and tokenize each session txt file in transcripts
 		- Count each word, spell, and monster in each session sepererate
@@ -50,7 +50,7 @@ Background: Critical Role is a D&D 5e campaign with a rich storyline spanning ov
 	- Once all charaters from each session is stored in dictionary/lists for each session, export it to new CSV for graphing for later 
 
 
-#FILE CHART.PY
+# FILE CHART.PY
 	- Getting the following Graphs from the CSV of session data:
 		- For the first 5 sessions of 1000 charaters 
 			- Each legend has name and class lv of charater 
@@ -66,7 +66,7 @@ Background: Critical Role is a D&D 5e campaign with a rich storyline spanning ov
 
 
 
-###Data Sources
+### Data Sources
 https://www.kaggle.com/datasets/matheusdalbuquerque/critical-role-campain-2-transcripts
 https://www.kaggle.com/datasets/patrickgomes/dungeons-and-dragons-5e-monsters
 https://www.kaggle.com/datasets/joebeachcapital/dungeons-and-dragons-characters
