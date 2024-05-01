@@ -94,8 +94,8 @@ plt.xlabel("Level")
 plt.ylabel("D&D Classes")
 # plt.xticks(rotation=45)
 plt.tight_layout()
-# plt.show()
-plt.savefig("LevelsandSuccessrates.png")
+plt.show()
+# plt.savefig("LevelsandSuccessrates.png")
 plt.clf()
 
 
