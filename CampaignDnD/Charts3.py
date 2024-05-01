@@ -57,102 +57,102 @@ for key in list_of_sessions:
     list_of_sessions[key] = {key: value for key, value in list_of_sessions[key].items() if value != 0}
 # print(list_of_sessions)
 
-#finding all the count of spells for each class in each session
-#
-# list_of_classes = {}
-# count = 0
-# for dict in list_of_sessions:
-#     # print(dict)
-#     count += 1
-#     for class_value in unqiue_classes:
-#         # print(class_value)
-#         class_dict = {}
-#         # spell_count = 0
-#         for spell in list_of_sessions[dict]:
-#             # print(spell)
-#             df_spell_class = df_spells[df_spells['Name'] == spell]
-#             df_spell_class = str(df_spell_class['Classes'])
-#             # print(df_spell_class)
-#             if(class_value in df_spell_class):
-#                 class_dict[spell] = list_of_sessions[dict][spell]
-#             # spell_count += 1
-#             # if(spell_count > 25):
-#             #     break
-#         list_of_classes[class_value] = class_dict
-#     # print(list_of_classes)
-#
-#     df_heatmap = pd.DataFrame(list_of_classes)
-#     df_heatmap = df_heatmap.fillna(0).astype(int)
-#     df_heatmap_transposed = df_heatmap.transpose()
-#     # print(df_heatmap)
-#     # print(df_heatmap_transposed)
-#
-#
-#     colors = [
-#         (0, "lightyellow"),
-#         (0.3, "yellowgreen"),
-#         (0.5, "lightgreen"),
-#         (0.7, "green"),
-#         (1, "DarkGreen"),
-#     ]
-#     # colors = [
-#     #     (0, "white"),  # Red for low values
-#     #     # (0.5, "orange"),  # Orange for middle values
-#     #     (1, "green"),  # Green for high values
-#     # ]
-#     custom_cmap = LinearSegmentedColormap.from_list("custom_cmap", colors)
-#
-#     # Find columns with a total sum less than 5
-#     column_sums = df_heatmap_transposed.sum(axis=0)  # Sum across rows for each column
-#     low_sum_columns = column_sums[column_sums < 10].index.tolist()  # Identify low-sum columns
-#
-#     # Remove columns with a total sum less than 5
-#     df_heatmap_transposed = df_heatmap_transposed.drop(columns=low_sum_columns)  # Drop the low-sum columns
-#
-#     plt.figure(figsize=(10, 10))
-#     heatmap = sns.heatmap(
-#         df_heatmap_transposed,
-#         annot=True,  # Annotate the heatmap with values
-#         fmt="d",  # Format as integers
-#         cmap=custom_cmap,  # Use the custom colormap
-#         cbar=True,  # Include a color bar
-#         # vmin=0,  # Minimum value for the colormap
-#         # vmax=20,  # Maximum value for the colormap (colors capped at 5)
-#     )
-#
-#     # the spell with the highest total usage
-#     column_sums = df_heatmap_transposed.sum(axis=0)
-#     max_column = column_sums.idxmax()
-#     max_column_index = df_heatmap_transposed.columns.get_loc(max_column)
-#     plt.axvline(x=max_column_index + 0.5, color='blue', linewidth=20, alpha=0.1)
-#
-#     # the class with the highest total spells
-#     class_sums = df_heatmap_transposed.sum(axis=1)
-#     max_class = class_sums.idxmax()
-#     max_class_index = df_heatmap_transposed.index.get_loc(max_class)
-#     plt.axhline(y=max_class_index + 0.5, color='blue', linewidth=20, alpha=0.1)
-#
-#     # Finding all spells with sum under 5
-#     low_sum_columns = column_sums[column_sums < 5].index.tolist()
-#     for col_name in low_sum_columns:
-#         col_index = df_heatmap_transposed.columns.get_loc(col_name)  # Get the column index
-#         plt.axvline(x=col_index + 0.5, color='red', linewidth=20, alpha=0.1)
-#
-#     # Finding all classes with no spell usage
-#     rows_with_zeros = df_heatmap_transposed[df_heatmap_transposed.eq(0).all(axis=1)].index.tolist()
-#     row_indices = [df_heatmap_transposed.index.get_loc(class_name) for class_name in rows_with_zeros]
-#     for row_index in row_indices:
-#         plt.axhline(y=row_index + 0.5, color='red', linewidth=20, alpha=0.1)
-#
-#
-#     plt.title("Spell Usage by D&D Classes for " + dict)
-#     plt.xlabel("Spells")
-#     plt.ylabel("D&D Classes")
-#     # plt.xticks(rotation=45)
-#     # plt.tight_layout()
-#     # plt.show()
-#     plt.savefig("HeatMapsBoth/Spell_Usage_by_D&D_Classes_" + str(count) + ".png")
-#     plt.clf()
+# finding all the count of spells for each class in each session
+
+list_of_classes = {}
+count = 0
+for dict in list_of_sessions:
+    # print(dict)
+    count += 1
+    for class_value in unqiue_classes:
+        # print(class_value)
+        class_dict = {}
+        # spell_count = 0
+        for spell in list_of_sessions[dict]:
+            # print(spell)
+            df_spell_class = df_spells[df_spells['Name'] == spell]
+            df_spell_class = str(df_spell_class['Classes'])
+            # print(df_spell_class)
+            if(class_value in df_spell_class):
+                class_dict[spell] = list_of_sessions[dict][spell]
+            # spell_count += 1
+            # if(spell_count > 25):
+            #     break
+        list_of_classes[class_value] = class_dict
+    # print(list_of_classes)
+
+    df_heatmap = pd.DataFrame(list_of_classes)
+    df_heatmap = df_heatmap.fillna(0).astype(int)
+    df_heatmap_transposed = df_heatmap.transpose()
+    # print(df_heatmap)
+    # print(df_heatmap_transposed)
+
+
+    colors = [
+        (0, "lightyellow"),
+        (0.3, "yellowgreen"),
+        (0.5, "lightgreen"),
+        (0.7, "green"),
+        (1, "DarkGreen"),
+    ]
+    # colors = [
+    #     (0, "white"),  # Red for low values
+    #     # (0.5, "orange"),  # Orange for middle values
+    #     (1, "green"),  # Green for high values
+    # ]
+    custom_cmap = LinearSegmentedColormap.from_list("custom_cmap", colors)
+
+    # Find columns with a total sum less than 5
+    column_sums = df_heatmap_transposed.sum(axis=0)  # Sum across rows for each column
+    low_sum_columns = column_sums[column_sums < 10].index.tolist()  # Identify low-sum columns
+
+    # Remove columns with a total sum less than 5
+    df_heatmap_transposed = df_heatmap_transposed.drop(columns=low_sum_columns)  # Drop the low-sum columns
+
+    plt.figure(figsize=(10, 10))
+    heatmap = sns.heatmap(
+        df_heatmap_transposed,
+        annot=True,  # Annotate the heatmap with values
+        fmt="d",  # Format as integers
+        cmap=custom_cmap,  # Use the custom colormap
+        cbar=True,  # Include a color bar
+        # vmin=0,  # Minimum value for the colormap
+        # vmax=20,  # Maximum value for the colormap (colors capped at 5)
+    )
+
+    # the spell with the highest total usage
+    column_sums = df_heatmap_transposed.sum(axis=0)
+    max_column = column_sums.idxmax()
+    max_column_index = df_heatmap_transposed.columns.get_loc(max_column)
+    plt.axvline(x=max_column_index + 0.5, color='blue', linewidth=20, alpha=0.1)
+
+    # the class with the highest total spells
+    class_sums = df_heatmap_transposed.sum(axis=1)
+    max_class = class_sums.idxmax()
+    max_class_index = df_heatmap_transposed.index.get_loc(max_class)
+    plt.axhline(y=max_class_index + 0.5, color='blue', linewidth=20, alpha=0.1)
+
+    # Finding all spells with sum under 5
+    low_sum_columns = column_sums[column_sums < 5].index.tolist()
+    for col_name in low_sum_columns:
+        col_index = df_heatmap_transposed.columns.get_loc(col_name)  # Get the column index
+        plt.axvline(x=col_index + 0.5, color='red', linewidth=20, alpha=0.1)
+
+    # Finding all classes with no spell usage
+    rows_with_zeros = df_heatmap_transposed[df_heatmap_transposed.eq(0).all(axis=1)].index.tolist()
+    row_indices = [df_heatmap_transposed.index.get_loc(class_name) for class_name in rows_with_zeros]
+    for row_index in row_indices:
+        plt.axhline(y=row_index + 0.5, color='red', linewidth=20, alpha=0.1)
+
+
+    plt.title("Spell Usage by D&D Classes for " + dict)
+    plt.xlabel("Spells")
+    plt.ylabel("D&D Classes")
+    # plt.xticks(rotation=45)
+    # plt.tight_layout()
+    # plt.show()
+    plt.savefig("HeatMapsBoth/Spell_Usage_by_D&D_Classes_" + str(count) + ".png")
+    plt.clf()
 
 
 
