@@ -16,31 +16,31 @@ success_rate_values = df['Success Rate (%)']
 
 # for each session, find the top 10 highest success rates of characters and print them out neatly sorted
 sessions = session_values.unique() #get all unique sessions file names
-for session in sessions:
-    session_data = []
-    for i in range(len(session_values)):
-        if session_values[i] == session:
-            session_data.append([character_values[i], success_rate_values[i]])
-    session_data = sorted(session_data, key=lambda x: x[1], reverse=True)
-    session_data = session_data[:10]
-    print("Top 10 highest success rates for session", session)
-    for i in range(len(session_data)):
-        print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
-
-# for each session, find the top 10 lowest success rates of characters and print them out neatly sorted
-sessions = session_values.unique() #get all unique sessions file names
-for session in sessions:
-    session_data = []
-    for i in range(len(session_values)):
-        if session_values[i] == session:
-            session_data.append([character_values[i], success_rate_values[i]])
-    session_data = sorted(session_data, key=lambda x: x[1])
-    session_data = session_data[:10]
-    print("Top 10 lowest success rates for session", session)
-    for i in range(len(session_data)):
-        print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
-
-plt.figure(figsize=(18, 9), dpi=300)
+# for session in sessions:
+#     session_data = []
+#     for i in range(len(session_values)):
+#         if session_values[i] == session:
+#             session_data.append([character_values[i], success_rate_values[i]])
+#     session_data = sorted(session_data, key=lambda x: x[1], reverse=True)
+#     session_data = session_data[:10]
+#     print("Top 10 highest success rates for session", session)
+#     for i in range(len(session_data)):
+#         print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
+#
+# # for each session, find the top 10 lowest success rates of characters and print them out neatly sorted
+# sessions = session_values.unique() #get all unique sessions file names
+# for session in sessions:
+#     session_data = []
+#     for i in range(len(session_values)):
+#         if session_values[i] == session:
+#             session_data.append([character_values[i], success_rate_values[i]])
+#     session_data = sorted(session_data, key=lambda x: x[1])
+#     session_data = session_data[:10]
+#     print("Top 10 lowest success rates for session", session)
+#     for i in range(len(session_data)):
+#         print(str(i+1) + ": "+ session_data[i][0], session_data[i][1])
+#
+# plt.figure(figsize=(18, 9), dpi=300)
 # get the average success rate for each session of all characters and print it out
 sessions = session_values.unique() #get all unique sessions file names
 average_success_rate_session = {}
@@ -59,9 +59,11 @@ for session in sessions:
     list_of_shorten_session.append(count)
     average_success_rate_session[session] = average_success_rate
     print("Average success rate for session", session, "is", average_success_rate)
+    if count == 15:
+        break
 
 # make a line chart for each session and the average success rate
-
+'''
 plt.plot(list_of_shorten_session, list(average_success_rate_session.values()), linestyle=':', color='black', label="Average Success Rate")
 plt.xlabel("Session #")
 # plt.xticks(rotation=45)
@@ -190,7 +192,43 @@ for i in range(0, len(character_names), 10):
     print("file printed fr charaters range: " + str(fileCount))
     if i == 50:
         break
+'''
 
+
+#take the highest success rate for each session and make a bar graph
+# plt.figure(figsize=(18, 9), dpi=300)
+count = 0
+highest_success_rate = {}
+for session in sessions:
+    session_data = []
+    print("Session: ", session)
+    for i in range(len(session_values)):
+        if session_values[i] == session:
+            session_data.append([character_values[i], success_rate_values[i]])
+    session_data = sorted(session_data, key=lambda x: x[1], reverse=True)
+    highest_success_rate[session] = session_data[0][1]
+    print("Highest success rate for session", session, "is", session_data[0][1])
+    count += 1
+    plt.bar(session, session_data[0][1], color='blue')
+    if count == 15:
+        break
+
+# plt.bar(list_of_shorten_session, list(highest_success_rate.values()), color='blue')
+
+
+for i in range(len(list_of_shorten_session)):
+    plt.text(i+1, list(highest_success_rate.values())[i] + 0.1, "{:.3f}".format(list(highest_success_rate.values())[i]), ha='center', va='bottom')
+
+
+plt.xlabel("Session #")
+plt.xticks(rotation=45)
+# tick_locations = np.arange(0, 110, 5)
+# plt.xticks(tick_locations)
+plt.ylabel("Success Rate (%)")
+plt.title("Highest Success Rate for Each Session")
+# plt.tight_layout()
+plt.show()
+plt.clf()
 
 
 

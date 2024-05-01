@@ -25,6 +25,202 @@ character_values = df['Character']
 character_class_values = df['Character_Class']
 success_rate_values = df['Success Rate (%)']
 
+#print the highest count of spell form the spells_values
+# print(spells_values[0])
+
+#for each session, get the highest number of spells used in the spells_values and print out the name of the spell with the most
+for session in session_unqiue_values:
+    session_dict = eval(spells_values[session_unqiue_values == session].iloc[0])
+    max_spell_count = 0
+    spell_name = ""
+    for key in session_dict:
+        if session_dict[key] > max_spell_count:
+            max_spell_count = session_dict[key]
+            spell_name = key
+    print("Session:", session, spell_name, max_spell_count)
+
+#for first session, take the spells_value and make adictionary, then for next session, take the spells_value and add it to the dictionary
+total_spell_count = {}
+for i in range(len(session_unqiue_values)):
+    session_dict = eval(spells_values[i])
+    for key in session_dict:
+        if key in total_spell_count:
+            total_spell_count[key] += session_dict[key]
+        else:
+            total_spell_count[key] = session_dict[key]
+print(total_spell_count)
+
+#take the total_spell_count and graph it out in a bar chart with the top 10 spells
+spell_names = list(total_spell_count.keys())
+spell_counts = list(total_spell_count.values())
+spell_names = [x for _, x in sorted(zip(spell_counts, spell_names), reverse=True)]
+spell_counts = sorted(spell_counts, reverse=True)
+spell_names = spell_names[:10]
+spell_counts = spell_counts[:10]
+colors = cm.viridis(np.linspace(0, 1, 10))
+
+plt.figure(figsize=(15, 10))
+bars = plt.bar(spell_names, spell_counts, color=colors)
+
+for bar, count, name in zip(bars, spell_counts, spell_names):
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.1, f"{count}", ha='center', va='bottom')
+
+plt.xlabel("Spell Name")
+plt.gca().xaxis.labelpad = 15.3
+plt.ylabel("Number of Times Used")
+plt.title("Top 10 Spells Used in All Sessions")
+plt.tight_layout()
+# plt.savefig("Important_Graphs/Spells_all_sessions.jpeg")
+plt.clf()
+# plt.show()
+
+df_spells = pd.read_csv("SpellsOutput.csv")
+column_names = df_spells.columns.tolist()
+print("Column Names:", column_names)
+classes_spell_use = df_spells['Classes']
+# print(classes_spell_use)
+
+unqiue_classes = ['Artificer', 'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard']
+
+
+count = 0
+for session in session_unqiue_values:
+    print(session)
+    count += 1
+    #in the session, get the highest success rate charater and print out the name of the character + success rate + class
+    # session_df = df[df['Session'] == session]
+    # max_success_rate = 0
+    # character_name = ""
+    # for i in range(len(session_df)):
+    #     if session_df['Success Rate (%)'].iloc[i] > max_success_rate:
+    #         max_success_rate = session_df['Success Rate (%)'].iloc[i]
+    #         character_name = session_df['Character'].iloc[i]
+    #         character_class = session_df['Character_Class'].iloc[i]
+    # print("Session:", session, character_name, max_success_rate, character_class)
+    #
+
+    # in the session, get the all characters with the highest success rate and print out the name of the character + success rate + class
+    session_df = df[df['Session'] == session]
+    success_rate_values = session_df['Success Rate (%)']
+    character_values = session_df['Character']
+    character_class_values = session_df['Character_Class']
+    success_rate_values, character_values, character_class_values = zip(*sorted(zip(success_rate_values, character_values, character_class_values), reverse=True))
+    for i in range(len(success_rate_values)):
+        #only print if the success rate is greater than 50%
+        if success_rate_values[i] > 50:
+            print("Session:", session, character_values[i], success_rate_values[i], character_class_values[i])
+
+    if count == 10:
+        break
+
+
+'''
+#for each spell in total_spell_count, get the class that uses it the most
+spell_class_count = {}
+for class_value in unqiue_classes:
+    print(class_value)
+    spell_class_count[class_value] = 0
+    for spell in total_spell_count:
+        # print(spell)
+        df_spell_class = df_spells[df_spells['Name'] == spell]
+        df_spell_class = str(df_spell_class['Classes'])
+        # print(df_spell_class)
+        if(class_value in df_spell_class):
+
+            # print("yes, " + class_value + " uses " + spell)
+            split_number = total_spell_count[spell]
+            # print(split_number)
+            spell_class_count[class_value] += split_number
+
+print(spell_class_count)
+
+#take the spell_class_count and graph it out in a bar chart with the all classes
+class_names = list(spell_class_count.keys())
+class_counts = list(spell_class_count.values())
+colors = cm.viridis(np.linspace(0, 1, len(class_names)))
+
+class_names = [x for _, x in sorted(zip(class_counts, class_names), reverse=True)]
+class_counts = sorted(class_counts, reverse=True)
+plt.figure(figsize=(15, 10))
+bars = plt.bar(class_names, class_counts, color=colors)
+
+
+
+for bar, count, name in zip(bars, class_counts, class_names):
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.1, f"{count}", ha='center', va='bottom')
+
+plt.xlabel("Class Name")
+plt.gca().xaxis.labelpad = 15.3
+plt.ylabel("Number of Spells Used")
+plt.title("Number of Spells Used by Each Class")
+plt.tight_layout()
+plt.savefig("Important_Graphs/Spells_Used_classes.jpeg")
+# plt.clf()
+plt.show()
+
+'''
+
+
+#for each session, get the highest number of spells used in the spells_values and print out the name of the spell with the most and create its own dictionary
+session_spell_count = {}
+for session in session_unqiue_values:
+    session_dict = eval(spells_values[session_unqiue_values == session].iloc[0])
+    max_spell_count = 0
+    spell_name = ""
+    for key in session_dict:
+        if session_dict[key] > max_spell_count:
+            max_spell_count = session_dict[key]
+            spell_name = key
+    session_spell_count[session] = spell_name + ":" + str(max_spell_count)
+print(session_spell_count)
+
+
+#for the average success rate for each session of all characters get the most common class type from unqiue_classes
+session_class_count = {}
+for session in session_unqiue_values:
+    session_dict = eval(spells_values[session_unqiue_values == session].iloc[0])
+    max_spell_count = 0
+    spell_name = ""
+    for key in session_dict:
+        if session_dict[key] > max_spell_count:
+            max_spell_count = session_dict[key]
+            spell_name = key
+    session_spell_count[session] = spell_name + ":" + str(max_spell_count)
+print(session_spell_count)
+
+
+
+
+
+
+
+
+'''
+#take the session_spell_count and graph it out in a bar chart
+session_names = list(session_spell_count.keys())
+spell_counts = [int(session_spell_count[session].split(":")[1]) for session in session_names]
+spell_names = [session_spell_count[session].split(":")[0] for session in session_names]
+colors = cm.viridis(np.linspace(0, 1, len(session_names)))
+
+plt.figure(figsize=(15, 10))
+bars = plt.bar(session_names, spell_counts, color=colors)
+
+for bar, count, name in zip(bars, spell_counts, spell_names):
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.1, f"{count}", ha='center', va='bottom')
+    plt.text(bar.get_x() + bar.get_width() / 2, -1.5, f"{name}", ha='center', va='top')
+
+plt.xlabel("Session")
+plt.gca().xaxis.labelpad = 15.3
+plt.ylabel("Number of Spells Used")
+plt.title("Number of Spells Used in Each Session")
+plt.tight_layout()
+# plt.savefig("Important_Graphs/Spells_all_sessions.jpeg")
+# plt.clf()
+plt.show()
+'''
+
+
+'''
 classes_success_rate = {}
 classes_count = {}
 
@@ -119,6 +315,9 @@ for session_name in session_values:
 
     # Show the plot for this session
     # plt.show()
+'''
+
+#for each session, get the highest number of spells used in the spells_values
 
 
 # plt.figure(figsize=(18, 9), dpi=300)
