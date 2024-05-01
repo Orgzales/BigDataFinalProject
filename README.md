@@ -14,6 +14,7 @@ Analyze transcripts from over 128+ episodes of the Dungeons & Dragons 5e series,
 
 Background: Critical Role is a D&D 5e campaign with a rich storyline spanning over a year. The character dataset includes outliers, such as level 200 characters with an expected high success rate, and level 1 characters whose survival may vary. Factors such as class, race, abilities, weapons, magic spells, and additional skills will influence their survivability. With seven years of experience as a Dungeon Master and player, I can discern which statistics hold greater significance than others.
 
+
 # FILE SPELLLIST.PY and CHARATERS.PY
 	- Spells: 
 		- Grabbing and ETL only the columns needed for the Data Success Rate 
@@ -34,7 +35,7 @@ Background: Critical Role is a D&D 5e campaign with a rich storyline spanning ov
 	- Read and tokenize each session txt file in transcripts
 		- Count each word, spell, and monster in each session sepererate
 		- Count each time a level up appears for permanent success addition later 
-		- Count total of all words, spells, and monsters of all sessions 
+		- Count total of all words, spells, and monsters of all episodes 
 	- Clean all charater data
 		- seperate levels and class in case of multiple classess in a charater 
 	- Go through each session (transcritp file count) for each charater for the following to get the success rate %:
@@ -52,17 +53,38 @@ Background: Critical Role is a D&D 5e campaign with a rich storyline spanning ov
 
 # FILE CHART.PY
 	- Getting the following Graphs from the CSV of session data:
-		- For the first 5 sessions of 1000 charaters 
+		- For the first 5 episodes of 1000 charaters 
 			- Each legend has name and class lv of charater 
 			- Getting Average of all charaters for each session for comparison 
-			- Success Rate of the first 10 charaters #1-#10 in all sessions 
+			- Success Rate of the first 10 charaters #1-#10 in all episodes 
 			- Seperate chart for each session of the top 10 highest success rate characters 
 			- Seperate chart for each session of the bottom 10 lowest success rate characters 
-		- FOr 100 sessions of 1000 charaters 
+		- FOr 100 episodes of 1000 charaters 
 			- Average of all characters for each session for comparison
-			- Success Rate of the first 10 charaters #1-#10 in all sessions 
+			- Success Rate of the first 10 charaters #1-#10 in all episodes 
 			- For the first 500 charaters, make a sepererate graph of their success rates for all session comparied to the avereage 
-
+	-Folders:
+		-AllSession_Charts:
+			- Each episode Top 10 + Worst 10 Charaters for each are graphed with their success rate for each episode
+		-Classes_SiccessRates
+			- Bar graphs for each episode that have the avereage succeed rate + Count of how many classes were calculated
+		-First5SEssion_Charts:
+			- Linegraphs that show succed rates for the first 10 episodes and 5 characters for testing 
+		-Graphs_and_charts:
+			- Linegraphs for every 10 characters avg succeed rates compared to the overall avereage succeed rate for every episode
+		-HeatMaps:
+			- Each heat map find the number of spells used per class for each seperate episode. 
+			- HeatMapLine: HeatMaps that identify the highest and lowest count of spell + class usage by highlighting them with lines 
+			- HeatMapColor: HeatMaps that are colored instead of white + green
+			- HeatMapBoth: Combination of both Color and Lines 
+		-Other_Graphs:
+			- Graphs that are testing are in this folder 
+		-Best_Graphs: 
+			- The final results that I find best from gathering data 
+			- Level to Class heat map for succeed rate
+			- Finding the succeed rate for each combination of classes 
+			
+![ClassToLevel HEATMAP](CampaignDnD/Best_Graphs/LevelsandSuccessrates.png)
 
 
 

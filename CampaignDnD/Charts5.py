@@ -118,11 +118,19 @@ colors = [
     (0.7, "yellowgreen"),
     (1, "green"),
 ]
+#make colors that are a blue range
+# colors = [
+#     (0, "blue"),
+#     (0.3, "lightblue"),
+#     (0.5, "lightcyan"),
+#     (0.7, "cyan"),
+#     (1, "darkcyan"),
+# ]
 
 custom_cmap = LinearSegmentedColormap.from_list("custom_cmap", colors)
 mask = df_heatmap_transposed == 0.00
 
-plt.figure(figsize=(15, 15))
+plt.figure(figsize=(20, 20), dpi=50)
 heatmap = sns.heatmap(
     df_heatmap_transposed,
     annot=True,  # Annotate the heatmap with values

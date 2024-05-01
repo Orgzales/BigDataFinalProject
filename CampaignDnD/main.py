@@ -75,8 +75,8 @@ with progress:
         monster_counts_per_file[file_path] = monster_counts
 
         progress.advance(task)
-        if count >= 10:
-            break
+        # if count >= 10:
+        #     break
 
 # Count the total occurrences of each spell and print the total with the spell name
 Spell_total_counts = {}

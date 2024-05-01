@@ -38,21 +38,21 @@ with open(output_file_path, "w", newline='', encoding='utf-8') as file:
     csv_writer = csv.writer(file)
     csv_writer.writerow(["Name", "Class", "Spells", "Skills"])  # Header
     for name in name_values:
-        # if count >= 5:  # testing
-        #     break
+        if count >= 1000:  # testing
+            break
         print(name)
         csv_writer.writerow([name, class_values[count], spells_values[count], skills_values[count]])
         count += 1
 
-#getting multiclasses
-count = 0
-output_file_path = "Charaters.csv"
-
-with open(output_file_path, "w", newline='', encoding='utf-8') as file:
-    csv_writer = csv.writer(file)
-    csv_writer.writerow(["Name", "Class", "Spells", "Skills"])  # Header
-    for name in name_values:
-        if "|" in class_values[count] and class_values[count].count("|") == 1:
-            print(name)
-            csv_writer.writerow([name, class_values[count], spells_values[count], skills_values[count]])
-        count += 1
+# #getting multiclasses
+# count = 0
+# output_file_path = "Charaters.csv"
+#
+# with open(output_file_path, "w", newline='', encoding='utf-8') as file:
+#     csv_writer = csv.writer(file)
+#     csv_writer.writerow(["Name", "Class", "Spells", "Skills"])  # Header
+#     for name in name_values:
+#         if "|" in class_values[count] and class_values[count].count("|") == 1:
+#             print(name)
+#             csv_writer.writerow([name, class_values[count], spells_values[count], skills_values[count]])
+#         count += 1
